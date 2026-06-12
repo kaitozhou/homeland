@@ -112,12 +112,12 @@ if (!Array.isArray(report.excludedCommunities)) {
   errors.push('quality report must include excludedCommunities')
 }
 
-if (!Array.isArray(catalog.communities) || catalog.communities.length < 200) {
-  errors.push('community catalog must include at least 200 Jianye community candidates after built-year pruning')
+if (!Array.isArray(catalog.communities) || catalog.communities.length !== 67) {
+  errors.push('community catalog must match the 67-community Excel商品房清单')
 }
 
-if (catalog.metadata?.catalogDefinition !== '住宅=小区；已知建成年代早于2010年的小区从候选目录剔除，建成年代缺失的小区保留待补充。') {
-  errors.push('community catalog metadata must state the current definition and 2010 built-year floor')
+if (catalog.metadata?.catalogDefinition !== '商品房小区清单以用户提供的《建邺区2010年后商品房清单.xlsx》为准；仅保留清单内2010年后建成商品房小区，剔除公寓、安置房、回迁房、经济适用房、商铺、写字楼及清单外小区。') {
+  errors.push('community catalog metadata must state the current Excel商品房清单 definition')
 }
 
 if (catalog.metadata?.total !== catalog.communities?.length) {

@@ -1,24 +1,24 @@
 {
   "updatedAt": "2026-06-12",
-  "rule": "住宅小区入图必须同时具备名称、坐标、住宅形态、建成年代、单价、价格口径、来源，且建成年代不得早于2010年。",
-  "catalogRule": "候选目录口径为住宅=小区；已知建成年代早于2010年的小区剔除。候选目录允许 submarket、builtYear、unitPrice、buildingForm 为 null，但 buildingForm 缺失时必须标记待补充，不做无依据推断。",
+  "rule": "商品房小区候选目录以用户提供Excel清单为准；小区需为2010年后建成商品房，楼型、建成年份、参考均价优先使用Excel字段。",
+  "catalogRule": "商品房小区清单以用户提供的《建邺区2010年后商品房清单.xlsx》为准；仅保留清单内2010年后建成商品房小区，剔除公寓、安置房、回迁房、经济适用房、商铺、写字楼及清单外小区。",
   "catalogQuality": {
-    "source": "聚汇数据建邺区小区房价列表 + 聚汇数据小区详情页；房天下当前返回滑块验证页，仅保留可公开抓取部分。 已知建成年代早于2010年的记录已从候选目录剔除。",
-    "total": 222,
-    "gotohuiDetailFetched": 633,
+    "source": "用户提供Excel清单：建邺区2010年后商品房清单.xlsx。",
+    "total": 67,
+    "gotohuiDetailFetched": 0,
     "fieldCoverage": {
-      "submarket": 133,
-      "builtYear": 105,
-      "buildingForm": 15,
-      "unitPrice": 188
+      "submarket": 67,
+      "builtYear": 67,
+      "buildingForm": 67,
+      "unitPrice": 67
     },
     "missing": {
-      "submarket": 89,
-      "builtYear": 117,
-      "buildingForm": 207,
-      "unitPrice": 34
+      "submarket": 0,
+      "builtYear": 0,
+      "buildingForm": 0,
+      "unitPrice": 0
     },
-    "excludedByBuiltYear": 368
+    "excludedByExcelWhitelist": 155
   },
   "blockedSources": [
     {
@@ -32,44 +32,5 @@
       "impact": "板块价格可使用检索摘要，详情页不作为稳定采集入口。"
     }
   ],
-  "excludedCommunities": [
-    {
-      "name": "金鼎湾和禧",
-      "missing": [
-        "近期成交或参考单价"
-      ],
-      "candidateSource": "https://nj.lianjia.com/xiaoqu/14000000021873/"
-    },
-    {
-      "name": "精金花园北区",
-      "missing": [
-        "近期成交或参考单价",
-        "建成年代"
-      ],
-      "candidateSource": "https://nj.lianjia.com/xiaoqu/1420027575001028/"
-    },
-    {
-      "name": "桃湖里花园西苑",
-      "missing": [
-        "近期成交或参考单价",
-        "建成年代"
-      ],
-      "candidateSource": "https://nj.lianjia.com/xiaoqu/14000000064236/"
-    },
-    {
-      "name": "融创滨江ONE",
-      "missing": [
-        "建成年代",
-        "住宅形态"
-      ],
-      "candidateSource": "https://nj.lianjia.com/xiaoqu/14000000005956/"
-    },
-    {
-      "name": "恒生·名仕嘉园",
-      "missing": [
-        "2010年后建成年代依据"
-      ],
-      "candidateSource": "小红书笔记 69eb74b0000000001e00cc5d：名仕家园05年电梯房"
-    }
-  ]
+  "excludedCommunities": []
 }

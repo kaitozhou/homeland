@@ -29,6 +29,9 @@ const missingFlags = research.records.filter((community) => {
 })
 const invalidStatuses = research.records.filter((community) => !validStatuses.has(community.query?.status))
 const pending = research.records.filter((community) => community.query?.status === 'todo')
+const missingTransactionCases = research.records.filter((community) => {
+  return !Array.isArray(community.calibration?.transactionCases) || community.calibration.transactionCases.length === 0
+})
 
 if (missingFlags.length > 0) {
   errors.push(`records with empty xhs query flag: ${missingFlags.map((community) => community.communityName).join(', ')}`)
@@ -60,6 +63,9 @@ console.log(JSON.stringify({
   catalogTotal: catalog.communities.length,
   missingFlags: missingFlags.length,
   pending: pending.length,
+  realCaseProcessed: research.records.length - missingTransactionCases.length,
+  missingTransactionCases: missingTransactionCases.length,
   counts,
   nextPending: pending.slice(0, 20).map((community) => community.communityName),
+  nextMissingTransactionCases: missingTransactionCases.slice(0, 20).map((community) => community.communityName),
 }, null, 2))
