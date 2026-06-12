@@ -1,0 +1,432 @@
+{
+  "metadata": {
+    "district": "南京市建邺区",
+    "updatedAt": "2026-06-11",
+    "priceUnit": "元/㎡",
+    "coordinateSystem": "GCJ-02",
+    "notes": [
+      "公开页面优先，未绕过登录、验证码或反爬。",
+      "小区入图要求字段齐全：名称、坐标、住宅形态、建成年代、单价、价格口径、来源。",
+      "板块边界为可视化近似轮廓，精确行政边界需后续接入官方/授权 GeoJSON。",
+      "已知建成年代早于2010年的小区不进入当前地图样例和候选筛选。"
+    ],
+    "sources": [
+      {
+        "name": "南京市建邺区人民政府 - 行政区划",
+        "url": "https://www.njjy.gov.cn/zjjy/xzqh/"
+      },
+      {
+        "name": "聚汇数据 - 南京建邺区房价",
+        "url": "https://fangjia.gotohui.com/fjdata-1957"
+      },
+      {
+        "name": "链家/贝壳/安居客/房天下公开检索摘要",
+        "url": "https://nj.lianjia.com/xiaoqu/"
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "mochouhu",
+      "name": "莫愁湖街道",
+      "marketName": "河西北 / 莫愁湖",
+      "center": [
+        118.7476,
+        32.0438
+      ],
+      "polygon": [
+        [
+          118.7275,
+          32.0595
+        ],
+        [
+          118.7705,
+          32.0595
+        ],
+        [
+          118.7718,
+          32.035
+        ],
+        [
+          118.733,
+          32.031
+        ],
+        [
+          118.7275,
+          32.0595
+        ]
+      ],
+      "communityCount": 13,
+      "avgPrice": 30200
+    },
+    {
+      "id": "nanyuan",
+      "name": "南苑街道",
+      "marketName": "南湖 / 南苑",
+      "center": [
+        118.7483,
+        32.0216
+      ],
+      "polygon": [
+        [
+          118.7315,
+          32.033
+        ],
+        [
+          118.7718,
+          32.035
+        ],
+        [
+          118.7698,
+          32.012
+        ],
+        [
+          118.737,
+          32.009
+        ],
+        [
+          118.7315,
+          32.033
+        ]
+      ],
+      "communityCount": 12,
+      "avgPrice": 31000
+    },
+    {
+      "id": "xinglong",
+      "name": "兴隆街道",
+      "marketName": "奥体 / 河西中",
+      "center": [
+        118.7249,
+        32.0128
+      ],
+      "polygon": [
+        [
+          118.701,
+          32.027
+        ],
+        [
+          118.737,
+          32.029
+        ],
+        [
+          118.738,
+          32.004
+        ],
+        [
+          118.702,
+          32.002
+        ],
+        [
+          118.701,
+          32.027
+        ]
+      ],
+      "communityCount": 12,
+      "avgPrice": 45500
+    },
+    {
+      "id": "shazhou",
+      "name": "沙洲街道",
+      "marketName": "河西中部 / 新城科技园",
+      "center": [
+        118.7243,
+        31.9936
+      ],
+      "polygon": [
+        [
+          118.7015,
+          32.003
+        ],
+        [
+          118.739,
+          32.004
+        ],
+        [
+          118.739,
+          31.974
+        ],
+        [
+          118.701,
+          31.973
+        ],
+        [
+          118.7015,
+          32.003
+        ]
+      ],
+      "communityCount": 12,
+      "avgPrice": 62337
+    },
+    {
+      "id": "shuangzha",
+      "name": "双闸街道",
+      "marketName": "河西南部 / 奥南",
+      "center": [
+        118.707,
+        31.9585
+      ],
+      "polygon": [
+        [
+          118.6865,
+          31.975
+        ],
+        [
+          118.739,
+          31.974
+        ],
+        [
+          118.734,
+          31.934
+        ],
+        [
+          118.691,
+          31.936
+        ],
+        [
+          118.6865,
+          31.975
+        ]
+      ],
+      "communityCount": 9,
+      "avgPrice": 58605
+    },
+    {
+      "id": "jiangxinzhou",
+      "name": "江心洲街道",
+      "marketName": "江心洲",
+      "center": [
+        118.6525,
+        32.0192
+      ],
+      "polygon": [
+        [
+          118.637,
+          32.063
+        ],
+        [
+          118.668,
+          32.054
+        ],
+        [
+          118.674,
+          32.005
+        ],
+        [
+          118.659,
+          31.966
+        ],
+        [
+          118.635,
+          31.981
+        ],
+        [
+          118.637,
+          32.063
+        ]
+      ],
+      "communityCount": 7,
+      "avgPrice": 47470
+    }
+  ],
+  "pois": [
+    {
+      "id": "poi-mochou-park",
+      "name": "莫愁湖公园",
+      "type": "park",
+      "blockId": "mochouhu",
+      "position": [
+        118.7531,
+        32.0448
+      ],
+      "source": "https://www.njjy.gov.cn/zjjy/jgk/"
+    },
+    {
+      "id": "poi-green-expo",
+      "name": "南京绿博园",
+      "type": "park",
+      "blockId": "xinglong",
+      "position": [
+        118.7093,
+        32.0216
+      ],
+      "source": "https://www.njjy.gov.cn/zjjy/jgk/"
+    },
+    {
+      "id": "poi-yuzui",
+      "name": "鱼嘴湿地公园",
+      "type": "park",
+      "blockId": "shuangzha",
+      "position": [
+        118.6869,
+        31.9506
+      ],
+      "source": "https://www.njjy.gov.cn/zjjy/jgk/"
+    },
+    {
+      "id": "poi-benq",
+      "name": "南京明基医院",
+      "type": "hospital",
+      "blockId": "xinglong",
+      "position": [
+        118.7358,
+        32.0105
+      ],
+      "source": "https://www.amap.com/"
+    },
+    {
+      "id": "poi-golden-eagle-world",
+      "name": "金鹰世界",
+      "type": "commercial",
+      "blockId": "shazhou",
+      "position": [
+        118.7315,
+        31.9969
+      ],
+      "source": "https://www.amap.com/"
+    },
+    {
+      "id": "poi-huacai",
+      "name": "华采天地",
+      "type": "commercial",
+      "blockId": "shazhou",
+      "position": [
+        118.7222,
+        31.9984
+      ],
+      "source": "https://www.amap.com/"
+    },
+    {
+      "id": "poi-olympic-center",
+      "name": "南京奥体中心",
+      "type": "civic",
+      "blockId": "xinglong",
+      "position": [
+        118.7247,
+        32.0103
+      ],
+      "source": "https://www.njjy.gov.cn/zjjy/jgk/"
+    }
+  ],
+  "communities": [
+    {
+      "id": "pujing",
+      "name": "璞境",
+      "blockId": "jiangxinzhou",
+      "marketName": "江心洲",
+      "position": [
+        118.6529,
+        32.027
+      ],
+      "buildingForm": "高层",
+      "builtYear": 2023,
+      "unitPrice": 59505,
+      "priceType": "参考均价",
+      "source": "https://fangjia.gotohui.com/fjdata-1957",
+      "detailSource": "https://nanjing.newhouse.fang.com/loupan/1810180540/dongtai/all/",
+      "updatedAt": "2026-06-11"
+    },
+    {
+      "id": "yihe-yuanjing",
+      "name": "颐和源璟",
+      "blockId": "shazhou",
+      "marketName": "河西中部",
+      "position": [
+        118.7278,
+        31.9956
+      ],
+      "buildingForm": "高层",
+      "builtYear": 2024,
+      "unitPrice": 66918,
+      "priceType": "参考均价",
+      "source": "https://fangjia.gotohui.com/fjdata-1957",
+      "detailSource": "https://nj.fang.lianjia.com/loupan/p_bljvk/",
+      "updatedAt": "2026-06-11"
+    },
+    {
+      "id": "kisa-city-2",
+      "name": "佳兆业城市广场2期",
+      "blockId": "shuangzha",
+      "marketName": "河西南部",
+      "position": [
+        118.712,
+        31.9583
+      ],
+      "buildingForm": "高层",
+      "builtYear": 2017,
+      "unitPrice": 49584,
+      "priceType": "参考均价",
+      "source": "https://fangjia.gotohui.com/fjdata-1957",
+      "detailSource": "https://nanjing.anjuke.com/community/view/1280805",
+      "updatedAt": "2026-06-11"
+    },
+    {
+      "id": "landsea-north",
+      "name": "朗诗国际街区北园",
+      "blockId": "shazhou",
+      "marketName": "河西CBD",
+      "position": [
+        118.7215,
+        31.9992
+      ],
+      "buildingForm": "高层",
+      "builtYear": 2014,
+      "unitPrice": 41890,
+      "priceType": "参考均价",
+      "source": "https://fangjia.gotohui.com/fjdata-1957",
+      "detailSource": "https://m.lianjia.com/nj/xiaoqu/hexiCBD/",
+      "updatedAt": "2026-06-11"
+    },
+    {
+      "id": "shenglong-rongyuan",
+      "name": "升龙公园道榕园",
+      "blockId": "shazhou",
+      "marketName": "河西中部",
+      "position": [
+        118.7176,
+        31.9886
+      ],
+      "buildingForm": "高层",
+      "builtYear": 2015,
+      "unitPrice": 46358,
+      "priceType": "参考均价",
+      "source": "https://fangjia.gotohui.com/fjdata-1957",
+      "detailSource": "https://fangjia.gotohui.com/fjdata-1957",
+      "updatedAt": "2026-06-11"
+    },
+    {
+      "id": "xidi-4",
+      "name": "银城西堤国际第四区",
+      "blockId": "xinglong",
+      "marketName": "奥体",
+      "position": [
+        118.7246,
+        32.0079
+      ],
+      "buildingForm": "小高层",
+      "builtYear": 2010,
+      "unitPrice": 44709,
+      "priceType": "近6个月成交和在售综合参考均价",
+      "source": "https://m.xflapp.com/xiaoqu/nj-6587277127794557198.html",
+      "detailSource": "https://m.xflapp.com/xiaoqu/nj-6587277127794557198.html",
+      "updatedAt": "2026-06-11"
+    },
+    {
+      "id": "jianfa-junhe-east",
+      "name": "建发珺和府东区",
+      "blockId": "shuangzha",
+      "marketName": "奥南",
+      "position": [
+        118.7065,
+        31.9562
+      ],
+      "buildingForm": "高层",
+      "builtYear": 2023,
+      "unitPrice": 33351,
+      "priceType": "参考均价",
+      "source": "https://nj.lianjia.com/xiaoqu/14000000005756/",
+      "detailSource": "https://nj.lianjia.com/xiaoqu/14000000005756/",
+      "updatedAt": "2026-06-11"
+    }
+  ]
+}
