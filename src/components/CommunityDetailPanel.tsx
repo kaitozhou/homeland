@@ -1,6 +1,6 @@
-import { AlertTriangle, CheckCircle2, ClipboardList } from 'lucide-react'
+import { AlertTriangle, CheckCircle2, ClipboardList, ExternalLink } from 'lucide-react'
 import { formatPrice } from '../lib/filters'
-import type { CatalogCommunityView, XhsQueryStatus } from '../types/domain'
+import type { CatalogCommunityView, XhsQueryStatus, XhsSourceNote } from '../types/domain'
 
 interface CommunityDetailPanelProps {
   community: CatalogCommunityView
@@ -60,19 +60,42 @@ function getStatusText(status: XhsQueryStatus, hasRealCase: boolean): string {
   return '未经过真实案例处理'
 }
 
+function hasReviewOnlyEvidence(community: CatalogCommunityView): boolean {
+  return (
+    community.xhsSourceNotes.some((source) => {
+      const scope = source.scope ?? ''
+      return scope.includes('price_hidden') || scope.includes('reference_price') || scope.includes('name_review')
+    }) ||
+    community.xhsTransactionCases.some((item) => {
+      return [item.totalPrice, item.unitPrice, item.features, item.source]
+        .filter(Boolean)
+        .some((value) => String(value).includes('未公开') || String(value).includes('隐藏') || String(value).includes('参考价'))
+    })
+  )
+}
+
+function getSourceLabel(source: XhsSourceNote): string {
+  const parts = [source.sourceName, source.title].filter(Boolean)
+  return parts.length > 0 ? parts.join(' · ') : '未命名来源'
+}
+
 export function CommunityDetailPanel({ community }: CommunityDetailPanelProps) {
   const hasRealCase = community.xhsRealCaseProcessed
-  const statusText = getStatusText(community.xhsStatus, hasRealCase)
+  const reviewOnlyEvidence = hasReviewOnlyEvidence(community)
+  const statusText = reviewOnlyEvidence && hasRealCase ? '已补网络来源，成交价口径需复核' : getStatusText(community.xhsStatus, hasRealCase)
   const shownCases = community.xhsTransactionCases.slice(0, 8)
+  const shownSources = community.xhsSourceNotes.slice(-6)
 
   return (
     <section className="community-detail" aria-label="小区结构化详情">
-      <div className={hasRealCase ? 'case-banner case-banner--ok' : 'case-banner case-banner--warning'}>
+      <div className={hasRealCase && !reviewOnlyEvidence ? 'case-banner case-banner--ok' : 'case-banner case-banner--warning'}>
         {hasRealCase ? <CheckCircle2 size={18} /> : <AlertTriangle size={18} />}
         <div>
           <strong>{statusText}</strong>
           {!hasRealCase ? (
             <span>当前价格展示以公开 catalog 或参考信息为主，不能视为本小区真实成交校准。</span>
+          ) : reviewOnlyEvidence ? (
+            <span>部分记录为价格隐藏成交、新房参考价或需复核分期口径，详情以来源记录为准。</span>
           ) : (
             <span>成交案例来自已记录的截图或笔记证据，详情如下。</span>
           )}
@@ -140,6 +163,32 @@ export function CommunityDetailPanel({ community }: CommunityDetailPanelProps) {
           {community.xhsJudgments.slice(0, 2).map((judgment) => (
             <span key={judgment}>{judgment}</span>
           ))}
+        </div>
+      )}
+
+      {shownSources.length > 0 && (
+        <div className="source-note-list" aria-label="案例来源">
+          <span className="source-note-list__title">来源记录</span>
+          {shownSources.map((source, index) => {
+            const label = getSourceLabel(source)
+            const meta = [source.noteDate, source.accessedAt ? `访问 ${source.accessedAt}` : null, source.scope]
+              .filter(Boolean)
+              .join(' · ')
+
+            return (
+              <div className="source-note" key={`${source.type ?? 'source'}-${source.url ?? source.title ?? index}`}>
+                {source.url ? (
+                  <a href={source.url} target="_blank" rel="noreferrer" title={label}>
+                    <span>{label}</span>
+                    <ExternalLink size={12} />
+                  </a>
+                ) : (
+                  <span>{label}</span>
+                )}
+                {meta && <em>{meta}</em>}
+              </div>
+            )
+          })}
         </div>
       )}
     </section>

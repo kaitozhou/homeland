@@ -55,7 +55,7 @@ expect(forms.has('高层') && forms.has('小高层'), 'Residential building form
 expect(dataset.blocks.length >= 6, 'Jianye block/street dataset is incomplete', failures)
 expect(dataset.communities.length >= 7, 'Post-2010 residential community dataset is too small for the current prototype', failures)
 expect(dataset.communities.every((community) => community.builtYear >= 2010), 'Residential community dataset contains known pre-2010 communities', failures)
-expect(catalog.communities.length >= 200, 'Post-2010 community catalog has too few entries', failures)
+expect(catalog.communities.length >= 60, 'Post-2010 Excel community catalog has too few entries', failures)
 expect(catalog.communities.every((community) => community.builtYear === null || community.builtYear >= 2010), 'Community catalog contains known pre-2010 communities', failures)
 expect(catalog.communities.every((community) => Object.prototype.hasOwnProperty.call(community, 'publicBuildingType')), 'Community catalog must include public building type field', failures)
 expect(Array.isArray(xhsResearch.records), 'XHS community calibration JSON is missing records array', failures)

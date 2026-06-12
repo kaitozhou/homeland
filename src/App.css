@@ -902,6 +902,50 @@ input[type='range'] {
   flex-direction: column;
 }
 
+.source-note-list {
+  display: grid;
+  gap: 6px;
+  color: var(--color-muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.source-note-list__title {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.source-note {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.source-note a {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+  gap: 4px;
+  color: #0f766e;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.source-note a span,
+.source-note > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.source-note em {
+  flex: 0 0 auto;
+  color: var(--color-muted);
+  font-style: normal;
+}
+
 .map-deferred {
   display: flex;
   align-items: center;

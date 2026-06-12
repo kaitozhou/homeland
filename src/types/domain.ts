@@ -186,6 +186,9 @@ export interface XhsSourceNote {
   noteId?: string
   author?: string
   noteDate?: string
+  sourceName?: string
+  url?: string
+  accessedAt?: string
   scope?: string
 }
 
