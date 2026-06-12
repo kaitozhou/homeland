@@ -1,9 +1,11 @@
 import type { CommunityCatalog, JianyeDataset, QualityReport, XhsCommunityCalibration } from '../types/domain'
 
-const datasetUrl = '/data/jianye-real-estate.json'
-const qualityReportUrl = '/data/data-quality-report.json'
-const communityCatalogUrl = '/data/jianye-communities-catalog.json'
-const xhsCommunityCalibrationUrl = '/data/xhs-nanjing-community-calibration.json'
+const baseUrl = import.meta.env.BASE_URL
+
+const datasetUrl = `${baseUrl}data/jianye-real-estate.json`
+const qualityReportUrl = `${baseUrl}data/data-quality-report.json`
+const communityCatalogUrl = `${baseUrl}data/jianye-communities-catalog.json`
+const xhsCommunityCalibrationUrl = `${baseUrl}data/xhs-nanjing-community-calibration.json`
 
 async function fetchJson<T>(url: string): Promise<T> {
   const response = await fetch(url)
