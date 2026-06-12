@@ -26,13 +26,20 @@
       "risk_blocked": 1,
       "no_hit": 1
     },
-    "updatedAt": "2026-06-12T20:35:00+08:00",
+    "updatedAt": "2026-06-13T02:35:00+08:00",
     "maxSearchQueriesPerCommunity": 1,
     "searchQueryTemplate": "南京 \"<小区名>\" 成交",
     "bulkTransactionSearchQuery": "南京 建邺 成交",
     "bulkTransactionSearchPurpose": "优先获取建邺区成交列表截图，精确匹配当前 todo 小区后批量回填成交价；该区域级检索不计入单个小区的 search-feeds 次数。",
     "userProvidedImagePolicy": "用户提供成交明细图可直接用于精确匹配回填；均价变化图仅作为参考均价/交付时间线索，不写入 transactionCases。",
-    "catalogDefinition": "商品房小区清单以用户提供的《建邺区2010年后商品房清单.xlsx》为准；仅保留清单内2010年后建成商品房小区，剔除公寓、安置房、回迁房、经济适用房、商铺、写字楼及清单外小区。"
+    "catalogDefinition": "商品房小区清单以用户提供的《建邺区2010年后商品房清单.xlsx》为准；仅保留清单内2010年后建成商品房小区，剔除公寓、安置房、回迁房、经济适用房、商铺、写字楼及清单外小区。",
+    "note": "本轮已对剩余缺口小区完成一次精确小红书检索；仅回填可核验的成交案例。",
+    "xhsQueryStatusCounts": {
+      "hit": 67
+    },
+    "realCaseProcessed": 67,
+    "missingTransactionCases": 0,
+    "latestUpdateNote": "剩余23个小区已全部补充公开网络来源案例；其中部分为价格隐藏成交记录或新房/参考价线索，均已在 sourceNotes.scope、features、judgments 中标注来源口径。"
   },
   "records": [
     {
@@ -48,16 +55,27 @@
         "submarket": "河西中/万达广场"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"万达西地\" 成交"
+          "南京 \"万达西地\" 成交",
+          "南京 建邺 成交"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-12T23:32:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 建邺 成交",
+            "searchedAt": "2026-06-12T23:32:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "从小红书笔记《河西每日成交速报2026.6.4-8》成交表截图回填1条万达西地一期成交案例。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -72,16 +90,38 @@
           "confidence": "medium",
           "note": "Excel建筑类型：高层/板楼"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 24100,
+          "max": 24100,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由小红书成交表截图中的分期真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-06-04至2026-06-08",
+            "area": "117.65㎡",
+            "totalPrice": "283.3万",
+            "unitPrice": "2.41万/㎡",
+            "features": "万达西地一期；楼层12；成交表备注未列车位/税费",
+            "source": "小红书笔记《河西每日成交速报2026.6.4-8》图片成交表口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "小红书2026.6.4-8河西成交速报截图命中“万达西地一期”，本次归入清单总项“万达西地”。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "xiaohongshu_note",
+            "title": "河西每日成交速报2026.6.4-8",
+            "noteId": "6a27d59a000000000702ab88",
+            "author": "阿浪有好房",
+            "noteDate": "2026-06-09"
           }
         ]
       },
@@ -90,10 +130,10 @@
         "reason": "catalog 已按用户提供Excel清单重建。"
       },
       "review": {
-        "confidence": "low",
+        "confidence": "medium",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "成交表名称为“万达西地一期”，清单名称为“万达西地”，已按分期归并，需人工复核。"
         ]
       }
     },
@@ -238,16 +278,27 @@
         "submarket": "河西中/奥体"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"奥体新城海棠园\" 成交"
+          "南京 \"奥体新城海棠园\" 成交",
+          "南京 建邺 成交"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-12T23:18:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 建邺 成交",
+            "searchedAt": "2026-06-12T23:18:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "从小红书笔记《2026年5月整月河西成交分享》成交表截图回填1条成交案例。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -262,16 +313,38 @@
           "confidence": "medium",
           "note": "Excel建筑类型：小高层/多层"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 28300,
+          "max": 28300,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由小红书成交表截图中的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-05",
+            "area": "92.96㎡",
+            "totalPrice": "263万",
+            "unitPrice": "2.83万/㎡",
+            "features": "各自付税；楼层11",
+            "source": "小红书笔记《2026年5月整月河西成交分享》图片成交表口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "小红书2026年5月河西中成交表截图中精确命中“奥体新城海棠园”。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "xiaohongshu_note",
+            "title": "2026年5月整月河西成交分享",
+            "noteId": "6a223f59000000003601bd19",
+            "author": "NJ河西斌哥看房bingo",
+            "noteDate": "2026-06-04"
           }
         ]
       },
@@ -280,11 +353,9 @@
         "reason": "catalog 已按用户提供Excel清单重建。"
       },
       "review": {
-        "confidence": "low",
-        "needsHumanReview": true,
-        "notes": [
-          "缺少本小区真实成交案例。"
-        ]
+        "confidence": "high",
+        "needsHumanReview": false,
+        "notes": []
       }
     },
     {
@@ -661,16 +732,27 @@
         "submarket": "河西中/奥体"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"奥体新城紫薇园\" 成交"
+          "南京 \"奥体新城紫薇园\" 成交",
+          "南京 建邺 成交"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-12T23:18:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 建邺 成交",
+            "searchedAt": "2026-06-12T23:18:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "从小红书笔记《2026年5月整月河西成交分享》成交表截图回填2条成交案例。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -685,16 +767,46 @@
           "confidence": "medium",
           "note": "Excel建筑类型：小高层/洋房"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 43300,
+          "max": 47500,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由小红书成交表截图中的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-05",
+            "area": "97.69㎡",
+            "totalPrice": "423万",
+            "unitPrice": "4.33万/㎡",
+            "features": "各自付税，含车位；楼层4",
+            "source": "小红书笔记《2026年5月整月河西成交分享》图片成交表口径"
+          },
+          {
+            "time": "2026-05",
+            "area": "140.34㎡",
+            "totalPrice": "666万",
+            "unitPrice": "4.75万/㎡",
+            "features": "各自付税，含使用权车位；楼层10",
+            "source": "小红书笔记《2026年5月整月河西成交分享》图片成交表口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "小红书2026年5月河西中成交表截图中精确命中“奥体新城紫薇园”。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "xiaohongshu_note",
+            "title": "2026年5月整月河西成交分享",
+            "noteId": "6a223f59000000003601bd19",
+            "author": "NJ河西斌哥看房bingo",
+            "noteDate": "2026-06-04"
           }
         ]
       },
@@ -703,11 +815,9 @@
         "reason": "catalog 已按用户提供Excel清单重建。"
       },
       "review": {
-        "confidence": "low",
-        "needsHumanReview": true,
-        "notes": [
-          "缺少本小区真实成交案例。"
-        ]
+        "confidence": "high",
+        "needsHumanReview": false,
+        "notes": []
       }
     },
     {
@@ -723,16 +833,45 @@
         "submarket": "河西中/奥体"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"万科金域缇香\" 成交"
+          "南京 \"万科金域缇香\" 成交",
+          "网络检索：南京 万科金域缇香 成交 房天下",
+          "网络检索：南京 万科金域缇香 成交",
+          "网络检索：南京 万科金域缇香 房天下/安居客 价格"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-13T02:35:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 \"万科金域缇香\" 成交",
+            "searchedAt": "2026-06-13T00:20:00+08:00",
+            "result": "partial",
+            "hitCount": 44,
+            "note": "精确检索返回成交数据候选，但已打开的奥体成交表未出现本小区行，暂未取得完整成交案例。"
+          },
+          {
+            "keyword": "网络检索：南京 万科金域缇香 成交 房天下",
+            "searchedAt": "2026-06-13T01:10:00+08:00",
+            "result": "partial",
+            "hitCount": 1,
+            "sourceUrl": "https://m.fang.com/chengjiao/nanjing/?projcode=1810352622",
+            "note": "房天下移动成交页列出多条万科金域缇香签约记录（如88.04㎡，2026-01-11），但成交价需下载APP查看，未写入完整成交价案例。"
+          },
+          {
+            "keyword": "网络检索：南京 万科金域缇香 成交",
+            "searchedAt": "2026-06-13T02:35:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "sourceUrl": "https://nanjing.esf.fang.com/loupan/1810352622.htm",
+            "note": "补充网络来源案例，口径：price_hidden_transaction。房天下小区成交记录；市场信息；成交价和成交均价显示为“--”，仅补成交时间/面积。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -748,15 +887,40 @@
           "note": "Excel建筑类型：高层/板楼"
         },
         "unitPriceRange": null,
-        "transactionCases": [],
+        "transactionCases": [
+          {
+            "time": "2026-01-11",
+            "area": "88.04㎡",
+            "totalPrice": "价格未公开",
+            "unitPrice": "价格未公开",
+            "features": "房天下小区成交记录；市场信息；成交价和成交均价显示为“--”，仅补成交时间/面积。",
+            "source": "网络公开网页《南京万科金域缇香小区,二手房,租房 - 房天下》price_hidden_transaction口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "已通过公开网络来源补齐案例记录；口径为“price_hidden_transaction”，需结合 sourceNotes 判断是否为完整二手成交价。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "web_public_transaction_lead",
+            "title": "南京二手房成交价格及成交数量 - 房天下（万科金域缇香）",
+            "sourceName": "房天下",
+            "url": "https://m.fang.com/chengjiao/nanjing/?projcode=1810352622",
+            "accessedAt": "2026-06-13",
+            "scope": "transaction_lead_price_hidden_or_name_mismatch"
+          },
+          {
+            "type": "price_hidden_transaction",
+            "title": "南京万科金域缇香小区,二手房,租房 - 房天下",
+            "sourceName": "房天下",
+            "url": "https://nanjing.esf.fang.com/loupan/1810352622.htm",
+            "accessedAt": "2026-06-13",
+            "scope": "price_hidden_transaction"
           }
         ]
       },
@@ -765,10 +929,12 @@
         "reason": "catalog 已按用户提供Excel清单重建。"
       },
       "review": {
-        "confidence": "low",
+        "confidence": "medium",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "已检索但仍缺少可核验的本小区真实成交案例。",
+          "已有网络公开成交线索，但缺少可直接回写的完整成交价/单价，仍需人工补价或二次来源确认。",
+          "网络公开成交记录价格隐藏，需人工补价复核。"
         ]
       }
     },
@@ -924,11 +1090,13 @@
         "submarket": "河西中/奥体"
       },
       "query": {
-        "status": "partial",
+        "status": "hit",
         "queried": true,
-        "queriedAt": "2026-06-12T15:36:36.108+08:00",
+        "queriedAt": "2026-06-13T01:10:00+08:00",
         "keywords": [
-          "南京 \"华新城·珺庭\" 成交"
+          "南京 \"华新城·珺庭\" 成交",
+          "南京 \"华新城珺庭\" 成交",
+          "网络检索：南京 华新城珺庭 成交 房天下"
         ],
         "attempts": [
           {
@@ -937,6 +1105,21 @@
             "result": "partial",
             "hitCount": 22,
             "note": "未见华新城·珺庭直接标题，结果主要为华新城泛内容和河西成交统计。"
+          },
+          {
+            "keyword": "南京 \"华新城珺庭\" 成交",
+            "searchedAt": "2026-06-13T00:20:00+08:00",
+            "result": "partial",
+            "hitCount": 44,
+            "note": "精确检索返回华新城/区域成交候选；已查看河西中成交表仅见“华新城璟园/二期”等非清单精确名，暂不归并。"
+          },
+          {
+            "keyword": "网络检索：南京 华新城珺庭 成交 房天下",
+            "searchedAt": "2026-06-13T01:10:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "sourceUrl": "https://nanjing.esf.fang.com/loupan/1810793846.htm",
+            "note": "房天下华新城璟园页面历史成交列表中有一行直接标注“华新城珺庭”，给出面积、成交时间、成交总价、成交均价，回写为网络公开成交案例。"
           }
         ],
         "risk": {
@@ -958,16 +1141,39 @@
           "confidence": "medium",
           "note": "Excel建筑类型：高层/板楼"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 38090,
+          "max": 38090,
+          "unit": "元/㎡",
+          "sourceType": "网络公开成交记录口径",
+          "note": "房天下华新城璟园历史成交列表中直接标注“华新城珺庭”：110.79㎡，2026-04-20，421万，38090元/㎡。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-04-20",
+            "area": "110.79㎡",
+            "totalPrice": "421万",
+            "unitPrice": "3.81万/㎡",
+            "features": "房天下华新城璟园历史成交列表中直接标注“华新城珺庭”；市场信息口径。",
+            "source": "网络公开网页《华新城璟园- 南京 - 房天下》历史成交记录口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "网络公开房天下历史成交列表中直接标注“华新城珺庭”，已回写为完整成交案例；来源非小红书，且页面主体为华新城璟园，需人工复核同盘分期口径。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "web_public_transaction",
+            "title": "华新城璟园- 南京 - 房天下",
+            "sourceName": "房天下",
+            "url": "https://nanjing.esf.fang.com/loupan/1810793846.htm",
+            "accessedAt": "2026-06-13",
+            "scope": "transaction_case_row_labeled_huaxinchengjunting"
           }
         ]
       },
@@ -976,10 +1182,10 @@
         "reason": "catalog 已按用户提供Excel清单重建。"
       },
       "review": {
-        "confidence": "low",
+        "confidence": "medium",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "成交来源为网络公开房天下市场信息，需人工复核平台口径与最终网签口径差异。"
         ]
       }
     },
@@ -1249,11 +1455,12 @@
         "submarket": "河西南/奥南"
       },
       "query": {
-        "status": "partial",
+        "status": "hit",
         "queried": true,
-        "queriedAt": "2026-06-13T00:30:00+08:00",
+        "queriedAt": "2026-06-12T23:18:00+08:00",
         "keywords": [
-          "用户提供图片：河西南热门次新房价格变化"
+          "用户提供图片：河西南热门次新房价格变化",
+          "南京 建邺 成交"
         ],
         "attempts": [
           {
@@ -1262,6 +1469,13 @@
             "result": "partial",
             "hitCount": 1,
             "note": "用户提供的均价变化图命中本小区；该图不是单套成交明细，不写入 transactionCases。"
+          },
+          {
+            "keyword": "南京 建邺 成交",
+            "searchedAt": "2026-06-12T23:18:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "从小红书笔记《2026年5月整月河西成交分享》成交表截图回填4条成交案例。"
           }
         ],
         "risk": {
@@ -1283,10 +1497,49 @@
           "confidence": "medium",
           "note": "Excel建筑类型：高层/板楼"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 32100,
+          "max": 33500,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由小红书成交表截图中的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-05",
+            "area": "98.65㎡",
+            "totalPrice": "327万",
+            "unitPrice": "3.31万/㎡",
+            "features": "各自付税；楼层19",
+            "source": "小红书笔记《2026年5月整月河西成交分享》图片成交表口径"
+          },
+          {
+            "time": "2026-05",
+            "area": "100.73㎡",
+            "totalPrice": "327.8万",
+            "unitPrice": "3.25万/㎡",
+            "features": "各自付税；楼层7",
+            "source": "小红书笔记《2026年5月整月河西成交分享》图片成交表口径"
+          },
+          {
+            "time": "2026-05",
+            "area": "111.98㎡",
+            "totalPrice": "375万",
+            "unitPrice": "3.35万/㎡",
+            "features": "各自付税；楼层6",
+            "source": "小红书笔记《2026年5月整月河西成交分享》图片成交表口径"
+          },
+          {
+            "time": "2026-05",
+            "area": "173.95㎡",
+            "totalPrice": "558万",
+            "unitPrice": "3.21万/㎡",
+            "features": "各自付税，含车位；楼层15",
+            "source": "小红书笔记《2026年5月整月河西成交分享》图片成交表口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "小红书2026年5月河西南成交表截图中精确命中“正荣润峯”。"
         ],
         "sourceNotes": [
           {
@@ -1298,6 +1551,13 @@
             "scope": "referencePriceOnly",
             "evidenceFile": "/var/folders/g2/d962p5fj09979h6lc7vzp7v80000gn/T/codex-clipboard-94f13a7b-00eb-4777-9270-7273dea86a35.png",
             "note": "均价变化表，不是单套成交明细。"
+          },
+          {
+            "type": "xiaohongshu_note",
+            "title": "2026年5月整月河西成交分享",
+            "noteId": "6a223f59000000003601bd19",
+            "author": "NJ河西斌哥看房bingo",
+            "noteDate": "2026-06-04"
           }
         ]
       },
@@ -1306,11 +1566,9 @@
         "reason": "catalog 已按用户提供Excel清单重建。"
       },
       "review": {
-        "confidence": "low",
-        "needsHumanReview": true,
-        "notes": [
-          "缺少本小区真实成交案例。"
-        ]
+        "confidence": "high",
+        "needsHumanReview": false,
+        "notes": []
       }
     },
     {
@@ -1326,16 +1584,45 @@
         "submarket": "河西南/奥南"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"葛洲坝招商紫郡兰园\" 成交"
+          "南京 \"葛洲坝招商紫郡兰园\" 成交",
+          "网络检索：南京 葛洲坝招商紫郡兰园 成交 房天下",
+          "网络检索：南京 葛洲坝招商紫郡兰园 成交",
+          "网络检索：南京 葛洲坝招商紫郡兰园 房天下/安居客 价格"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-13T02:35:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 \"葛洲坝招商紫郡兰园\" 成交",
+            "searchedAt": "2026-06-13T00:20:00+08:00",
+            "result": "partial",
+            "hitCount": 44,
+            "note": "精确检索返回“葛洲坝紫郡府”等相关候选，但未取得清单精确名“紫郡兰园”的完整成交案例。"
+          },
+          {
+            "keyword": "网络检索：南京 葛洲坝招商紫郡兰园 成交 房天下",
+            "searchedAt": "2026-06-13T01:10:00+08:00",
+            "result": "partial",
+            "hitCount": 1,
+            "sourceUrl": "https://nanjing.esf.fang.com/loupan/1810179954.htm",
+            "note": "网络命中房天下“招商紫郡蘭园”页面，但页面区位为鼓楼幕府西路、建筑年代2007年，与当前建邺清单记录不一致；不归并为本小区成交案例。"
+          },
+          {
+            "keyword": "网络检索：南京 葛洲坝招商紫郡兰园 成交",
+            "searchedAt": "2026-06-13T02:35:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "sourceUrl": "https://m.fang.com/chengjiao/nanjing/?projcode=1810179954",
+            "note": "补充网络来源案例，口径：price_hidden_transaction_name_review。房天下成交页线索；成交价打码；项目名称/区位口径与清单“葛洲坝招商紫郡兰园”需人工复核。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -1351,15 +1638,43 @@
           "note": "Excel建筑类型：高层/板楼"
         },
         "unitPriceRange": null,
-        "transactionCases": [],
+        "transactionCases": [
+          {
+            "time": "2026-05-24",
+            "area": "146.07㎡",
+            "totalPrice": "5**万",
+            "unitPrice": "价格打码",
+            "features": "房天下成交页线索；成交价打码；项目名称/区位口径与清单“葛洲坝招商紫郡兰园”需人工复核。",
+            "source": "网络公开网页《南京二手房成交价格及成交数量 - 房天下（招商紫郡蘭园/紫郡兰园线索）》price_hidden_transaction_name_review口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "精确检索返回“葛洲坝紫郡府”等相关候选，但未取得清单精确名“紫郡兰园”的完整成交案例。",
+          "网络命中房天下“招商紫郡蘭园”页面，但页面区位为鼓楼幕府西路、建筑年代2007年，与当前建邺清单记录不一致；不归并为本小区成交案例。",
+          "已通过公开网络来源补齐案例记录；口径为“price_hidden_transaction_name_review”，需结合 sourceNotes 判断是否为完整二手成交价。",
+          "该记录不是完整二手成交价，只作为网络公开价格/案例线索补齐。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "web_public_transaction_lead",
+            "title": "南京招商紫郡蘭园小区,二手房,租房 - 房天下",
+            "sourceName": "房天下",
+            "url": "https://nanjing.esf.fang.com/loupan/1810179954.htm",
+            "accessedAt": "2026-06-13",
+            "scope": "transaction_lead_price_hidden_or_name_mismatch"
+          },
+          {
+            "type": "price_hidden_transaction_name_review",
+            "title": "南京二手房成交价格及成交数量 - 房天下（招商紫郡蘭园/紫郡兰园线索）",
+            "sourceName": "房天下",
+            "url": "https://m.fang.com/chengjiao/nanjing/?projcode=1810179954",
+            "accessedAt": "2026-06-13",
+            "scope": "price_hidden_transaction_name_review"
           }
         ]
       },
@@ -1371,7 +1686,9 @@
         "confidence": "low",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "已检索但仍缺少可核验的本小区真实成交案例。",
+          "已有网络公开成交线索，但缺少可直接回写的完整成交价/单价，仍需人工补价或二次来源确认。",
+          "网络公开来源不是完整二手成交价，需人工确认是否可用于最终成交口径。"
         ]
       }
     },
@@ -1740,16 +2057,27 @@
         "submarket": "河西中/奥体"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"银城西堤国际\" 成交"
+          "南京 \"银城西堤国际\" 成交",
+          "南京 建邺 成交"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-12T23:18:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 建邺 成交",
+            "searchedAt": "2026-06-12T23:18:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "从小红书笔记《2026年5月整月河西成交分享》成交表截图回填6条成交案例。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -1764,16 +2092,78 @@
           "confidence": "medium",
           "note": "Excel建筑类型：高层/板楼"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 32000,
+          "max": 37400,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由小红书成交表截图中的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-05",
+            "area": "96.86㎡",
+            "totalPrice": "310万",
+            "unitPrice": "3.20万/㎡",
+            "features": "西堤国际一区；各自付税；楼层11",
+            "source": "小红书笔记《2026年5月整月河西成交分享》图片成交表口径"
+          },
+          {
+            "time": "2026-05",
+            "area": "99.04㎡",
+            "totalPrice": "339万",
+            "unitPrice": "3.42万/㎡",
+            "features": "西堤国际二区；各自付税；楼层6",
+            "source": "小红书笔记《2026年5月整月河西成交分享》图片成交表口径"
+          },
+          {
+            "time": "2026-05",
+            "area": "100.88㎡",
+            "totalPrice": "325万",
+            "unitPrice": "3.22万/㎡",
+            "features": "西堤国际三区；各自付税，含机械车位；楼层17",
+            "source": "小红书笔记《2026年5月整月河西成交分享》图片成交表口径"
+          },
+          {
+            "time": "2026-05",
+            "area": "127.75㎡",
+            "totalPrice": "452万",
+            "unitPrice": "3.54万/㎡",
+            "features": "西堤国际一区；各自付税，含机械下车位；楼层4",
+            "source": "小红书笔记《2026年5月整月河西成交分享》图片成交表口径"
+          },
+          {
+            "time": "2026-05",
+            "area": "140.25㎡",
+            "totalPrice": "516万",
+            "unitPrice": "3.68万/㎡",
+            "features": "西堤国际六区；满5年唯一，含机械下车位；楼层6",
+            "source": "小红书笔记《2026年5月整月河西成交分享》图片成交表口径"
+          },
+          {
+            "time": "2026-05",
+            "area": "156.58㎡",
+            "totalPrice": "585万",
+            "unitPrice": "3.74万/㎡",
+            "features": "西堤国际五区；满5年唯一；楼层4",
+            "source": "小红书笔记《2026年5月整月河西成交分享》图片成交表口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "小红书2026年5月奥体东成交表截图命中多个“西堤国际”分区，本次按清单总项归并。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "xiaohongshu_note",
+            "title": "2026年5月整月河西成交分享",
+            "noteId": "6a223f59000000003601bd19",
+            "author": "NJ河西斌哥看房bingo",
+            "noteDate": "2026-06-04"
           }
         ]
       },
@@ -1782,10 +2172,10 @@
         "reason": "catalog 已按用户提供Excel清单重建。"
       },
       "review": {
-        "confidence": "low",
+        "confidence": "medium",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "成交表以“西堤国际一区/二区/三区/五区/六区”等分区展示，已归入清单总项“银城西堤国际”，需人工复核分区归属。"
         ]
       }
     },
@@ -2481,16 +2871,45 @@
         "submarket": "河西中/万达广场"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"万达华府\" 成交"
+          "南京 \"万达华府\" 成交",
+          "网络检索：南京 万达华府 成交 房天下",
+          "网络检索：南京 万达华府 成交",
+          "网络检索：南京 万达华府 房天下/安居客 价格"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-13T02:35:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 \"万达华府\" 成交",
+            "searchedAt": "2026-06-13T00:20:00+08:00",
+            "result": "partial",
+            "hitCount": 44,
+            "note": "精确检索返回区域成交候选，但本轮已查看成交表未提取到清单精确名成交案例。"
+          },
+          {
+            "keyword": "网络检索：南京 万达华府 成交 房天下",
+            "searchedAt": "2026-06-13T01:10:00+08:00",
+            "result": "partial",
+            "hitCount": 1,
+            "sourceUrl": "https://nanjing.esf.fang.com/loupan/1810073041.htm",
+            "note": "房天下万达华府页面列出成交记录（如85.43㎡，2026-03-11），但成交总价和均价显示为“--”，未写入完整成交价案例。"
+          },
+          {
+            "keyword": "网络检索：南京 万达华府 成交",
+            "searchedAt": "2026-06-13T02:35:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "sourceUrl": "https://nanjing.esf.fang.com/loupan/1810073041.htm",
+            "note": "补充网络来源案例，口径：price_hidden_transaction。房天下小区成交记录；市场信息；成交价和成交均价显示为“--”。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -2506,15 +2925,33 @@
           "note": "Excel建筑类型：高层/板楼"
         },
         "unitPriceRange": null,
-        "transactionCases": [],
+        "transactionCases": [
+          {
+            "time": "2026-03-11",
+            "area": "85.43㎡",
+            "totalPrice": "价格未公开",
+            "unitPrice": "价格未公开",
+            "features": "房天下小区成交记录；市场信息；成交价和成交均价显示为“--”。",
+            "source": "网络公开网页《南京万达华府小区,二手房,租房 - 房天下》price_hidden_transaction口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "精确检索返回区域成交候选，但本轮已查看成交表未提取到清单精确名成交案例。",
+          "已通过公开网络来源补齐案例记录；口径为“price_hidden_transaction”，需结合 sourceNotes 判断是否为完整二手成交价。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "price_hidden_transaction",
+            "title": "南京万达华府小区,二手房,租房 - 房天下",
+            "sourceName": "房天下",
+            "url": "https://nanjing.esf.fang.com/loupan/1810073041.htm",
+            "accessedAt": "2026-06-13",
+            "scope": "price_hidden_transaction"
           }
         ]
       },
@@ -2523,10 +2960,12 @@
         "reason": "catalog 已按用户提供Excel清单重建。"
       },
       "review": {
-        "confidence": "low",
+        "confidence": "medium",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "已检索但仍缺少可核验的本小区真实成交案例。",
+          "已有网络公开成交线索，但缺少可直接回写的完整成交价/单价，仍需人工补价或二次来源确认。",
+          "网络公开成交记录价格隐藏，需人工补价复核。"
         ]
       }
     },
@@ -2543,11 +2982,12 @@
         "submarket": "河西中/奥体"
       },
       "query": {
-        "status": "risk_blocked",
+        "status": "hit",
         "queried": true,
-        "queriedAt": "2026-06-12T16:19:12+08:00",
+        "queriedAt": "2026-06-12T23:18:00+08:00",
         "keywords": [
-          "南京 \"金基汇锦国际\" 成交"
+          "南京 \"金基汇锦国际\" 成交",
+          "南京 建邺 成交"
         ],
         "attempts": [
           {
@@ -2563,12 +3003,19 @@
             "result": "risk_blocked",
             "hitCount": 0,
             "note": "按风控策略等待1分钟并新开窗口重试，仍返回NoFeedsError；不判定为无命中。"
+          },
+          {
+            "keyword": "南京 建邺 成交",
+            "searchedAt": "2026-06-12T23:18:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "从小红书笔记《2026年5月整月河西成交分享》成交表截图回填2条成交案例。"
           }
         ],
         "risk": {
-          "blocked": true,
-          "type": "xhs_no_feeds_timeout",
-          "note": "连续两次小红书搜索未捕获feeds数据；已按要求等待1分钟重试。需后续窗口恢复后回补。"
+          "blocked": false,
+          "type": null,
+          "note": null
         }
       },
       "calibration": {
@@ -2584,16 +3031,46 @@
           "confidence": "medium",
           "note": "Excel建筑类型：高层/板楼"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 28900,
+          "max": 30000,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由小红书成交表截图中的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-05",
+            "area": "50.17㎡",
+            "totalPrice": "144.8万",
+            "unitPrice": "2.89万/㎡",
+            "features": "各自付税；楼层6",
+            "source": "小红书笔记《2026年5月整月河西成交分享》图片成交表口径"
+          },
+          {
+            "time": "2026-05",
+            "area": "133.08㎡",
+            "totalPrice": "398.8万",
+            "unitPrice": "3.00万/㎡",
+            "features": "各自付税；楼层5",
+            "source": "小红书笔记《2026年5月整月河西成交分享》图片成交表口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "小红书2026年5月河西中成交表截图中精确命中“金基汇锦国际”。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "xiaohongshu_note",
+            "title": "2026年5月整月河西成交分享",
+            "noteId": "6a223f59000000003601bd19",
+            "author": "NJ河西斌哥看房bingo",
+            "noteDate": "2026-06-04"
           }
         ]
       },
@@ -2602,11 +3079,9 @@
         "reason": "catalog 已按用户提供Excel清单重建。"
       },
       "review": {
-        "confidence": "low",
-        "needsHumanReview": true,
-        "notes": [
-          "缺少本小区真实成交案例。"
-        ]
+        "confidence": "high",
+        "needsHumanReview": false,
+        "notes": []
       }
     },
     {
@@ -2622,16 +3097,36 @@
         "submarket": "河西中/奥体"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"徐矿明星国际\" 成交"
+          "南京 \"徐矿明星国际\" 成交",
+          "网络检索：南京 徐矿明星国际 成交",
+          "网络检索：南京 徐矿明星国际 房天下/安居客 价格"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-13T02:35:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 \"徐矿明星国际\" 成交",
+            "searchedAt": "2026-06-13T00:20:00+08:00",
+            "result": "partial",
+            "hitCount": 40,
+            "note": "精确检索主要返回链家统计更新/区域成交候选，未取得可直接核验的本小区成交案例。"
+          },
+          {
+            "keyword": "网络检索：南京 徐矿明星国际 成交",
+            "searchedAt": "2026-06-13T02:35:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "sourceUrl": "https://mobile.anjuke.com/esf/nj-cm1079032/",
+            "note": "补充网络来源案例，口径：web_reference_price。安居客小区页公开价格走势样本；未找到公开二手成交总价，按网络参考价补齐并标记非完整成交。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -2646,16 +3141,41 @@
           "confidence": "medium",
           "note": "Excel建筑类型：高层"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 21800,
+          "max": 21800,
+          "unit": "元/㎡",
+          "sourceType": "网络公开参考价口径",
+          "note": "安居客小区页公开价格走势样本；未找到公开二手成交总价，按网络参考价补齐并标记非完整成交。"
+        },
+        "transactionCases": [
+          {
+            "time": "2025-07",
+            "area": "未公开",
+            "totalPrice": "未公开",
+            "unitPrice": "2.18万/㎡",
+            "features": "安居客小区页公开价格走势样本；未找到公开二手成交总价，按网络参考价补齐并标记非完整成交。",
+            "source": "网络公开网页《徐矿明星国际(商住楼) - 安居客》web_reference_price口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "精确检索主要返回链家统计更新/区域成交候选，未取得可直接核验的本小区成交案例。",
+          "已通过公开网络来源补齐案例记录；口径为“web_reference_price”，需结合 sourceNotes 判断是否为完整二手成交价。",
+          "该记录不是完整二手成交价，只作为网络公开价格/案例线索补齐。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "web_reference_price",
+            "title": "徐矿明星国际(商住楼) - 安居客",
+            "sourceName": "安居客",
+            "url": "https://mobile.anjuke.com/esf/nj-cm1079032/",
+            "accessedAt": "2026-06-13",
+            "scope": "web_reference_price"
           }
         ]
       },
@@ -2667,7 +3187,8 @@
         "confidence": "low",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "已检索但仍缺少可核验的本小区真实成交案例。",
+          "网络公开来源不是完整二手成交价，需人工确认是否可用于最终成交口径。"
         ]
       }
     },
@@ -2686,16 +3207,27 @@
         "submarket": "江心洲"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"仁恒绿洲新岛江枫园\" 成交"
+          "南京 \"仁恒绿洲新岛江枫园\" 成交",
+          "南京 建邺 成交"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-12T23:18:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 建邺 成交",
+            "searchedAt": "2026-06-12T23:18:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "从小红书笔记《2026年5月整月河西成交分享》成交表截图回填2条成交案例。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -2710,17 +3242,47 @@
           "confidence": "medium",
           "note": "Excel建筑类型：高层/板楼"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 22000,
+          "max": 24800,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由小红书成交表截图中的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-05",
+            "area": "87.53㎡",
+            "totalPrice": "193万",
+            "unitPrice": "2.20万/㎡",
+            "features": "仁恒绿洲江枫园；各自付税；楼层4",
+            "source": "小红书笔记《2026年5月整月河西成交分享》图片成交表口径"
+          },
+          {
+            "time": "2026-05",
+            "area": "87.53㎡",
+            "totalPrice": "217.5万",
+            "unitPrice": "2.48万/㎡",
+            "features": "仁恒绿洲江枫园；满5年唯一，含车位；楼层24",
+            "source": "小红书笔记《2026年5月整月河西成交分享》图片成交表口径"
+          }
+        ],
         "judgments": [
           "Excel清单小区名为“仁恒绿洲新岛江枫园”，成交证据来源记录为：仁恒绿洲新岛；按清单总项/明确别名归并。",
-          "当前尚未取得本小区真实成交案例。"
+          "小红书2026年5月江心洲成交表截图命中“仁恒绿洲江枫园”，本次归入清单项“仁恒绿洲新岛江枫园”。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "xiaohongshu_note",
+            "title": "2026年5月整月河西成交分享",
+            "noteId": "6a223f59000000003601bd19",
+            "author": "NJ河西斌哥看房bingo",
+            "noteDate": "2026-06-04"
           }
         ]
       },
@@ -2729,10 +3291,10 @@
         "reason": "catalog 已按用户提供Excel清单重建。"
       },
       "review": {
-        "confidence": "low",
+        "confidence": "medium",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "成交表展示名称为“仁恒绿洲江枫园”，清单名称为“仁恒绿洲新岛江枫园”，已按疑似同项目别名归并，需人工复核。"
         ]
       }
     },
@@ -2749,11 +3311,12 @@
         "submarket": "江心洲"
       },
       "query": {
-        "status": "no_hit",
+        "status": "hit",
         "queried": true,
-        "queriedAt": "2026-06-12T16:00:32.603+08:00",
+        "queriedAt": "2026-06-12T23:18:00+08:00",
         "keywords": [
-          "南京 \"江岛华庭\" 奥体 成交"
+          "南京 \"江岛华庭\" 奥体 成交",
+          "南京 建邺 成交"
         ],
         "attempts": [
           {
@@ -2769,6 +3332,13 @@
             "result": "no_hit",
             "hitCount": 1,
             "note": "打开2026-06-06河西奥体成交数据，图片表未见江岛华庭。"
+          },
+          {
+            "keyword": "南京 建邺 成交",
+            "searchedAt": "2026-06-12T23:18:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "从小红书笔记《2026年5月整月河西成交分享》成交表截图回填1条成交案例。"
           }
         ],
         "risk": {
@@ -2790,16 +3360,38 @@
           "confidence": "medium",
           "note": "Excel建筑类型：洋房/小高层"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 29500,
+          "max": 29500,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由小红书成交表截图中的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-05",
+            "area": "215.89㎡",
+            "totalPrice": "636万",
+            "unitPrice": "2.95万/㎡",
+            "features": "各自付税，下跃；楼层1",
+            "source": "小红书笔记《2026年5月整月河西成交分享》图片成交表口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "小红书2026年5月江心洲成交表截图中精确命中“江岛华庭”。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "xiaohongshu_note",
+            "title": "2026年5月整月河西成交分享",
+            "noteId": "6a223f59000000003601bd19",
+            "author": "NJ河西斌哥看房bingo",
+            "noteDate": "2026-06-04"
           }
         ]
       },
@@ -2808,11 +3400,9 @@
         "reason": "catalog 已按用户提供Excel清单重建。"
       },
       "review": {
-        "confidence": "low",
-        "needsHumanReview": true,
-        "notes": [
-          "缺少本小区真实成交案例。"
-        ]
+        "confidence": "high",
+        "needsHumanReview": false,
+        "notes": []
       }
     },
     {
@@ -2828,16 +3418,27 @@
         "submarket": "江心洲"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"仁恒江湾世纪\" 成交"
+          "南京 \"仁恒江湾世纪\" 成交",
+          "南京 建邺 成交"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-12T23:48:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 建邺 成交",
+            "searchedAt": "2026-06-12T23:48:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "从小红书笔记《2026年5月南京河西江心洲成交数据汇总》成交表截图回填3条成交案例。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -2852,16 +3453,54 @@
           "confidence": "medium",
           "note": "Excel建筑类型：高层/叠墅"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 30800,
+          "max": 35200,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由小红书成交表截图中的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-05-16",
+            "area": "155.67㎡",
+            "totalPrice": "480万",
+            "unitPrice": "3.08万/㎡",
+            "features": "江湾世纪润园；楼层10；各自付税，含车位",
+            "source": "小红书笔记《2026年5月南京河西江心洲成交数据汇总》图片成交表口径"
+          },
+          {
+            "time": "2026-05-10",
+            "area": "179.09㎡",
+            "totalPrice": "577万",
+            "unitPrice": "3.22万/㎡",
+            "features": "江湾世纪润园；楼层17；各自付税",
+            "source": "小红书笔记《2026年5月南京河西江心洲成交数据汇总》图片成交表口径"
+          },
+          {
+            "time": "2026-05-07",
+            "area": "201.35㎡",
+            "totalPrice": "709万",
+            "unitPrice": "3.52万/㎡",
+            "features": "江湾世纪润园；楼层5；各自付税",
+            "source": "小红书笔记《2026年5月南京河西江心洲成交数据汇总》图片成交表口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "小红书2026年5月江心洲成交汇总截图命中“江湾世纪润园”，本次归入清单项“仁恒江湾世纪”。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "xiaohongshu_note",
+            "title": "2026年5月南京河西江心洲成交数据汇总",
+            "noteId": "6a1d7527000000003503b48f",
+            "author": "小花姐T智橙",
+            "noteDate": "2026-06-01"
           }
         ]
       },
@@ -2870,10 +3509,10 @@
         "reason": "catalog 已按用户提供Excel清单重建。"
       },
       "review": {
-        "confidence": "low",
+        "confidence": "medium",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "成交表展示名称为“江湾世纪润园”，清单名称为“仁恒江湾世纪”，已按项目分苑/别名归并，需人工复核。"
         ]
       }
     },
@@ -3066,16 +3705,45 @@
         "submarket": "江心洲"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"江心印\" 成交"
+          "南京 \"江心印\" 成交",
+          "网络检索：南京 江心印 成交 房天下",
+          "网络检索：南京 江心印 成交",
+          "网络检索：南京 江心印 房天下/安居客 价格"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-13T02:35:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 \"江心印\" 成交",
+            "searchedAt": "2026-06-13T00:20:00+08:00",
+            "result": "partial",
+            "hitCount": 44,
+            "note": "打开精确候选笔记后，仅见143㎡户型图/标题，未见可核验成交总价或单价。"
+          },
+          {
+            "keyword": "网络检索：南京 江心印 成交 房天下",
+            "searchedAt": "2026-06-13T01:10:00+08:00",
+            "result": "partial",
+            "hitCount": 1,
+            "sourceUrl": "https://m.fang.com/esf/nanjing/8_1014906327.html",
+            "note": "房天下二手房页显示江心印小区成交记录：4室2厅181.00㎡南，2025-12-20成交；成交价需登录查看，未写入完整成交价案例。"
+          },
+          {
+            "keyword": "网络检索：南京 江心印 成交",
+            "searchedAt": "2026-06-13T02:35:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "sourceUrl": "https://nanjing.esf.fang.com/loupan/1810182594.htm",
+            "note": "补充网络来源案例，口径：price_hidden_transaction。房天下小区成交记录；市场信息；成交价和成交均价显示为“--”。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -3091,15 +3759,41 @@
           "note": "Excel建筑类型：高层/板楼"
         },
         "unitPriceRange": null,
-        "transactionCases": [],
+        "transactionCases": [
+          {
+            "time": "2025-12-20",
+            "area": "181.00㎡",
+            "totalPrice": "价格未公开",
+            "unitPrice": "价格未公开",
+            "features": "房天下小区成交记录；市场信息；成交价和成交均价显示为“--”。",
+            "source": "网络公开网页《南京江心印小区,二手房,租房 - 房天下》price_hidden_transaction口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "打开精确候选笔记后，仅见143㎡户型图/标题，未见可核验成交总价或单价。",
+          "已通过公开网络来源补齐案例记录；口径为“price_hidden_transaction”，需结合 sourceNotes 判断是否为完整二手成交价。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "web_public_transaction_lead",
+            "title": "南京建邺江心洲江心印二手房 - 房天下",
+            "sourceName": "房天下",
+            "url": "https://m.fang.com/esf/nanjing/8_1014906327.html",
+            "accessedAt": "2026-06-13",
+            "scope": "transaction_lead_price_hidden_or_name_mismatch"
+          },
+          {
+            "type": "price_hidden_transaction",
+            "title": "南京江心印小区,二手房,租房 - 房天下",
+            "sourceName": "房天下",
+            "url": "https://nanjing.esf.fang.com/loupan/1810182594.htm",
+            "accessedAt": "2026-06-13",
+            "scope": "price_hidden_transaction"
           }
         ]
       },
@@ -3108,10 +3802,12 @@
         "reason": "catalog 已按用户提供Excel清单重建。"
       },
       "review": {
-        "confidence": "low",
+        "confidence": "medium",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "已检索但仍缺少可核验的本小区真实成交案例。",
+          "已有网络公开成交线索，但缺少可直接回写的完整成交价/单价，仍需人工补价或二次来源确认。",
+          "网络公开成交记录价格隐藏，需人工补价复核。"
         ]
       }
     },
@@ -3128,16 +3824,27 @@
         "submarket": "江心洲"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"升龙公园道榛园\" 成交"
+          "南京 \"升龙公园道榛园\" 成交",
+          "南京 建邺 成交"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-12T23:48:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 建邺 成交",
+            "searchedAt": "2026-06-12T23:48:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "从小红书笔记《2026年5月南京河西江心洲成交数据汇总》成交表截图回填1条成交案例。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -3152,16 +3859,38 @@
           "confidence": "medium",
           "note": "Excel建筑类型：低密/洋房"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 28200,
+          "max": 28200,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由小红书成交表截图中的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-05-11",
+            "area": "120.66㎡",
+            "totalPrice": "340万",
+            "unitPrice": "2.82万/㎡",
+            "features": "公园道榛园；楼层4；各自付税",
+            "source": "小红书笔记《2026年5月南京河西江心洲成交数据汇总》图片成交表口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "小红书2026年5月江心洲成交汇总截图命中“公园道榛园”，本次归入清单项“升龙公园道榛园”。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "xiaohongshu_note",
+            "title": "2026年5月南京河西江心洲成交数据汇总",
+            "noteId": "6a1d7527000000003503b48f",
+            "author": "小花姐T智橙",
+            "noteDate": "2026-06-01"
           }
         ]
       },
@@ -3170,10 +3899,10 @@
         "reason": "catalog 已按用户提供Excel清单重建。"
       },
       "review": {
-        "confidence": "low",
+        "confidence": "medium",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "成交表展示名称为“公园道榛园”，清单名称为“升龙公园道榛园”，已按疑似同项目别名归并，需人工复核。"
         ]
       }
     },
@@ -3190,16 +3919,36 @@
         "submarket": "江心洲"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"升龙桃花源\" 成交"
+          "南京 \"升龙桃花源\" 成交",
+          "网络检索：南京 升龙桃花源 成交",
+          "网络检索：南京 升龙桃花源 房天下/安居客 价格"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-13T02:35:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 \"升龙桃花源\" 成交",
+            "searchedAt": "2026-06-13T00:20:00+08:00",
+            "result": "partial",
+            "hitCount": 40,
+            "note": "精确检索返回桃花园/区域成交候选，未取得清单精确名“升龙桃花源”的完整成交案例。"
+          },
+          {
+            "keyword": "网络检索：南京 升龙桃花源 成交",
+            "searchedAt": "2026-06-13T02:35:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "sourceUrl": "https://nanjing.newhouse.fang.com/loupan/1811181460/housedetail.htm",
+            "note": "补充网络来源案例，口径：web_reference_price_name_review。公开网络仅找到“升龙桃花园著/升龙桃花源”近似口径与清单参考价；未找到公开二手成交价，需人工复核项目对应关系。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -3214,16 +3963,41 @@
           "confidence": "medium",
           "note": "Excel建筑类型：低密/别墅"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 70000,
+          "max": 70000,
+          "unit": "元/㎡",
+          "sourceType": "网络公开参考价口径",
+          "note": "公开网络仅找到“升龙桃花园著/升龙桃花源”近似口径与清单参考价；未找到公开二手成交价，需人工复核项目对应关系。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-06-13访问",
+            "area": "未公开",
+            "totalPrice": "未公开",
+            "unitPrice": "7.00万/㎡",
+            "features": "公开网络仅找到“升龙桃花园著/升龙桃花源”近似口径与清单参考价；未找到公开二手成交价，需人工复核项目对应关系。",
+            "source": "网络公开网页《升龙桃花园著基本信息 - 房天下》web_reference_price_name_review口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "精确检索返回桃花园/区域成交候选，未取得清单精确名“升龙桃花源”的完整成交案例。",
+          "已通过公开网络来源补齐案例记录；口径为“web_reference_price_name_review”，需结合 sourceNotes 判断是否为完整二手成交价。",
+          "该记录不是完整二手成交价，只作为网络公开价格/案例线索补齐。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "web_reference_price_name_review",
+            "title": "升龙桃花园著基本信息 - 房天下",
+            "sourceName": "房天下",
+            "url": "https://nanjing.newhouse.fang.com/loupan/1811181460/housedetail.htm",
+            "accessedAt": "2026-06-13",
+            "scope": "web_reference_price_name_review"
           }
         ]
       },
@@ -3235,7 +4009,8 @@
         "confidence": "low",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "已检索但仍缺少可核验的本小区真实成交案例。",
+          "网络公开来源不是完整二手成交价，需人工确认是否可用于最终成交口径。"
         ]
       }
     },
@@ -3704,16 +4479,27 @@
         "submarket": "河西南/奥南"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"升龙天汇\" 成交"
+          "南京 \"升龙天汇\" 成交",
+          "南京 建邺 成交"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-12T23:48:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 建邺 成交",
+            "searchedAt": "2026-06-12T23:48:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "从小红书笔记《2026年5月南京河西江心洲成交数据汇总》成交表截图回填6条成交案例。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -3728,16 +4514,78 @@
           "confidence": "medium",
           "note": "Excel建筑类型：高层/板楼"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 25400,
+          "max": 30100,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由小红书成交表截图中的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-05-06",
+            "area": "86.13㎡",
+            "totalPrice": "219万",
+            "unitPrice": "2.54万/㎡",
+            "features": "升龙天汇一期；楼层19；各自付税",
+            "source": "小红书笔记《2026年5月南京河西江心洲成交数据汇总》图片成交表口径"
+          },
+          {
+            "time": "2026-05-24",
+            "area": "99.95㎡",
+            "totalPrice": "265万",
+            "unitPrice": "2.65万/㎡",
+            "features": "升龙天汇一期；楼层6；各自付税",
+            "source": "小红书笔记《2026年5月南京河西江心洲成交数据汇总》图片成交表口径"
+          },
+          {
+            "time": "2026-05-27",
+            "area": "85.65㎡",
+            "totalPrice": "257.5万",
+            "unitPrice": "3.01万/㎡",
+            "features": "升龙天汇二期；楼层22；各自付税",
+            "source": "小红书笔记《2026年5月南京河西江心洲成交数据汇总》图片成交表口径"
+          },
+          {
+            "time": "2026-05-16",
+            "area": "95.39㎡",
+            "totalPrice": "286.6万",
+            "unitPrice": "3.00万/㎡",
+            "features": "升龙天汇三期；楼层17；各自付税",
+            "source": "小红书笔记《2026年5月南京河西江心洲成交数据汇总》图片成交表口径"
+          },
+          {
+            "time": "2026-05-03",
+            "area": "95.44㎡",
+            "totalPrice": "257.5万",
+            "unitPrice": "2.70万/㎡",
+            "features": "升龙天汇四期；楼层19；各自付税",
+            "source": "小红书笔记《2026年5月南京河西江心洲成交数据汇总》图片成交表口径"
+          },
+          {
+            "time": "2026-05-31",
+            "area": "145.9㎡",
+            "totalPrice": "401万",
+            "unitPrice": "2.75万/㎡",
+            "features": "升龙天汇四期；楼层12；各自付税，含车位",
+            "source": "小红书笔记《2026年5月南京河西江心洲成交数据汇总》图片成交表口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "小红书2026年5月成交汇总截图命中多个“升龙天汇”分期，本次按清单总项归并。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "xiaohongshu_note",
+            "title": "2026年5月南京河西江心洲成交数据汇总",
+            "noteId": "6a1d7527000000003503b48f",
+            "author": "小花姐T智橙",
+            "noteDate": "2026-06-01"
           }
         ]
       },
@@ -3746,10 +4594,10 @@
         "reason": "catalog 已按用户提供Excel清单重建。"
       },
       "review": {
-        "confidence": "low",
+        "confidence": "medium",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "成交表展示为“升龙天汇一期/二期/三期/四期”，已归入清单总项“升龙天汇”，需人工复核分期归属。"
         ]
       }
     },
@@ -4073,16 +4921,36 @@
         "submarket": "河西南/奥南"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"星叶云墅\" 成交"
+          "南京 \"星叶云墅\" 成交",
+          "网络检索：南京 星叶云墅 成交",
+          "网络检索：南京 星叶云墅 房天下/安居客 价格"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-13T02:35:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 \"星叶云墅\" 成交",
+            "searchedAt": "2026-06-13T00:20:00+08:00",
+            "result": "partial",
+            "hitCount": 44,
+            "note": "精确检索返回“1020万成交”等候选，但详情未捕获到数据，未写入成交案例。"
+          },
+          {
+            "keyword": "网络检索：南京 星叶云墅 成交",
+            "searchedAt": "2026-06-13T02:35:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "sourceUrl": "https://nanjing.esf.fang.com/loupan/1810184078.htm",
+            "note": "补充网络来源案例，口径：web_reference_price。房天下小区页公开在售/行情信息；未解析到公开成交价，按网络参考样本补齐并保留复核。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -4097,16 +4965,41 @@
           "confidence": "medium",
           "note": "Excel建筑类型：低密/洋房"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 50800,
+          "max": 50800,
+          "unit": "元/㎡",
+          "sourceType": "网络公开参考价口径",
+          "note": "房天下小区页公开在售/行情信息；未解析到公开成交价，按网络参考样本补齐并保留复核。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-06-13访问",
+            "area": "未公开",
+            "totalPrice": "未公开",
+            "unitPrice": "5.08万/㎡",
+            "features": "房天下小区页公开在售/行情信息；未解析到公开成交价，按网络参考样本补齐并保留复核。",
+            "source": "网络公开网页《南京星叶云墅小区,二手房,租房 - 房天下》web_reference_price口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "精确检索返回“1020万成交”等候选，但详情未捕获到数据，未写入成交案例。",
+          "已通过公开网络来源补齐案例记录；口径为“web_reference_price”，需结合 sourceNotes 判断是否为完整二手成交价。",
+          "该记录不是完整二手成交价，只作为网络公开价格/案例线索补齐。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "web_reference_price",
+            "title": "南京星叶云墅小区,二手房,租房 - 房天下",
+            "sourceName": "房天下",
+            "url": "https://nanjing.esf.fang.com/loupan/1810184078.htm",
+            "accessedAt": "2026-06-13",
+            "scope": "web_reference_price"
           }
         ]
       },
@@ -4118,7 +5011,8 @@
         "confidence": "low",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "已检索但仍缺少可核验的本小区真实成交案例。",
+          "网络公开来源不是完整二手成交价，需人工确认是否可用于最终成交口径。"
         ]
       }
     },
@@ -4661,16 +5555,45 @@
         "submarket": "河西南/鱼嘴"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"颐和铂湾\" 成交"
+          "南京 \"颐和铂湾\" 成交",
+          "网络检索：南京 颐和铂湾 成交 房天下",
+          "网络检索：南京 颐和铂湾 成交",
+          "网络检索：南京 颐和铂湾 房天下/安居客 价格"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-13T02:35:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 \"颐和铂湾\" 成交",
+            "searchedAt": "2026-06-13T00:20:00+08:00",
+            "result": "partial",
+            "hitCount": 44,
+            "note": "精确检索返回河西南成交价等候选，但未取得可直接核验的本小区完整成交案例。"
+          },
+          {
+            "keyword": "网络检索：南京 颐和铂湾 成交 房天下",
+            "searchedAt": "2026-06-13T01:10:00+08:00",
+            "result": "partial",
+            "hitCount": 1,
+            "sourceUrl": "https://m.fang.com/esf/nanjing/8_1013057442.html?source_page=13",
+            "note": "房天下二手房页显示颐和铂湾小区成交记录：5室3厅240.23㎡南，2026-04-20成交；成交价需登录查看，未写入完整成交价案例。"
+          },
+          {
+            "keyword": "网络检索：南京 颐和铂湾 成交",
+            "searchedAt": "2026-06-13T02:35:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "sourceUrl": "https://nanjing.esf.fang.com/loupan/1810180252.htm",
+            "note": "补充网络来源案例，口径：price_hidden_transaction。房天下小区成交记录；市场信息；成交价和成交均价显示为“--”。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -4686,15 +5609,41 @@
           "note": "Excel建筑类型：高层/板楼"
         },
         "unitPriceRange": null,
-        "transactionCases": [],
+        "transactionCases": [
+          {
+            "time": "2026-04-20",
+            "area": "240.23㎡",
+            "totalPrice": "价格未公开",
+            "unitPrice": "价格未公开",
+            "features": "房天下小区成交记录；市场信息；成交价和成交均价显示为“--”。",
+            "source": "网络公开网页《南京颐和铂湾小区,二手房,租房 - 房天下》price_hidden_transaction口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "精确检索返回河西南成交价等候选，但未取得可直接核验的本小区完整成交案例。",
+          "已通过公开网络来源补齐案例记录；口径为“price_hidden_transaction”，需结合 sourceNotes 判断是否为完整二手成交价。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "web_public_transaction_lead",
+            "title": "南京建邺河西颐和铂湾二手房 - 房天下",
+            "sourceName": "房天下",
+            "url": "https://m.fang.com/esf/nanjing/8_1013057442.html?source_page=13",
+            "accessedAt": "2026-06-13",
+            "scope": "transaction_lead_price_hidden_or_name_mismatch"
+          },
+          {
+            "type": "price_hidden_transaction",
+            "title": "南京颐和铂湾小区,二手房,租房 - 房天下",
+            "sourceName": "房天下",
+            "url": "https://nanjing.esf.fang.com/loupan/1810180252.htm",
+            "accessedAt": "2026-06-13",
+            "scope": "price_hidden_transaction"
           }
         ]
       },
@@ -4703,10 +5652,12 @@
         "reason": "catalog 已按用户提供Excel清单重建。"
       },
       "review": {
-        "confidence": "low",
+        "confidence": "medium",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "已检索但仍缺少可核验的本小区真实成交案例。",
+          "已有网络公开成交线索，但缺少可直接回写的完整成交价/单价，仍需人工补价或二次来源确认。",
+          "网络公开成交记录价格隐藏，需人工补价复核。"
         ]
       }
     },
@@ -4725,9 +5676,10 @@
       "query": {
         "status": "hit",
         "queried": true,
-        "queriedAt": "2026-06-12T15:56:25.833+08:00",
+        "queriedAt": "2026-06-12T23:18:00+08:00",
         "keywords": [
-          "南京 \"建发珺和府\" 成交"
+          "南京 \"建发珺和府\" 成交",
+          "南京 建邺 成交"
         ],
         "attempts": [
           {
@@ -4743,6 +5695,13 @@
             "result": "hit",
             "hitCount": 1,
             "note": "详情正文点名建发珺和府东区房价下降近15%；配图给出东区/西区交付时间、历史高价、2025-12与2026-05均价。"
+          },
+          {
+            "keyword": "南京 建邺 成交",
+            "searchedAt": "2026-06-12T23:18:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "从小红书笔记《2026年5月整月河西成交分享》成交表截图回填2条成交案例。"
           }
         ],
         "risk": {
@@ -4764,10 +5723,33 @@
           "confidence": "medium",
           "note": "Excel建筑类型：高层/板楼"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 32400,
+          "max": 33200,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由小红书成交表截图中的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-05",
+            "area": "118.94㎡",
+            "totalPrice": "395万",
+            "unitPrice": "3.32万/㎡",
+            "features": "各自付税；楼层17",
+            "source": "小红书笔记《2026年5月整月河西成交分享》图片成交表口径"
+          },
+          {
+            "time": "2026-05",
+            "area": "186.84㎡",
+            "totalPrice": "605万",
+            "unitPrice": "3.24万/㎡",
+            "features": "各自付税，含车位，顶跃；楼层25",
+            "source": "小红书笔记《2026年5月整月河西成交分享》图片成交表口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "小红书2026年5月河西南成交表截图中精确命中“建发珺和府”。"
         ],
         "sourceNotes": [
           {
@@ -4781,6 +5763,13 @@
               "配图：东区2022年12月交付，2025年12月均价3.8万/㎡，2026年5月均价3.2万/㎡，下降15.8%。",
               "配图：西区2023年5月交付，2025年12月和2026年5月均价均3.2万/㎡。"
             ]
+          },
+          {
+            "type": "xiaohongshu_note",
+            "title": "2026年5月整月河西成交分享",
+            "noteId": "6a223f59000000003601bd19",
+            "author": "NJ河西斌哥看房bingo",
+            "noteDate": "2026-06-04"
           }
         ]
       },
@@ -4789,11 +5778,9 @@
         "reason": "catalog 已按用户提供Excel清单重建。"
       },
       "review": {
-        "confidence": "low",
-        "needsHumanReview": true,
-        "notes": [
-          "缺少本小区真实成交案例。"
-        ]
+        "confidence": "high",
+        "needsHumanReview": false,
+        "notes": []
       }
     },
     {
@@ -4809,16 +5796,36 @@
         "submarket": "河西南/奥南"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"深业南湾上府\" 成交"
+          "南京 \"深业南湾上府\" 成交",
+          "网络检索：南京 深业南湾上府 成交",
+          "网络检索：南京 深业南湾上府 房天下/安居客 价格"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-13T02:35:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 \"深业南湾上府\" 成交",
+            "searchedAt": "2026-06-13T00:20:00+08:00",
+            "result": "partial",
+            "hitCount": 42,
+            "note": "打开精确候选笔记后，仅确认143㎡成交，正文和图片未明示成交总价或单价。"
+          },
+          {
+            "keyword": "网络检索：南京 深业南湾上府 成交",
+            "searchedAt": "2026-06-13T02:35:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "sourceUrl": "http://m.jiwu.com/nj/loupan/1526947.html",
+            "note": "补充网络来源案例，口径：newhouse_reference_price。吉屋公开楼盘价：建面约143㎡、价格约429万/套、参考均价约30000元/㎡；非二手成交。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -4833,16 +5840,41 @@
           "confidence": "medium",
           "note": "Excel建筑类型：高层/板楼"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 30000,
+          "max": 30000,
+          "unit": "元/㎡",
+          "sourceType": "网络公开新房参考价口径",
+          "note": "吉屋公开楼盘价：建面约143㎡、价格约429万/套、参考均价约30000元/㎡；非二手成交。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-06-13访问",
+            "area": "约143㎡",
+            "totalPrice": "约429万/套",
+            "unitPrice": "3.00万/㎡",
+            "features": "吉屋公开楼盘价：建面约143㎡、价格约429万/套、参考均价约30000元/㎡；非二手成交。",
+            "source": "网络公开网页《深业南湾上府楼盘详情 - 吉屋》newhouse_reference_price口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "打开精确候选笔记后，仅确认143㎡成交，正文和图片未明示成交总价或单价。",
+          "已通过公开网络来源补齐案例记录；口径为“newhouse_reference_price”，需结合 sourceNotes 判断是否为完整二手成交价。",
+          "该记录不是完整二手成交价，只作为网络公开价格/案例线索补齐。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "newhouse_reference_price",
+            "title": "深业南湾上府楼盘详情 - 吉屋",
+            "sourceName": "吉屋",
+            "url": "http://m.jiwu.com/nj/loupan/1526947.html",
+            "accessedAt": "2026-06-13",
+            "scope": "newhouse_reference_price"
           }
         ]
       },
@@ -4854,7 +5886,8 @@
         "confidence": "low",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "已检索但仍缺少可核验的本小区真实成交案例。",
+          "网络公开来源不是完整二手成交价，需人工确认是否可用于最终成交口径。"
         ]
       }
     },
@@ -4871,8 +5904,8 @@
         "submarket": "河西中/奥体"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
           "南京 \"中宁府\" 成交"
         ],
@@ -4880,7 +5913,17 @@
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-13T00:20:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 \"中宁府\" 成交",
+            "searchedAt": "2026-06-13T00:20:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "打开精确候选笔记，正文给出198㎡、16层、1165万、5.88万/㎡、不带车位。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -4895,16 +5938,38 @@
           "confidence": "medium",
           "note": "Excel建筑类型：高层/大平层"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 58800,
+          "max": 58800,
+          "unit": "元/㎡",
+          "sourceType": "小红书正文口径",
+          "note": "由小红书真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2025-07笔记口径",
+            "area": "198㎡",
+            "totalPrice": "1165万",
+            "unitPrice": "5.88万/㎡",
+            "features": "16层；正常楼层；标准户型；挂牌价1330万；不带车位",
+            "source": "小红书笔记《中宁府，首套二手房5.88万成交！400万没了》正文口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "小红书精确候选笔记给出中宁府首套二手成交的面积、总价、单价与楼层。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "xiaohongshu_note",
+            "title": "中宁府，首套二手房5.88万成交！400万没了",
+            "noteId": "686c76f4000000001c033ec1",
+            "author": "小红薯6934A5F7",
+            "noteDate": "2025-07-08"
           }
         ]
       },
@@ -4913,10 +5978,10 @@
         "reason": "catalog 已按用户提供Excel清单重建。"
       },
       "review": {
-        "confidence": "low",
+        "confidence": "medium",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "正文称为“据说/问到的大致消息”，缺少独立成交截图，需人工复核。"
         ]
       }
     },
@@ -4933,16 +5998,36 @@
         "submarket": "河西中/奥体"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"源尚丹若府\" 成交"
+          "南京 \"源尚丹若府\" 成交",
+          "网络检索：南京 源尚丹若府 成交",
+          "网络检索：南京 源尚丹若府 房天下/安居客 价格"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-13T02:35:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 \"源尚丹若府\" 成交",
+            "searchedAt": "2026-06-13T00:20:00+08:00",
+            "result": "partial",
+            "hitCount": 44,
+            "note": "打开精确候选笔记后，正文为5月成交讨论和周边参考，未提取到本小区单套面积/总价/单价组合。"
+          },
+          {
+            "keyword": "网络检索：南京 源尚丹若府 成交",
+            "searchedAt": "2026-06-13T02:35:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "sourceUrl": "https://nanjing.newhouse.fang.com/loupan/1810186748/housedetail.htm",
+            "note": "补充网络来源案例，口径：newhouse_reference_price。房天下新房基本信息：参考单价54000元/㎡、参考总价951.5万元/套；非二手成交。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -4957,16 +6042,41 @@
           "confidence": "medium",
           "note": "Excel建筑类型：高层/板楼"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 54000,
+          "max": 54000,
+          "unit": "元/㎡",
+          "sourceType": "网络公开新房参考价口径",
+          "note": "房天下新房基本信息：参考单价54000元/㎡、参考总价951.5万元/套；非二手成交。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-06-13访问",
+            "area": "未公开",
+            "totalPrice": "951.5万/套",
+            "unitPrice": "5.40万/㎡",
+            "features": "房天下新房基本信息：参考单价54000元/㎡、参考总价951.5万元/套；非二手成交。",
+            "source": "网络公开网页《源尚丹若府基本信息 - 房天下》newhouse_reference_price口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "打开精确候选笔记后，正文为5月成交讨论和周边参考，未提取到本小区单套面积/总价/单价组合。",
+          "已通过公开网络来源补齐案例记录；口径为“newhouse_reference_price”，需结合 sourceNotes 判断是否为完整二手成交价。",
+          "该记录不是完整二手成交价，只作为网络公开价格/案例线索补齐。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "newhouse_reference_price",
+            "title": "源尚丹若府基本信息 - 房天下",
+            "sourceName": "房天下",
+            "url": "https://nanjing.newhouse.fang.com/loupan/1810186748/housedetail.htm",
+            "accessedAt": "2026-06-13",
+            "scope": "newhouse_reference_price"
           }
         ]
       },
@@ -4978,7 +6088,8 @@
         "confidence": "low",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "已检索但仍缺少可核验的本小区真实成交案例。",
+          "网络公开来源不是完整二手成交价，需人工确认是否可用于最终成交口径。"
         ]
       }
     },
@@ -4995,16 +6106,36 @@
         "submarket": "河西南/奥南"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"伟星长江之歌\" 成交"
+          "南京 \"伟星长江之歌\" 成交",
+          "网络检索：南京 伟星长江之歌 成交",
+          "网络检索：南京 伟星长江之歌 房天下/安居客 价格"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-13T02:35:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 \"伟星长江之歌\" 成交",
+            "searchedAt": "2026-06-13T00:20:00+08:00",
+            "result": "no_hit",
+            "hitCount": 44,
+            "note": "完成一次精确检索，前序候选为：长江之歌又调价了，214平总价一千万出头；20260611链家南京二手房成交统计更新0521；长江之歌值得入手吗；未取得可直接写入的本小区真实成交案例。"
+          },
+          {
+            "keyword": "网络检索：南京 伟星长江之歌 成交",
+            "searchedAt": "2026-06-13T02:35:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "sourceUrl": "https://nanjing.newhouse.fang.com/loupan/1810186734.htm",
+            "note": "补充网络来源案例，口径：newhouse_reference_price。房天下新房楼盘详情：参考均价68000元/㎡；非二手成交。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -5019,16 +6150,41 @@
           "confidence": "medium",
           "note": "Excel建筑类型：高层/大平层"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 68000,
+          "max": 68000,
+          "unit": "元/㎡",
+          "sourceType": "网络公开新房参考价口径",
+          "note": "房天下新房楼盘详情：参考均价68000元/㎡；非二手成交。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-06-13访问",
+            "area": "未公开",
+            "totalPrice": "未公开",
+            "unitPrice": "6.80万/㎡",
+            "features": "房天下新房楼盘详情：参考均价68000元/㎡；非二手成交。",
+            "source": "网络公开网页《南京伟星长江之歌楼盘详情 - 房天下》newhouse_reference_price口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "已完成一次精确检索，未取得可直接写入的本小区真实成交案例。",
+          "已通过公开网络来源补齐案例记录；口径为“newhouse_reference_price”，需结合 sourceNotes 判断是否为完整二手成交价。",
+          "该记录不是完整二手成交价，只作为网络公开价格/案例线索补齐。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "newhouse_reference_price",
+            "title": "南京伟星长江之歌楼盘详情 - 房天下",
+            "sourceName": "房天下",
+            "url": "https://nanjing.newhouse.fang.com/loupan/1810186734.htm",
+            "accessedAt": "2026-06-13",
+            "scope": "newhouse_reference_price"
           }
         ]
       },
@@ -5040,7 +6196,8 @@
         "confidence": "low",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "已检索但仍缺少可核验的本小区真实成交案例。",
+          "网络公开来源不是完整二手成交价，需人工确认是否可用于最终成交口径。"
         ]
       }
     },
@@ -5057,16 +6214,36 @@
         "submarket": "河西中/奥体"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"天琴华樟\" 成交"
+          "南京 \"天琴华樟\" 成交",
+          "网络检索：南京 天琴华樟 成交",
+          "网络检索：南京 天琴华樟 房天下/安居客 价格"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-13T02:35:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 \"天琴华樟\" 成交",
+            "searchedAt": "2026-06-13T00:20:00+08:00",
+            "result": "no_hit",
+            "hitCount": 43,
+            "note": "完成一次精确检索，前序候选为：真的假的？！2000万豪宅1个月成交10套！；20260611链家南京二手房成交统计更新0521；今年1-5月，河西南二手房价格变化；未取得可直接写入的本小区真实成交案例。"
+          },
+          {
+            "keyword": "网络检索：南京 天琴华樟 成交",
+            "searchedAt": "2026-06-13T02:35:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "sourceUrl": "https://nanjing.newhouse.fang.com/loupan/1810186224.htm",
+            "note": "补充网络来源案例，口径：newhouse_reference_price。房天下新房楼盘详情：参考单价75000元/㎡、参考总价1900-2900万元/套、面积300-385㎡；非二手成交。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -5081,16 +6258,41 @@
           "confidence": "medium",
           "note": "Excel建筑类型：高层/大平层"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 75000,
+          "max": 75000,
+          "unit": "元/㎡",
+          "sourceType": "网络公开新房参考价口径",
+          "note": "房天下新房楼盘详情：参考单价75000元/㎡、参考总价1900-2900万元/套、面积300-385㎡；非二手成交。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-06-13访问",
+            "area": "300-385㎡",
+            "totalPrice": "1900-2900万/套",
+            "unitPrice": "7.50万/㎡",
+            "features": "房天下新房楼盘详情：参考单价75000元/㎡、参考总价1900-2900万元/套、面积300-385㎡；非二手成交。",
+            "source": "网络公开网页《南京天琴华樟楼盘详情 - 房天下》newhouse_reference_price口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "已完成一次精确检索，未取得可直接写入的本小区真实成交案例。",
+          "已通过公开网络来源补齐案例记录；口径为“newhouse_reference_price”，需结合 sourceNotes 判断是否为完整二手成交价。",
+          "该记录不是完整二手成交价，只作为网络公开价格/案例线索补齐。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "newhouse_reference_price",
+            "title": "南京天琴华樟楼盘详情 - 房天下",
+            "sourceName": "房天下",
+            "url": "https://nanjing.newhouse.fang.com/loupan/1810186224.htm",
+            "accessedAt": "2026-06-13",
+            "scope": "newhouse_reference_price"
           }
         ]
       },
@@ -5102,7 +6304,8 @@
         "confidence": "low",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "已检索但仍缺少可核验的本小区真实成交案例。",
+          "网络公开来源不是完整二手成交价，需人工确认是否可用于最终成交口径。"
         ]
       }
     },
@@ -5119,16 +6322,36 @@
         "submarket": "河西中/奥体"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"绿城华发金陵月华\" 成交"
+          "南京 \"绿城华发金陵月华\" 成交",
+          "网络检索：南京 绿城华发金陵月华 成交",
+          "网络检索：南京 绿城华发金陵月华 房天下/安居客 价格"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-13T02:35:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 \"绿城华发金陵月华\" 成交",
+            "searchedAt": "2026-06-13T00:20:00+08:00",
+            "result": "no_hit",
+            "hitCount": 44,
+            "note": "完成一次精确检索，前序候选为：南京楼市主编李子墨对话金陵月华 10亿姐 上；20260611链家南京二手房成交统计更新0521；五月成交数据；未取得可直接写入的本小区真实成交案例。"
+          },
+          {
+            "keyword": "网络检索：南京 绿城华发金陵月华 成交",
+            "searchedAt": "2026-06-13T02:35:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "sourceUrl": "https://nanjing.newhouse.fang.com/loupan/1810186844.htm",
+            "note": "补充网络来源案例，口径：newhouse_reference_price。房天下新房楼盘详情：参考单价77268元/㎡、参考总价1562-2439万元/套；非二手成交。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -5143,16 +6366,41 @@
           "confidence": "medium",
           "note": "Excel建筑类型：高层/大平层"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 77268,
+          "max": 77268,
+          "unit": "元/㎡",
+          "sourceType": "网络公开新房参考价口径",
+          "note": "房天下新房楼盘详情：参考单价77268元/㎡、参考总价1562-2439万元/套；非二手成交。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-06-13访问",
+            "area": "未公开",
+            "totalPrice": "1562-2439万/套",
+            "unitPrice": "7.73万/㎡",
+            "features": "房天下新房楼盘详情：参考单价77268元/㎡、参考总价1562-2439万元/套；非二手成交。",
+            "source": "网络公开网页《绿城华发金陵月华 - 房天下》newhouse_reference_price口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "已完成一次精确检索，未取得可直接写入的本小区真实成交案例。",
+          "已通过公开网络来源补齐案例记录；口径为“newhouse_reference_price”，需结合 sourceNotes 判断是否为完整二手成交价。",
+          "该记录不是完整二手成交价，只作为网络公开价格/案例线索补齐。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "newhouse_reference_price",
+            "title": "绿城华发金陵月华 - 房天下",
+            "sourceName": "房天下",
+            "url": "https://nanjing.newhouse.fang.com/loupan/1810186844.htm",
+            "accessedAt": "2026-06-13",
+            "scope": "newhouse_reference_price"
           }
         ]
       },
@@ -5164,7 +6412,8 @@
         "confidence": "low",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "已检索但仍缺少可核验的本小区真实成交案例。",
+          "网络公开来源不是完整二手成交价，需人工确认是否可用于最终成交口径。"
         ]
       }
     },
@@ -5181,8 +6430,8 @@
         "submarket": "河西南/奥南"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
           "南京 \"嘉璟峰\" 成交"
         ],
@@ -5190,7 +6439,17 @@
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-13T00:20:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 \"嘉璟峰\" 成交",
+            "searchedAt": "2026-06-13T00:20:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "打开精确候选笔记，正文给出嘉璟峰悦庭103.77㎡、410万、约3.95万/㎡。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -5205,16 +6464,38 @@
           "confidence": "medium",
           "note": "Excel建筑类型：高层/板楼"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 39500,
+          "max": 39500,
+          "unit": "元/㎡",
+          "sourceType": "小红书正文口径",
+          "note": "由小红书真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2025-03笔记口径",
+            "area": "103.77㎡",
+            "totalPrice": "410万",
+            "unitPrice": "3.95万/㎡",
+            "features": "嘉璟峰悦庭首套二手房；楼层未明示",
+            "source": "小红书笔记《3.95万首套成交，开发商懵逼，还剩一栋咋办》正文口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "小红书精确候选笔记给出嘉璟峰悦庭首套二手成交面积、总价与单价。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "xiaohongshu_note",
+            "title": "3.95万首套成交，开发商懵逼，还剩一栋咋办",
+            "noteId": "67cef5c1000000000e005519",
+            "author": "钟山烟火集",
+            "noteDate": "2025-03-10"
           }
         ]
       },
@@ -5223,10 +6504,10 @@
         "reason": "catalog 已按用户提供Excel清单重建。"
       },
       "review": {
-        "confidence": "low",
+        "confidence": "medium",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "正文口径为嘉璟峰悦庭，清单名称为嘉璟峰，已按项目总项归并。"
         ]
       }
     },
@@ -5243,16 +6524,36 @@
         "submarket": "河西南/奥南"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"枫璟雅园\" 成交"
+          "南京 \"枫璟雅园\" 成交",
+          "网络检索：南京 枫璟雅园 成交",
+          "网络检索：南京 枫璟雅园 房天下/安居客 价格"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-13T02:35:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 \"枫璟雅园\" 成交",
+            "searchedAt": "2026-06-13T00:20:00+08:00",
+            "result": "no_hit",
+            "hitCount": 44,
+            "note": "完成一次精确检索，前序候选为：枫璟雅园近期头条；20260612链家南京二手房成交统计更新0522；刚拿房就亏200万 苦苦等了两年 摇号盘；未取得可直接写入的本小区真实成交案例。"
+          },
+          {
+            "keyword": "网络检索：南京 枫璟雅园 成交",
+            "searchedAt": "2026-06-13T02:35:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "sourceUrl": "https://m.fang.com/fangjia/nanjing_list_267/",
+            "note": "补充网络来源案例，口径：web_reference_price。房天下建邺房价榜公开枫璟雅园参考价45912元/㎡；未找到公开二手成交总价。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -5267,16 +6568,41 @@
           "confidence": "medium",
           "note": "Excel建筑类型：高层/板楼"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 45912,
+          "max": 45912,
+          "unit": "元/㎡",
+          "sourceType": "网络公开参考价口径",
+          "note": "房天下建邺房价榜公开枫璟雅园参考价45912元/㎡；未找到公开二手成交总价。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-06",
+            "area": "未公开",
+            "totalPrice": "未公开",
+            "unitPrice": "4.59万/㎡",
+            "features": "房天下建邺房价榜公开枫璟雅园参考价45912元/㎡；未找到公开二手成交总价。",
+            "source": "网络公开网页《南京建邺房价走势2026年 - 房天下》web_reference_price口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "已完成一次精确检索，未取得可直接写入的本小区真实成交案例。",
+          "已通过公开网络来源补齐案例记录；口径为“web_reference_price”，需结合 sourceNotes 判断是否为完整二手成交价。",
+          "该记录不是完整二手成交价，只作为网络公开价格/案例线索补齐。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "web_reference_price",
+            "title": "南京建邺房价走势2026年 - 房天下",
+            "sourceName": "房天下",
+            "url": "https://m.fang.com/fangjia/nanjing_list_267/",
+            "accessedAt": "2026-06-13",
+            "scope": "web_reference_price"
           }
         ]
       },
@@ -5288,7 +6614,8 @@
         "confidence": "low",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "已检索但仍缺少可核验的本小区真实成交案例。",
+          "网络公开来源不是完整二手成交价，需人工确认是否可用于最终成交口径。"
         ]
       }
     },
@@ -5305,16 +6632,36 @@
         "submarket": "江心洲"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"江尚紫薇\" 成交"
+          "南京 \"江尚紫薇\" 成交",
+          "网络检索：南京 江尚紫薇 成交",
+          "网络检索：南京 江尚紫薇 房天下/安居客 价格"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-13T02:35:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 \"江尚紫薇\" 成交",
+            "searchedAt": "2026-06-13T00:20:00+08:00",
+            "result": "no_hit",
+            "hitCount": 42,
+            "note": "完成一次精确检索，前序候选为：南京河西中最新真实成交数据📊 截至6月8日；20260610链家南京二手房成交统计更新0520；南京云尚紫薇真实成交；未取得可直接写入的本小区真实成交案例。"
+          },
+          {
+            "keyword": "网络检索：南京 江尚紫薇 成交",
+            "searchedAt": "2026-06-13T02:35:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "sourceUrl": "https://xj.newhouse.fang.com/loupan/1810184298/housedetail.htm",
+            "note": "补充网络来源案例，口径：newhouse_reference_price。房天下新房基本信息：参考单价44274元/㎡、参考总价618-891万元/套；页面城市路径异常，需复核来源域名口径。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -5329,16 +6676,41 @@
           "confidence": "medium",
           "note": "Excel建筑类型：高层/板楼"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 44274,
+          "max": 44274,
+          "unit": "元/㎡",
+          "sourceType": "网络公开新房参考价口径",
+          "note": "房天下新房基本信息：参考单价44274元/㎡、参考总价618-891万元/套；页面城市路径异常，需复核来源域名口径。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-06-13访问",
+            "area": "143-206㎡",
+            "totalPrice": "618-891万/套",
+            "unitPrice": "4.43万/㎡",
+            "features": "房天下新房基本信息：参考单价44274元/㎡、参考总价618-891万元/套；页面城市路径异常，需复核来源域名口径。",
+            "source": "网络公开网页《江尚紫薇基本信息 - 房天下》newhouse_reference_price口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "已完成一次精确检索，未取得可直接写入的本小区真实成交案例。",
+          "已通过公开网络来源补齐案例记录；口径为“newhouse_reference_price”，需结合 sourceNotes 判断是否为完整二手成交价。",
+          "该记录不是完整二手成交价，只作为网络公开价格/案例线索补齐。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "newhouse_reference_price",
+            "title": "江尚紫薇基本信息 - 房天下",
+            "sourceName": "房天下",
+            "url": "https://xj.newhouse.fang.com/loupan/1810184298/housedetail.htm",
+            "accessedAt": "2026-06-13",
+            "scope": "newhouse_reference_price"
           }
         ]
       },
@@ -5350,7 +6722,8 @@
         "confidence": "low",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "已检索但仍缺少可核验的本小区真实成交案例。",
+          "网络公开来源不是完整二手成交价，需人工确认是否可用于最终成交口径。"
         ]
       }
     },
@@ -5367,16 +6740,36 @@
         "submarket": "江心洲"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"仁恒江湾时代\" 成交"
+          "南京 \"仁恒江湾时代\" 成交",
+          "网络检索：南京 仁恒江湾时代 成交",
+          "网络检索：南京 仁恒江湾时代 房天下/安居客 价格"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-13T02:35:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 \"仁恒江湾时代\" 成交",
+            "searchedAt": "2026-06-13T00:20:00+08:00",
+            "result": "no_hit",
+            "hitCount": 44,
+            "note": "完成一次精确检索，前序候选为：富人岛也扛不住了--仁恒江湾时代骤跌100万；南京河西中最新真实成交数据📊 截至6月8日；天啦 仁恒江湾时代 2楼 490万 砸盘；未取得可直接写入的本小区真实成交案例。"
+          },
+          {
+            "keyword": "网络检索：南京 仁恒江湾时代 成交",
+            "searchedAt": "2026-06-13T02:35:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "sourceUrl": "https://nanjing.esf.fang.com/chengjiao-a0267-b023412/h36/",
+            "note": "补充网络来源案例，口径：price_hidden_transaction。房天下江心洲成交房源列表出现仁恒江湾时代4室2厅142.45平米；价格未在公开摘要中展示。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -5392,15 +6785,33 @@
           "note": "Excel建筑类型：高层/板楼"
         },
         "unitPriceRange": null,
-        "transactionCases": [],
+        "transactionCases": [
+          {
+            "time": "2026-06-13访问",
+            "area": "142.45㎡",
+            "totalPrice": "价格未公开",
+            "unitPrice": "价格未公开",
+            "features": "房天下江心洲成交房源列表出现仁恒江湾时代4室2厅142.45平米；价格未在公开摘要中展示。",
+            "source": "网络公开网页《南京建邺江心洲成交房源信息查询 - 房天下》price_hidden_transaction口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "已完成一次精确检索，未取得可直接写入的本小区真实成交案例。",
+          "已通过公开网络来源补齐案例记录；口径为“price_hidden_transaction”，需结合 sourceNotes 判断是否为完整二手成交价。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "price_hidden_transaction",
+            "title": "南京建邺江心洲成交房源信息查询 - 房天下",
+            "sourceName": "房天下",
+            "url": "https://nanjing.esf.fang.com/chengjiao-a0267-b023412/h36/",
+            "accessedAt": "2026-06-13",
+            "scope": "price_hidden_transaction"
           }
         ]
       },
@@ -5409,10 +6820,11 @@
         "reason": "catalog 已按用户提供Excel清单重建。"
       },
       "review": {
-        "confidence": "low",
+        "confidence": "medium",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "已检索但仍缺少可核验的本小区真实成交案例。",
+          "网络公开成交记录价格隐藏，需人工补价复核。"
         ]
       }
     },
@@ -5429,16 +6841,36 @@
         "submarket": "江心洲"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"中海江湾境\" 成交"
+          "南京 \"中海江湾境\" 成交",
+          "网络检索：南京 中海江湾境 成交",
+          "网络检索：南京 中海江湾境 房天下/安居客 价格"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-13T02:35:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 \"中海江湾境\" 成交",
+            "searchedAt": "2026-06-13T00:20:00+08:00",
+            "result": "partial",
+            "hitCount": 44,
+            "note": "精确检索返回“成交一套187平”候选，但详情未捕获到数据，未写入成交案例。"
+          },
+          {
+            "keyword": "网络检索：南京 中海江湾境 成交",
+            "searchedAt": "2026-06-13T02:35:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "sourceUrl": "https://nanjing.newhouse.fang.com/loupan/1810184784.htm",
+            "note": "补充网络来源案例，口径：newhouse_reference_price。房天下新房楼盘详情：参考单价50000元/㎡、参考总价784-1007万元/套；非二手成交。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -5453,16 +6885,41 @@
           "confidence": "medium",
           "note": "Excel建筑类型：高层/板楼"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 50000,
+          "max": 50000,
+          "unit": "元/㎡",
+          "sourceType": "网络公开新房参考价口径",
+          "note": "房天下新房楼盘详情：参考单价50000元/㎡、参考总价784-1007万元/套；非二手成交。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-06-13访问",
+            "area": "155-187㎡",
+            "totalPrice": "784-1007万/套",
+            "unitPrice": "5.00万/㎡",
+            "features": "房天下新房楼盘详情：参考单价50000元/㎡、参考总价784-1007万元/套；非二手成交。",
+            "source": "网络公开网页《南京中海江湾境楼盘详情 - 房天下》newhouse_reference_price口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "精确检索返回“成交一套187平”候选，但详情未捕获到数据，未写入成交案例。",
+          "已通过公开网络来源补齐案例记录；口径为“newhouse_reference_price”，需结合 sourceNotes 判断是否为完整二手成交价。",
+          "该记录不是完整二手成交价，只作为网络公开价格/案例线索补齐。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "newhouse_reference_price",
+            "title": "南京中海江湾境楼盘详情 - 房天下",
+            "sourceName": "房天下",
+            "url": "https://nanjing.newhouse.fang.com/loupan/1810184784.htm",
+            "accessedAt": "2026-06-13",
+            "scope": "newhouse_reference_price"
           }
         ]
       },
@@ -5474,7 +6931,8 @@
         "confidence": "low",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "已检索但仍缺少可核验的本小区真实成交案例。",
+          "网络公开来源不是完整二手成交价，需人工确认是否可用于最终成交口径。"
         ]
       }
     },
@@ -5491,16 +6949,36 @@
         "submarket": "江心洲"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"星叶栖悦湾\" 成交"
+          "南京 \"星叶栖悦湾\" 成交",
+          "网络检索：南京 星叶栖悦湾 成交",
+          "网络检索：南京 星叶栖悦湾 房天下/安居客 价格"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-13T02:35:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 \"星叶栖悦湾\" 成交",
+            "searchedAt": "2026-06-13T00:20:00+08:00",
+            "result": "no_hit",
+            "hitCount": 42,
+            "note": "完成一次精确检索，前序候选为：河西中旁 现房 119平 380万；20260610链家南京二手房成交统计更新0520；今年1-5月，河西南二手房价格变化；未取得可直接写入的本小区真实成交案例。"
+          },
+          {
+            "keyword": "网络检索：南京 星叶栖悦湾 成交",
+            "searchedAt": "2026-06-13T02:35:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "sourceUrl": "https://nanjing.newhouse.fang.com/loupan/1810182734.htm",
+            "note": "补充网络来源案例，口径：newhouse_reference_price。房天下新房楼盘详情：参考均价41000元/㎡；非二手成交。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -5515,16 +6993,41 @@
           "confidence": "medium",
           "note": "Excel建筑类型：高层/板楼"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 41000,
+          "max": 41000,
+          "unit": "元/㎡",
+          "sourceType": "网络公开新房参考价口径",
+          "note": "房天下新房楼盘详情：参考均价41000元/㎡；非二手成交。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-06-13访问",
+            "area": "119㎡起",
+            "totalPrice": "未公开",
+            "unitPrice": "4.10万/㎡",
+            "features": "房天下新房楼盘详情：参考均价41000元/㎡；非二手成交。",
+            "source": "网络公开网页《南京星叶栖悦湾楼盘详情 - 房天下》newhouse_reference_price口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "已完成一次精确检索，未取得可直接写入的本小区真实成交案例。",
+          "已通过公开网络来源补齐案例记录；口径为“newhouse_reference_price”，需结合 sourceNotes 判断是否为完整二手成交价。",
+          "该记录不是完整二手成交价，只作为网络公开价格/案例线索补齐。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "newhouse_reference_price",
+            "title": "南京星叶栖悦湾楼盘详情 - 房天下",
+            "sourceName": "房天下",
+            "url": "https://nanjing.newhouse.fang.com/loupan/1810182734.htm",
+            "accessedAt": "2026-06-13",
+            "scope": "newhouse_reference_price"
           }
         ]
       },
@@ -5536,7 +7039,8 @@
         "confidence": "low",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "已检索但仍缺少可核验的本小区真实成交案例。",
+          "网络公开来源不是完整二手成交价，需人工确认是否可用于最终成交口径。"
         ]
       }
     },
@@ -5553,16 +7057,36 @@
         "submarket": "江心洲"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"水沐和瑞园\" 成交"
+          "南京 \"水沐和瑞园\" 成交",
+          "网络检索：南京 水沐和瑞园 成交",
+          "网络检索：南京 水沐和瑞园 房天下/安居客 价格"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-13T02:35:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 \"水沐和瑞园\" 成交",
+            "searchedAt": "2026-06-13T00:20:00+08:00",
+            "result": "no_hit",
+            "hitCount": 40,
+            "note": "完成一次精确检索，前序候选为：20260611链家南京二手房成交统计更新0521；今年1-5月，河西南二手房价格变化；6.1-6.7河西二手房成交周报；未取得可直接写入的本小区真实成交案例。"
+          },
+          {
+            "keyword": "网络检索：南京 水沐和瑞园 成交",
+            "searchedAt": "2026-06-13T02:35:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "sourceUrl": "https://m.fang.com/fangjia/xiaoqu/nanjing/1810386150.html",
+            "note": "补充网络来源案例，口径：newhouse_reference_price。房天下周边新房推荐列出水沐和瑞园在售参考价44411元/㎡；未找到公开二手成交总价。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -5577,16 +7101,41 @@
           "confidence": "medium",
           "note": "Excel建筑类型：低密/洋房"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 44411,
+          "max": 44411,
+          "unit": "元/㎡",
+          "sourceType": "网络公开新房参考价口径",
+          "note": "房天下周边新房推荐列出水沐和瑞园在售参考价44411元/㎡；未找到公开二手成交总价。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-06-13访问",
+            "area": "未公开",
+            "totalPrice": "未公开",
+            "unitPrice": "4.44万/㎡",
+            "features": "房天下周边新房推荐列出水沐和瑞园在售参考价44411元/㎡；未找到公开二手成交总价。",
+            "source": "网络公开网页《水沐和瑞园价格线索 - 房天下》newhouse_reference_price口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "已完成一次精确检索，未取得可直接写入的本小区真实成交案例。",
+          "已通过公开网络来源补齐案例记录；口径为“newhouse_reference_price”，需结合 sourceNotes 判断是否为完整二手成交价。",
+          "该记录不是完整二手成交价，只作为网络公开价格/案例线索补齐。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "newhouse_reference_price",
+            "title": "水沐和瑞园价格线索 - 房天下",
+            "sourceName": "房天下",
+            "url": "https://m.fang.com/fangjia/xiaoqu/nanjing/1810386150.html",
+            "accessedAt": "2026-06-13",
+            "scope": "newhouse_reference_price"
           }
         ]
       },
@@ -5598,7 +7147,8 @@
         "confidence": "low",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "已检索但仍缺少可核验的本小区真实成交案例。",
+          "网络公开来源不是完整二手成交价，需人工确认是否可用于最终成交口径。"
         ]
       }
     },
@@ -5615,16 +7165,36 @@
         "submarket": "江心洲"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"荣盛江天瓴筑\" 成交"
+          "南京 \"荣盛江天瓴筑\" 成交",
+          "网络检索：南京 荣盛江天瓴筑 成交",
+          "网络检索：南京 荣盛江天瓴筑 房天下/安居客 价格"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-13T02:35:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 \"荣盛江天瓴筑\" 成交",
+            "searchedAt": "2026-06-13T00:20:00+08:00",
+            "result": "no_hit",
+            "hitCount": 44,
+            "note": "完成一次精确检索，前序候选为：🔥河西豪宅3.4万成交？露台美炸！；河西奥体.昨日成交速递2025.8.9；20260611链家南京二手房成交统计更新0521；未取得可直接写入的本小区真实成交案例。"
+          },
+          {
+            "keyword": "网络检索：南京 荣盛江天瓴筑 成交",
+            "searchedAt": "2026-06-13T02:35:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "sourceUrl": "https://nanjing.esf.fang.com/chengjiao-a0267-b023412/g25-j2200-k2300-h33/",
+            "note": "补充网络来源案例，口径：price_hidden_transaction。房天下江心洲成交房源列表出现荣盛江天瓴筑4室2厅277.54平米；价格未在公开摘要中展示。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -5640,15 +7210,33 @@
           "note": "Excel建筑类型：低密/洋房"
         },
         "unitPriceRange": null,
-        "transactionCases": [],
+        "transactionCases": [
+          {
+            "time": "2026-06-13访问",
+            "area": "277.54㎡",
+            "totalPrice": "价格未公开",
+            "unitPrice": "价格未公开",
+            "features": "房天下江心洲成交房源列表出现荣盛江天瓴筑4室2厅277.54平米；价格未在公开摘要中展示。",
+            "source": "网络公开网页《南京建邺江心洲五居200-300平米成交房源信息查询 - 房天下》price_hidden_transaction口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "已完成一次精确检索，未取得可直接写入的本小区真实成交案例。",
+          "已通过公开网络来源补齐案例记录；口径为“price_hidden_transaction”，需结合 sourceNotes 判断是否为完整二手成交价。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "price_hidden_transaction",
+            "title": "南京建邺江心洲五居200-300平米成交房源信息查询 - 房天下",
+            "sourceName": "房天下",
+            "url": "https://nanjing.esf.fang.com/chengjiao-a0267-b023412/g25-j2200-k2300-h33/",
+            "accessedAt": "2026-06-13",
+            "scope": "price_hidden_transaction"
           }
         ]
       },
@@ -5657,10 +7245,11 @@
         "reason": "catalog 已按用户提供Excel清单重建。"
       },
       "review": {
-        "confidence": "low",
+        "confidence": "medium",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "已检索但仍缺少可核验的本小区真实成交案例。",
+          "网络公开成交记录价格隐藏，需人工补价复核。"
         ]
       }
     },
@@ -5677,16 +7266,36 @@
         "submarket": "河西中/奥体"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"招商金陵序\" 成交"
+          "南京 \"招商金陵序\" 成交",
+          "网络检索：南京 招商金陵序 成交",
+          "网络检索：南京 招商金陵序 房天下/安居客 价格"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-13T02:35:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 \"招商金陵序\" 成交",
+            "searchedAt": "2026-06-13T00:20:00+08:00",
+            "result": "no_hit",
+            "hitCount": 44,
+            "note": "完成一次精确检索，前序候选为：20260611链家南京二手房成交统计更新0521；南京河西中最新真实成交数据📊 截至6月8日；有没有金陵序的业主呀；未取得可直接写入的本小区真实成交案例。"
+          },
+          {
+            "keyword": "网络检索：南京 招商金陵序 成交",
+            "searchedAt": "2026-06-13T02:35:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "sourceUrl": "https://nanjing.newhouse.fang.com/loupan/1810187146.htm",
+            "note": "补充网络来源案例，口径：newhouse_reference_price。房天下新房楼盘详情：参考单价76799元/㎡、参考总价1456万元/套；非二手成交。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -5701,16 +7310,41 @@
           "confidence": "medium",
           "note": "Excel建筑类型：高层/大平层"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 76799,
+          "max": 76799,
+          "unit": "元/㎡",
+          "sourceType": "网络公开新房参考价口径",
+          "note": "房天下新房楼盘详情：参考单价76799元/㎡、参考总价1456万元/套；非二手成交。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-06-13访问",
+            "area": "未公开",
+            "totalPrice": "1456万/套",
+            "unitPrice": "7.68万/㎡",
+            "features": "房天下新房楼盘详情：参考单价76799元/㎡、参考总价1456万元/套；非二手成交。",
+            "source": "网络公开网页《南京招商金陵序楼盘详情 - 房天下》newhouse_reference_price口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "已完成一次精确检索，未取得可直接写入的本小区真实成交案例。",
+          "已通过公开网络来源补齐案例记录；口径为“newhouse_reference_price”，需结合 sourceNotes 判断是否为完整二手成交价。",
+          "该记录不是完整二手成交价，只作为网络公开价格/案例线索补齐。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "newhouse_reference_price",
+            "title": "南京招商金陵序楼盘详情 - 房天下",
+            "sourceName": "房天下",
+            "url": "https://nanjing.newhouse.fang.com/loupan/1810187146.htm",
+            "accessedAt": "2026-06-13",
+            "scope": "newhouse_reference_price"
           }
         ]
       },
@@ -5722,7 +7356,8 @@
         "confidence": "low",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "已检索但仍缺少可核验的本小区真实成交案例。",
+          "网络公开来源不是完整二手成交价，需人工确认是否可用于最终成交口径。"
         ]
       }
     },
@@ -5739,16 +7374,36 @@
         "submarket": "河西中/奥体"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"丹荔云府\" 成交"
+          "南京 \"丹荔云府\" 成交",
+          "网络检索：南京 丹荔云府 成交",
+          "网络检索：南京 丹荔云府 房天下/安居客 价格"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-13T02:35:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 \"丹荔云府\" 成交",
+            "searchedAt": "2026-06-13T00:20:00+08:00",
+            "result": "no_hit",
+            "hitCount": 44,
+            "note": "完成一次精确检索，前序候选为：刚卖掉 南京建邺🏠丹荔云府 你猜多少？；20260610链家南京二手房成交统计更新0520；中建合玺东方成交不到两成！这算啥河西豪宅；未取得可直接写入的本小区真实成交案例。"
+          },
+          {
+            "keyword": "网络检索：南京 丹荔云府 成交",
+            "searchedAt": "2026-06-13T02:35:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "sourceUrl": "https://xiuwen.newhouse.fang.com/loupan/1810187010.htm",
+            "note": "补充网络来源案例，口径：newhouse_reference_price。房天下新房楼盘详情：丹荔云府参考均价60000元/㎡；页面城市路径异常，需复核来源域名口径。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -5763,16 +7418,41 @@
           "confidence": "medium",
           "note": "Excel建筑类型：高层/板楼"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 60000,
+          "max": 60000,
+          "unit": "元/㎡",
+          "sourceType": "网络公开新房参考价口径",
+          "note": "房天下新房楼盘详情：丹荔云府参考均价60000元/㎡；页面城市路径异常，需复核来源域名口径。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-06-13访问",
+            "area": "未公开",
+            "totalPrice": "未公开",
+            "unitPrice": "6.00万/㎡",
+            "features": "房天下新房楼盘详情：丹荔云府参考均价60000元/㎡；页面城市路径异常，需复核来源域名口径。",
+            "source": "网络公开网页《丹荔云府 - 房天下》newhouse_reference_price口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "已完成一次精确检索，未取得可直接写入的本小区真实成交案例。",
+          "已通过公开网络来源补齐案例记录；口径为“newhouse_reference_price”，需结合 sourceNotes 判断是否为完整二手成交价。",
+          "该记录不是完整二手成交价，只作为网络公开价格/案例线索补齐。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "newhouse_reference_price",
+            "title": "丹荔云府 - 房天下",
+            "sourceName": "房天下",
+            "url": "https://xiuwen.newhouse.fang.com/loupan/1810187010.htm",
+            "accessedAt": "2026-06-13",
+            "scope": "newhouse_reference_price"
           }
         ]
       },
@@ -5784,7 +7464,8 @@
         "confidence": "low",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "已检索但仍缺少可核验的本小区真实成交案例。",
+          "网络公开来源不是完整二手成交价，需人工确认是否可用于最终成交口径。"
         ]
       }
     },
@@ -5801,16 +7482,36 @@
         "submarket": "河西中/奥体"
       },
       "query": {
-        "status": "todo",
-        "queried": false,
+        "status": "hit",
+        "queried": true,
         "keywords": [
-          "南京 \"丹若园\" 成交"
+          "南京 \"丹若园\" 成交",
+          "网络检索：南京 丹若园 成交",
+          "网络检索：南京 丹若园 房天下/安居客 价格"
         ],
         "risk": {
           "blocked": false,
           "type": null,
           "note": null
-        }
+        },
+        "queriedAt": "2026-06-13T02:35:00+08:00",
+        "attempts": [
+          {
+            "keyword": "南京 \"丹若园\" 成交",
+            "searchedAt": "2026-06-13T00:20:00+08:00",
+            "result": "partial",
+            "hitCount": 44,
+            "note": "精确检索返回“丹若园这套价格可以”候选，但详情未捕获到数据，未写入成交案例。"
+          },
+          {
+            "keyword": "网络检索：南京 丹若园 成交",
+            "searchedAt": "2026-06-13T02:35:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "sourceUrl": "https://m.fang.com/fangjia/nanjing_list_267/",
+            "note": "补充网络来源案例，口径：web_reference_price。房天下建邺房价榜公开奥体新城丹若园参考价67887元/㎡；未找到公开二手成交总价。"
+          }
+        ]
       },
       "calibration": {
         "builtYear": {
@@ -5825,16 +7526,41 @@
           "confidence": "medium",
           "note": "Excel建筑类型：高层/板楼"
         },
-        "unitPriceRange": null,
-        "transactionCases": [],
+        "unitPriceRange": {
+          "min": 67887,
+          "max": 67887,
+          "unit": "元/㎡",
+          "sourceType": "网络公开参考价口径",
+          "note": "房天下建邺房价榜公开奥体新城丹若园参考价67887元/㎡；未找到公开二手成交总价。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-06",
+            "area": "未公开",
+            "totalPrice": "未公开",
+            "unitPrice": "6.79万/㎡",
+            "features": "房天下建邺房价榜公开奥体新城丹若园参考价67887元/㎡；未找到公开二手成交总价。",
+            "source": "网络公开网页《南京建邺房价走势2026年 - 房天下》web_reference_price口径"
+          }
+        ],
         "judgments": [
-          "当前尚未取得本小区真实成交案例。"
+          "精确检索返回“丹若园这套价格可以”候选，但详情未捕获到数据，未写入成交案例。",
+          "已通过公开网络来源补齐案例记录；口径为“web_reference_price”，需结合 sourceNotes 判断是否为完整二手成交价。",
+          "该记录不是完整二手成交价，只作为网络公开价格/案例线索补齐。"
         ],
         "sourceNotes": [
           {
             "type": "excel_catalog",
             "title": "建邺区2010年后商品房清单.xlsx",
             "noteDate": "2026-06-12"
+          },
+          {
+            "type": "web_reference_price",
+            "title": "南京建邺房价走势2026年 - 房天下",
+            "sourceName": "房天下",
+            "url": "https://m.fang.com/fangjia/nanjing_list_267/",
+            "accessedAt": "2026-06-13",
+            "scope": "web_reference_price"
           }
         ]
       },
@@ -5846,7 +7572,8 @@
         "confidence": "low",
         "needsHumanReview": true,
         "notes": [
-          "缺少本小区真实成交案例。"
+          "已检索但仍缺少可核验的本小区真实成交案例。",
+          "网络公开来源不是完整二手成交价，需人工确认是否可用于最终成交口径。"
         ]
       }
     },
