@@ -1,0 +1,5950 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "district": "南京市建邺区",
+    "generatedAt": "2026-06-12T20:35:00+08:00",
+    "sourceCatalog": {
+      "path": "public/data/jianye-communities-catalog.json",
+      "generatedAt": "2026-06-12T20:35:00+08:00",
+      "total": 67,
+      "source": "建邺区2010年后商品房清单.xlsx"
+    },
+    "skill": "xhs-nanjing-community-research",
+    "minimumIncludedBuiltYear": 2010,
+    "statusEnum": [
+      "todo",
+      "hit",
+      "no_hit",
+      "risk_blocked",
+      "partial"
+    ],
+    "queryDiscipline": "小红书查询必须串行；优先用区域级检索 南京 建邺 成交 获取成交列表截图并精确匹配当前 todo 小区批量回填成交价；每个小区如仍需单独核验，仅执行1次 search-feeds 检索，检索式固定为 南京 \"<小区名>\" 成交；命中后可打开必要详情页和图片核验，但不再换词追加搜索；每次 search/detail/feed/profile 调用间隔至少10秒。触发风控、限频或未登录时先等待1分钟/新开窗口或恢复登录，不把失败误判为无命中，也不消耗小区检索名额。",
+    "counts": {
+      "todo": 33,
+      "hit": 30,
+      "partial": 2,
+      "risk_blocked": 1,
+      "no_hit": 1
+    },
+    "updatedAt": "2026-06-12T20:35:00+08:00",
+    "maxSearchQueriesPerCommunity": 1,
+    "searchQueryTemplate": "南京 \"<小区名>\" 成交",
+    "bulkTransactionSearchQuery": "南京 建邺 成交",
+    "bulkTransactionSearchPurpose": "优先获取建邺区成交列表截图，精确匹配当前 todo 小区后批量回填成交价；该区域级检索不计入单个小区的 search-feeds 次数。",
+    "userProvidedImagePolicy": "用户提供成交明细图可直接用于精确匹配回填；均价变化图仅作为参考均价/交付时间线索，不写入 transactionCases。",
+    "catalogDefinition": "商品房小区清单以用户提供的《建邺区2010年后商品房清单.xlsx》为准；仅保留清单内2010年后建成商品房小区，剔除公寓、安置房、回迁房、经济适用房、商铺、写字楼及清单外小区。"
+  },
+  "records": [
+    {
+      "communityId": "excel-001",
+      "communityName": "万达西地",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2010,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 42000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/万达广场"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"万达西地\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2010,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2010"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-002",
+      "communityName": "金地名京",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2010,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 43000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/湖西街"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-12T16:03:10+08:00",
+        "keywords": [
+          "南京 \"金地·名京\" 成交"
+        ],
+        "attempts": [
+          {
+            "keyword": "南京 \"金地·名京\" 成交",
+            "searchedAt": "2026-06-12T16:02:34+08:00",
+            "result": "hit",
+            "hitCount": 20,
+            "note": "搜索结果直接命中《卖房小故事——之《金地名京》》，并出现多条河西/奥体成交汇总候选。"
+          },
+          {
+            "keyword": "卖房小故事——之《金地名京》",
+            "searchedAt": "2026-06-12T16:02:58+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "已打开详情；正文给出2025-12-01成交306.6万、单价3.5万，并回顾同户型历史成交。图片中另有87.57平已成交335万截图。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2010,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2010"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": {
+          "min": 35000,
+          "max": 44500,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2025-12-01",
+            "area": "88㎡",
+            "totalPrice": "306.6万",
+            "unitPrice": "3.5万/㎡",
+            "features": "小三房；作者评论称非边户；正文提到曾带租约、不满二等交易背景。",
+            "source": "小红书笔记《卖房小故事——之《金地名京》》正文口径"
+          },
+          {
+            "time": "2025-08-01挂牌，成交时间未明示",
+            "area": "87.57㎡",
+            "totalPrice": "335万",
+            "unitPrice": "38255元/㎡",
+            "features": "3-1-1-1户型；图片可见“已成交”、挂牌124天、东南向/落地窗客厅。",
+            "source": "小红书笔记《卖房小故事——之《金地名京》》图片截图口径"
+          },
+          {
+            "time": "2025-11笔记回顾",
+            "area": "同户型，面积未明示",
+            "totalPrice": "320万",
+            "unitPrice": "3.65万/㎡",
+            "features": "作者称楼层视野更好的同户型成交；为正文回顾口径。",
+            "source": "小红书笔记《卖房小故事——之《金地名京》》正文回顾口径"
+          },
+          {
+            "time": "2025-09笔记回顾",
+            "area": "同户型，面积未明示",
+            "totalPrice": "366万",
+            "unitPrice": "4.17万/㎡",
+            "features": "同户型历史成交回顾；缺少独立截图。",
+            "source": "小红书笔记《卖房小故事——之《金地名京》》正文回顾口径"
+          },
+          {
+            "time": "2025-06笔记回顾",
+            "area": "同户型，面积未明示",
+            "totalPrice": "393万",
+            "unitPrice": "4.45万/㎡",
+            "features": "同户型历史成交回顾；缺少独立截图。",
+            "source": "小红书笔记《卖房小故事——之《金地名京》》正文回顾口径"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 5 条真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "xiaohongshu_note",
+            "title": "卖房小故事——之《金地名京》",
+            "noteId": "69331a5f000000001e008c54",
+            "author": "小X卖房记-置家",
+            "noteDate": "2025-12-06"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": false,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-003",
+      "communityName": "奥体新城海棠园",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2010,
+        "buildingForm": "混合",
+        "publicBuildingType": "小高层/多层",
+        "unitPrice": 41000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"奥体新城海棠园\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2010,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2010"
+        },
+        "buildingForm": {
+          "value": "混合",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：小高层/多层"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-004",
+      "communityName": "保利香槟国际",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2011,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 43000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-12T10:29:59+08:00",
+        "keywords": [
+          "保利香槟国际 成交"
+        ],
+        "attempts": [
+          {
+            "keyword": "保利香槟国际 成交",
+            "searchedAt": "2026-06-12T10:27:44+08:00",
+            "result": "hit",
+            "hitCount": 44,
+            "note": "搜索结果同时包含南京河西成交数据和合肥同名小区内容；需排除异地同名。"
+          },
+          {
+            "keyword": "成交对比：保利香槟国际（天鹅湖概念房）",
+            "searchedAt": "2026-06-12T10:29:35+08:00",
+            "result": "excluded",
+            "hitCount": 1,
+            "note": "详情正文和话题为合肥二手房/合肥房价，排除为异地同名小区。"
+          },
+          {
+            "keyword": "河西中5月份完整成交数据建议收藏转发",
+            "searchedAt": "2026-06-12T10:29:59+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "南京河西中成交汇总笔记正文明确列出保利香槟国际 2.95万/㎡。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2011,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2011-2013"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": {
+          "min": 29500,
+          "max": 29500,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026年5月成交汇总",
+            "area": null,
+            "totalPrice": null,
+            "unitPrice": "2.95万/㎡",
+            "features": "河西中5月成交汇总；未披露单套面积/总价/楼层",
+            "source": "小红书《河西中5月份完整成交数据建议收藏转发》正文"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 1 条真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "xiaohongshu_note",
+            "title": "河西中5月份完整成交数据建议收藏转发",
+            "noteId": "6a27fad2000000001502718b",
+            "author": "梦师傅房产严选丨好居",
+            "noteDate": "2026-06-09"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": false,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-005",
+      "communityName": "海峡城",
+      "aliases": [
+        "海峡城云璟湾",
+        "海峡城云珑湾",
+        "海峡城云玺湾",
+        "南京海峡城",
+        "世茂海峡城"
+      ],
+      "catalogSnapshot": {
+        "builtYear": 2014,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 35000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西南/奥南"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-12T11:15:20+08:00",
+        "keywords": [
+          "海峡城 成交",
+          "海峡城云璟湾 成交"
+        ],
+        "attempts": [
+          {
+            "keyword": "海峡城 成交",
+            "searchedAt": "2026-06-12T11:11:50+08:00",
+            "result": "hit",
+            "hitCount": 22,
+            "note": "命中云玺湾成交走势、云珑湾跌幅、云璟湾成交等海峡城分期材料。"
+          },
+          {
+            "keyword": "海峡城云璟湾 成交",
+            "searchedAt": "2026-06-12T11:14:38+08:00",
+            "result": "hit",
+            "hitCount": 22,
+            "note": "命中“海峡城昨日成交！！”，详情确认海峡城云璟湾114.6㎡、359万成交。"
+          },
+          {
+            "keyword": "海峡城昨日成交！！",
+            "searchedAt": "2026-06-12T11:15:03+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "详情确认云璟湾114.6㎡三房359万；评论补充二期3栋2015年底交房，1-5栋2015年底、6-10栋2016年9月。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2014,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2014-2016"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": {
+          "min": 19516,
+          "max": 61600,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "date": "2024-08-12",
+            "area": 114.6,
+            "areaUnit": "㎡",
+            "floor": "中高楼层（20+）",
+            "totalPrice": 359,
+            "totalPriceUnit": "万元",
+            "unitPrice": 31326,
+            "unitPriceUnit": "元/㎡",
+            "features": "三室两厅一卫，各自付税；评论确认建邺区河西南海峡城云璟湾。",
+            "source": "小红书笔记《海峡城昨日成交！！》"
+          },
+          {
+            "date": "2024-08-10",
+            "area": 115,
+            "areaUnit": "㎡",
+            "floor": 6,
+            "totalPrice": 370,
+            "totalPriceUnit": "万元",
+            "unitPrice": 32174,
+            "unitPriceUnit": "元/㎡",
+            "features": "同笔记转述上一套云璟湾成交，户型约115㎡。",
+            "source": "小红书笔记《海峡城昨日成交！！》正文转述"
+          },
+          {
+            "date": "2026-06-07",
+            "area": 110,
+            "areaUnit": "㎡",
+            "floor": "9/19",
+            "totalPrice": 268.4,
+            "totalPriceUnit": "万元",
+            "totalPriceNote": "按110㎡ * 24400元/㎡计算，原笔记未直接给总价。",
+            "unitPrice": 24400,
+            "unitPriceUnit": "元/㎡",
+            "features": "含车位；笔记称刚刚成交。",
+            "source": "小红书笔记《今天来看一下海峡城云玺湾成交走势》"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 3 条真实成交案例。",
+          "Excel清单小区名为“海峡城”，成交证据来源记录为：海峡城云璟湾、海峡城云珑湾、海峡城云玺湾、南京海峡城、世茂海峡城；按清单总项/明确别名归并。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "xiaohongshu_note",
+            "title": "海峡城昨日成交！！",
+            "noteId": "66b9668d0000000009016692",
+            "author": "一亩地房产精选好房丨橙租",
+            "noteDate": "2024-08-12"
+          },
+          {
+            "type": "xiaohongshu_note",
+            "title": "南京建邺奥南海峡城云珑湾从6.16w跌至2.2w",
+            "noteId": "68b33466000000001b035521",
+            "author": "小红薯68BCC6CE",
+            "noteDate": "2025-08-31"
+          },
+          {
+            "type": "xiaohongshu_note",
+            "title": "今天来看一下海峡城云玺湾成交走势",
+            "noteId": "6a264b60000000002202e9e9",
+            "author": "蓝鲸避坑看房日记OE",
+            "noteDate": "2026-06-08"
+          },
+          {
+            "type": "catalog_alias_merge",
+            "title": "按Excel清单总项归并：海峡城云璟湾、海峡城云珑湾、海峡城云玺湾、南京海峡城、世茂海峡城",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": true,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-006",
+      "communityName": "和府奥园",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2010,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 43000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-12T11:28:10+08:00",
+        "keywords": [
+          "和府奥园 成交"
+        ],
+        "attempts": [
+          {
+            "keyword": "和府奥园 成交",
+            "searchedAt": "2026-06-12T11:26:55+08:00",
+            "result": "hit",
+            "hitCount": 22,
+            "note": "搜索结果直接命中《和府奥园117户型昨天成交了》，并附带河西/奥体成交汇总结果。"
+          },
+          {
+            "keyword": "和府奥园117户型昨天成交了",
+            "searchedAt": "2026-06-12T11:27:16+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "详情确认和府奥园2014年建成、开发商精装修交付、总高18层、117户型成交；评论询价但作者仅私信回复，公开详情无总价/单价。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2010,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2010-2015"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": {
+          "min": 43846,
+          "max": 43846,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "date": "2025-12-05",
+            "areaSqm": 117,
+            "totalPriceWan": null,
+            "unitPriceYuanPerSqm": null,
+            "floor": null,
+            "features": "117户型，开发商精装修交付，地源热泵系统，中央空调；笔记图片为户型图，公开内容未给成交价。",
+            "source": "小红书笔记《和府奥园117户型昨天成交了》",
+            "sourceNoteId": "6933a16e000000001e00cf9f"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 1 条真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "platform": "小红书",
+            "noteId": "6933a16e000000001e00cf9f",
+            "title": "和府奥园117户型昨天成交了",
+            "author": "河西段同学探房I崇正",
+            "noteDate": "2025-12-06",
+            "extracted": "正文称和府奥园2014年建成、开发商精装修交付、地源热泵系统、中央空调、南师附中新城黄山路学区、2和7双地铁、奥体东、总高18层；标题称117户型昨天成交，公开内容未给成交价。"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": false,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-007",
+      "communityName": "奥体新城紫薇园",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2013,
+        "buildingForm": "混合",
+        "publicBuildingType": "小高层/洋房",
+        "unitPrice": 50000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"奥体新城紫薇园\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2013,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2013"
+        },
+        "buildingForm": {
+          "value": "混合",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：小高层/洋房"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-008",
+      "communityName": "万科金域缇香",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2010,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 54000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"万科金域缇香\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2010,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2010"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-009",
+      "communityName": "华新城璟园",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2015,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 68600,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-12T15:36:36.108+08:00",
+        "keywords": [
+          "南京 \"华新城璟园\" 成交"
+        ],
+        "attempts": [
+          {
+            "keyword": "南京 \"华新城璟园\" 成交",
+            "searchedAt": "2026-06-12T15:34:38+08:00",
+            "result": "hit",
+            "hitCount": 22,
+            "note": "直接命中《华新城璟园成交统计以及小区介绍》。"
+          },
+          {
+            "keyword": "feed-detail:68aebf64000000001d002aee",
+            "searchedAt": "2026-06-12T15:34:54+08:00",
+            "result": "retry_needed",
+            "hitCount": 1,
+            "note": "首次未捕获详情数据。"
+          },
+          {
+            "keyword": "feed-detail:68aebf64000000001d002aee",
+            "searchedAt": "2026-06-12T15:35:12+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "重试成功；正文确认2017年交付、11栋346户，配图给出2020-2025成交表。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2015,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2015"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": {
+          "min": 54139,
+          "max": 83991,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2025-06-04",
+            "area": "136.92㎡",
+            "totalPrice": "845万",
+            "unitPrice": "61715元/㎡",
+            "features": "3-1-1-2，中/11层",
+            "source": "小红书《华新城璟园成交统计以及小区介绍》配图"
+          },
+          {
+            "time": "2025-06-01",
+            "area": "167.38㎡",
+            "totalPrice": "1212万",
+            "unitPrice": "72410元/㎡",
+            "features": "3-2-1-2，中/17层",
+            "source": "同上"
+          },
+          {
+            "time": "2025-05-07",
+            "area": "141.79㎡",
+            "totalPrice": "908万",
+            "unitPrice": "64038元/㎡",
+            "features": "3-1-1-2，中/17层",
+            "source": "同上"
+          },
+          {
+            "time": "2025-02-18",
+            "area": "99.65㎡",
+            "totalPrice": "539.5万",
+            "unitPrice": "54139元/㎡",
+            "features": "2-2-1-1，中/18层",
+            "source": "同上"
+          },
+          {
+            "time": "2024-09-14",
+            "area": "162.05㎡",
+            "totalPrice": "1192万",
+            "unitPrice": "73558元/㎡",
+            "features": "3-2-1-2，高/17层",
+            "source": "同上"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 5 条真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "xiaohongshu_note",
+            "title": "华新城璟园成交统计以及小区介绍",
+            "noteId": "68aebf64000000001d002aee",
+            "author": "河西豪宅小黄总丨好居",
+            "noteDate": "2025-08-28",
+            "evidence": [
+              "正文称华新城璟园2017年交付、共11栋楼、346户。",
+              "配图列出2020-2025成交表，字段包括面积、成交总价、成交单价、户型、成交时间、楼层。"
+            ]
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": false,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-010",
+      "communityName": "华新城珺庭",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2015,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 58100,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "partial",
+        "queried": true,
+        "queriedAt": "2026-06-12T15:36:36.108+08:00",
+        "keywords": [
+          "南京 \"华新城·珺庭\" 成交"
+        ],
+        "attempts": [
+          {
+            "keyword": "南京 \"华新城·珺庭\" 成交",
+            "searchedAt": "2026-06-12T15:34:19+08:00",
+            "result": "partial",
+            "hitCount": 22,
+            "note": "未见华新城·珺庭直接标题，结果主要为华新城泛内容和河西成交统计。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2015,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2015"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-011",
+      "communityName": "朗诗熙华府",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2015,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 50000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西南/奥南"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-12T18:15:20+08:00",
+        "keywords": [
+          "附带命中：南京 \"精锐SOHO\" 成交"
+        ],
+        "attempts": [
+          {
+            "keyword": "南京 \"精锐SOHO\" 成交",
+            "searchedAt": "2026-06-12T18:15:20+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "未对本小区单独执行 search-feeds；按用户要求，从已打开的小红书成交表截图中提取同名小区成交数据并回填。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2015,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2015-2017"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": {
+          "min": 27900,
+          "max": 27900,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-06-04~2026-06-08",
+            "area": "143.26㎡",
+            "totalPrice": "400万",
+            "unitPrice": "2.79万/㎡",
+            "features": "33F；成交表未标注车位。",
+            "source": "小红书笔记《河西每日成交速报2026.6.4-8》图片口径"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 1 条真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "xiaohongshu_note",
+            "title": "河西每日成交速报2026.6.4-8",
+            "noteId": "6a27d59a000000000702ab88",
+            "author": "阿浪有好房",
+            "noteDate": "2026-06-09"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": false,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-012",
+      "communityName": "五矿崇文金城",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2015,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 45000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西南/奥南"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-12T23:53:00+08:00",
+        "keywords": [
+          "附带命中：河西南5月份完整成交数据播报"
+        ],
+        "attempts": [
+          {
+            "keyword": "附带命中：河西南5月份完整成交数据播报",
+            "searchedAt": "2026-06-12T23:53:00+08:00",
+            "result": "hit",
+            "hitCount": 10,
+            "note": "未对本小区单独执行 search-feeds；按用户要求，从已打开的小红书成交表截图中提取同名小区成交数据并回填。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2015,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2015-2018"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": {
+          "min": 24117,
+          "max": 30641,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-05-31",
+            "area": "140.5㎡",
+            "totalPrice": "399万",
+            "unitPrice": "28399元/㎡（计算）",
+            "features": "13F/33；成交表未标注税费/车位细节",
+            "source": "《河西南5月份完整成交数据播报一定要收藏好》成交表截图"
+          },
+          {
+            "time": "2026-05-31",
+            "area": "100.76㎡",
+            "totalPrice": "243万",
+            "unitPrice": "24117元/㎡（计算）",
+            "features": "17F/33；成交表未标注税费/车位细节",
+            "source": "《河西南5月份完整成交数据播报一定要收藏好》成交表截图"
+          },
+          {
+            "time": "2026-05-17",
+            "area": "126.48㎡",
+            "totalPrice": "380万",
+            "unitPrice": "30044元/㎡（计算）",
+            "features": "12F/33；成交表未标注税费/车位细节",
+            "source": "《河西南5月份完整成交数据播报一定要收藏好》成交表截图"
+          },
+          {
+            "time": "2026-05-16",
+            "area": "82.94㎡",
+            "totalPrice": "226万",
+            "unitPrice": "27249元/㎡（计算）",
+            "features": "26F/33；成交表未标注税费/车位细节",
+            "source": "《河西南5月份完整成交数据播报一定要收藏好》成交表截图"
+          },
+          {
+            "time": "2026-05-14",
+            "area": "141.37㎡",
+            "totalPrice": "406万",
+            "unitPrice": "28719元/㎡（计算）",
+            "features": "9F/33；成交表未标注税费/车位细节",
+            "source": "《河西南5月份完整成交数据播报一定要收藏好》成交表截图"
+          },
+          {
+            "time": "2026-05-10",
+            "area": "95.39㎡",
+            "totalPrice": "249.8万",
+            "unitPrice": "26187元/㎡（计算）",
+            "features": "9F/31；成交表未标注税费/车位细节",
+            "source": "《河西南5月份完整成交数据播报一定要收藏好》成交表截图"
+          },
+          {
+            "time": "2026-05-07",
+            "area": "90.21㎡",
+            "totalPrice": "256万",
+            "unitPrice": "28378元/㎡（计算）",
+            "features": "12F/32；成交表未标注税费/车位细节",
+            "source": "《河西南5月份完整成交数据播报一定要收藏好》成交表截图"
+          },
+          {
+            "time": "2026-05-05",
+            "area": "92.36㎡",
+            "totalPrice": "283万",
+            "unitPrice": "30641元/㎡（计算）",
+            "features": "25F/33；成交表未标注税费/车位细节",
+            "source": "《河西南5月份完整成交数据播报一定要收藏好》成交表截图"
+          },
+          {
+            "time": "2026-05-05",
+            "area": "111.05㎡",
+            "totalPrice": "307.8万",
+            "unitPrice": "27717元/㎡（计算）",
+            "features": "9F/33；成交表未标注税费/车位细节",
+            "source": "《河西南5月份完整成交数据播报一定要收藏好》成交表截图"
+          },
+          {
+            "time": "2026-05-01",
+            "area": "82.84㎡",
+            "totalPrice": "236万",
+            "unitPrice": "28489元/㎡（计算）",
+            "features": "30F/31；成交表未标注税费/车位细节",
+            "source": "《河西南5月份完整成交数据播报一定要收藏好》成交表截图"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 10 条真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "xiaohongshu_note",
+            "title": "河西南5月份完整成交数据播报一定要收藏好",
+            "noteId": "6a201d7900000000380229e3",
+            "author": "梦师傅房产严选丨好居",
+            "noteDate": "2026-06-03",
+            "scope": "attachedTransactionTable",
+            "evidenceFile": "/tmp/homeland-xhs/jindi-fenghua-may.webp",
+            "note": "按用户要求，从已打开的小红书成交表截图中提取同名小区成交数据；未对本小区单独执行 search-feeds。"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": false,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-013",
+      "communityName": "正荣润峯",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2015,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 44000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西南/奥南"
+      },
+      "query": {
+        "status": "partial",
+        "queried": true,
+        "queriedAt": "2026-06-13T00:30:00+08:00",
+        "keywords": [
+          "用户提供图片：河西南热门次新房价格变化"
+        ],
+        "attempts": [
+          {
+            "keyword": "用户提供图片：河西南热门次新房价格变化",
+            "searchedAt": "2026-06-13T00:30:00+08:00",
+            "result": "partial",
+            "hitCount": 1,
+            "note": "用户提供的均价变化图命中本小区；该图不是单套成交明细，不写入 transactionCases。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2015,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2015-2018"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "user_provided_image",
+            "title": "今年以来 河西南热门次新房价格变化",
+            "noteId": null,
+            "author": null,
+            "noteDate": "2026-06-12用户提供",
+            "scope": "referencePriceOnly",
+            "evidenceFile": "/var/folders/g2/d962p5fj09979h6lc7vzp7v80000gn/T/codex-clipboard-94f13a7b-00eb-4777-9270-7273dea86a35.png",
+            "note": "均价变化表，不是单套成交明细。"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-014",
+      "communityName": "葛洲坝招商紫郡兰园",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2017,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 43000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西南/奥南"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"葛洲坝招商紫郡兰园\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2017,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2017-2020"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-015",
+      "communityName": "保利天悦",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2015,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 57600,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-12T10:26:39+08:00",
+        "keywords": [
+          "保利天悦 成交"
+        ],
+        "attempts": [
+          {
+            "keyword": "保利天悦 成交",
+            "searchedAt": "2026-06-12T10:25:54+08:00",
+            "result": "hit",
+            "hitCount": 44,
+            "note": "搜索直接命中南京河西中成交数据和保利天悦相关结果；排除一条陕西同名楼盘详情。"
+          },
+          {
+            "keyword": "南京河西中最新真实成交数据📊 截至6月8日",
+            "searchedAt": "2026-06-12T10:26:39+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "详情长图中保利天悦成交行可读。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2015,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2015-2018"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": {
+          "min": 42100,
+          "max": 42100,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-06笔记，成交表截至6月8日",
+            "area": "112.17㎡",
+            "totalPrice": "472.5万",
+            "unitPrice": "4.21万/㎡",
+            "features": "保利天悦，带车位",
+            "source": "《南京河西中最新真实成交数据📊 截至6月8日》图片截图 / noteId 6a28c0bb0000000015025dfa"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 1 条真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "xiaohongshu_note",
+            "title": "南京河西中最新真实成交数据📊 截至6月8日",
+            "noteId": "6a28c0bb0000000015025dfa",
+            "author": "南京欢哥看房丨创格家",
+            "noteDate": "2026-06-10"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": false,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-016",
+      "communityName": "东原印长江",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2018,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 55000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-12T10:59:45+08:00",
+        "keywords": [
+          "东原 印长江 成交",
+          "东原印长江 房价"
+        ],
+        "attempts": [
+          {
+            "keyword": "东原 印长江 成交",
+            "searchedAt": "2026-06-12T10:57:59+08:00",
+            "result": "hit",
+            "hitCount": 22,
+            "note": "首条“法拍正在定义二手”直接写东原印长江二期5月9日法拍成交，160㎡、341万、单价2.14万。"
+          },
+          {
+            "keyword": "法拍正在定义二手",
+            "searchedAt": "2026-06-12T10:58:25+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "详情确认成交样本为二期法拍，且正文补充二期最低挂牌2.9万、交付约6年、精装地暖中央空调新风等信息。"
+          },
+          {
+            "keyword": "东原印长江 房价",
+            "searchedAt": "2026-06-12T10:58:49+08:00",
+            "result": "hit",
+            "hitCount": 22,
+            "note": "继续命中法拍笔记，并命中建邺万达东原印长江126.27㎡三房房源线索；同时出现重庆东原1891印长江等异地结果，已排除。"
+          },
+          {
+            "keyword": "惊天消息价格调整！南京万达次新房",
+            "searchedAt": "2026-06-12T10:59:30+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "详情确认建邺万达广场东原印长江，126.27㎡三房、精装、中楼层、距2号线集庆门大街站约716米，但正文未给出明确总价/单价。详情打开时短暂扫码验证后自动恢复。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": "打开第二个详情时短暂出现扫码验证，CLI重访后验证消失并成功加载；后续查询按用户要求保守等待。"
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2018,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2018-2020"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": {
+          "min": 21400,
+          "max": 29000,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "date": "2026-05-09",
+            "area": 160,
+            "areaUnit": "㎡",
+            "totalPrice": 341,
+            "totalPriceUnit": "万元",
+            "unitPrice": 21400,
+            "unitPriceUnit": "元/㎡",
+            "features": "东原印长江二期法拍，标准层，开发商精装，地暖/中央空调/新风；二拍成交，非普通二手成交样本。",
+            "source": "小红书笔记《法拍正在定义二手》"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 1 条真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "xiaohongshu_note",
+            "title": "法拍正在定义二手",
+            "noteId": "6a0300e70000000008000bd8",
+            "author": "街口卖红薯🍠",
+            "noteDate": "2026-05-12"
+          },
+          {
+            "type": "xiaohongshu_note",
+            "title": "💸惊天消息价格调整！南京万达次新房",
+            "noteId": "69fff65b000000003501de15",
+            "author": "老王选房日记丨佳骏",
+            "noteDate": "2026-05-10"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": false,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-017",
+      "communityName": "星雨华府",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2010,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 40000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-12T18:15:20+08:00",
+        "keywords": [
+          "附带命中：南京 \"精锐SOHO\" 成交",
+          "附带命中：南京 \"精金花园\" 成交",
+          "附带命中：南京 \"金马郦城西区\" 成交"
+        ],
+        "attempts": [
+          {
+            "keyword": "南京 \"精锐SOHO\" 成交",
+            "searchedAt": "2026-06-12T18:15:20+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "未对本小区单独执行 search-feeds；按用户要求，从已打开的小红书成交表截图中提取同名小区成交数据并回填。"
+          },
+          {
+            "keyword": "南京 \"精金花园\" 成交",
+            "searchedAt": "2026-06-12T18:15:20+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "未对本小区单独执行 search-feeds；按用户要求，从已打开的小红书成交表截图中提取同名小区成交数据并回填。"
+          },
+          {
+            "keyword": "南京 \"金马郦城西区\" 成交",
+            "searchedAt": "2026-06-12T18:15:20+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "未对本小区单独执行 search-feeds；按用户要求，从已打开的小红书成交表截图中提取同名小区成交数据并回填。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2010,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2010-2015"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": {
+          "min": 29200,
+          "max": 37300,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-06-04~2026-06-08",
+            "area": "72.29㎡",
+            "totalPrice": "211万",
+            "unitPrice": "2.92万/㎡",
+            "features": "17F；成交表未标注车位。",
+            "source": "小红书笔记《河西每日成交速报2026.6.4-8》图片口径"
+          },
+          {
+            "time": "2026-01-18",
+            "area": "89.17㎡",
+            "totalPrice": "263.8万",
+            "unitPrice": "约2.96万/㎡",
+            "features": "23/25楼；成交表未标注车位。",
+            "source": "小红书笔记《河西成交》图片口径"
+          },
+          {
+            "time": "2025-04-28",
+            "area": "90.67㎡",
+            "totalPrice": "338万",
+            "unitPrice": "3.73万/㎡",
+            "features": "成交表未标注楼层、车位等附加条件。",
+            "source": "小红书笔记《河西奥体成交数据2025/04/28》图片口径"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 3 条真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "xiaohongshu_note",
+            "title": "河西每日成交速报2026.6.4-8",
+            "noteId": "6a27d59a000000000702ab88",
+            "author": "阿浪有好房",
+            "noteDate": "2026-06-09"
+          },
+          {
+            "type": "xiaohongshu_note",
+            "title": "河西成交",
+            "noteId": "69704ee4000000000a03016a",
+            "author": "南京买房通",
+            "noteDate": "2026-01-21"
+          },
+          {
+            "type": "xiaohongshu_note",
+            "title": "河西奥体成交数据2025/04/28",
+            "noteId": "681042d3000000002002945c",
+            "author": "松子爱洛",
+            "noteDate": "2025-04-29"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": false,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-018",
+      "communityName": "银城西堤国际",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2010,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 44000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"银城西堤国际\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2010,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2010-2013"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-019",
+      "communityName": "苏宁睿城",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2013,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 45000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-12T23:33:00+08:00",
+        "keywords": [
+          "附带命中：南京河西中最新真实成交数据 截至6月8日"
+        ],
+        "attempts": [
+          {
+            "keyword": "附带命中：南京河西中最新真实成交数据 截至6月8日",
+            "searchedAt": "2026-06-12T23:33:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "未对本小区单独执行 search-feeds；按用户要求，从已打开的小红书成交表截图中提取同名小区成交数据并回填。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2013,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2013"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": {
+          "min": 35200,
+          "max": 35200,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-06（笔记题头截至6月8日）",
+            "area": "117.4㎡",
+            "totalPrice": "413.8万",
+            "unitPrice": "35200元/㎡",
+            "features": "成交表未标注楼层/车位",
+            "source": "《南京河西中最新真实成交数据📊 截至6月8日》成交表截图"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 1 条真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "xiaohongshu_note",
+            "title": "南京河西中最新真实成交数据📊 截至6月8日",
+            "noteId": "6a28c0bb0000000015025dfa",
+            "author": "南京欢哥看房丨创格家",
+            "noteDate": "2026-06-10",
+            "scope": "attachedTransactionTable",
+            "evidenceFile": "/tmp/homeland-xhs/baoli-tianyue-nanjing.webp",
+            "note": "按用户要求，从已打开的小红书成交表截图中提取同名小区成交数据；未对本小区单独执行 search-feeds。"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": false,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-020",
+      "communityName": "中海塞纳丽舍",
+      "aliases": [
+        "中海·塞纳丽舍东苑"
+      ],
+      "catalogSnapshot": {
+        "builtYear": 2010,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 45000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-13T00:45:00+08:00",
+        "keywords": [
+          "用户提供图片：2026年5月河西中二手成交数据"
+        ],
+        "attempts": [
+          {
+            "keyword": "用户提供图片：2026年5月河西中二手成交数据",
+            "searchedAt": "2026-06-13T00:45:00+08:00",
+            "result": "hit",
+            "hitCount": 4,
+            "note": "按用户要求，直接从用户提供的成交表截图中提取同名小区成交数据；未使用小红书 skill/CLI。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2010,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2010-2015"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": {
+          "min": 37000,
+          "max": 40300,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026年5月",
+            "area": "133.58㎡",
+            "totalPrice": "505万",
+            "unitPrice": "37800元/㎡",
+            "features": "14楼；各付",
+            "source": "用户提供《2026年5月河西中二手成交数据》截图"
+          },
+          {
+            "time": "2026年5月",
+            "area": "134.73㎡",
+            "totalPrice": "543.5万",
+            "unitPrice": "40300元/㎡",
+            "features": "5楼；含车位，各付",
+            "source": "用户提供《2026年5月河西中二手成交数据》截图"
+          },
+          {
+            "time": "2026年5月",
+            "area": "171.46㎡",
+            "totalPrice": "649万",
+            "unitPrice": "37900元/㎡",
+            "features": "6楼；含车位，各付",
+            "source": "用户提供《2026年5月河西中二手成交数据》截图"
+          },
+          {
+            "time": "2026年5月",
+            "area": "133.96㎡",
+            "totalPrice": "496万",
+            "unitPrice": "37000元/㎡",
+            "features": "3楼；各付",
+            "source": "用户提供《2026年5月河西中二手成交数据》截图"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 4 条真实成交案例。",
+          "Excel清单小区名为“中海塞纳丽舍”，成交证据来源记录为：中海·塞纳丽舍东苑；按清单总项/明确别名归并。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "user_provided_image",
+            "title": "2026年5月河西中二手成交数据",
+            "noteId": null,
+            "author": null,
+            "noteDate": "2026-06-12用户提供",
+            "scope": "transactionTable",
+            "evidenceFile": "/var/folders/g2/d962p5fj09979h6lc7vzp7v80000gn/T/codex-clipboard-0fc2f1b1-8d0e-4bc4-971c-e02e141926a7.png",
+            "note": "用户提供长成交明细截图；本次未继续使用小红书 skill/CLI，仅从图片可见字段提取。"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": true,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-021",
+      "communityName": "海玥名都",
+      "aliases": [
+        "海玥名都苑"
+      ],
+      "catalogSnapshot": {
+        "builtYear": 2016,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 60000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-12T11:20:20+08:00",
+        "keywords": [
+          "南京 海玥名都 成交"
+        ],
+        "attempts": [
+          {
+            "keyword": "南京 海玥名都 成交",
+            "searchedAt": "2026-06-12T11:18:39+08:00",
+            "result": "hit",
+            "hitCount": 22,
+            "note": "命中“海玥名都又成交了”“海玥名都二手房成交统计以及市场走势报告”等直接结果。"
+          },
+          {
+            "keyword": "海玥名都又成交了",
+            "searchedAt": "2026-06-12T11:19:06+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "详情写4楼136㎡608万含车位，上一套十天前7楼136㎡587万含车位。"
+          },
+          {
+            "keyword": "海玥名都二手房成交统计以及市场走势报告",
+            "searchedAt": "2026-06-12T11:19:55+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "详情补充2018年建成、1047户、科技住宅、140-240㎡户型、2025年1-5月成交单价5.54-6.31万/㎡。详情打开时短暂扫码验证后自动恢复。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": "打开成交统计报告详情时短暂出现扫码验证，CLI重访后验证消失并成功加载。"
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2016,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2016-2018"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": {
+          "min": 43162,
+          "max": 63100,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "date": "2026-01-21",
+            "area": 136,
+            "areaUnit": "㎡",
+            "floor": 4,
+            "totalPrice": 608,
+            "totalPriceUnit": "万元",
+            "unitPrice": 44706,
+            "unitPriceUnit": "元/㎡",
+            "features": "含车位；136㎡两房，低楼层样本。",
+            "source": "小红书笔记《海玥名都又成交了》"
+          },
+          {
+            "date": "2026-01-11",
+            "area": 136,
+            "areaUnit": "㎡",
+            "floor": 7,
+            "totalPrice": 587,
+            "totalPriceUnit": "万元",
+            "unitPrice": 43162,
+            "unitPriceUnit": "元/㎡",
+            "features": "含车位；同笔记称十天前成交。",
+            "source": "小红书笔记《海玥名都又成交了》正文转述"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 2 条真实成交案例。",
+          "Excel清单小区名为“海玥名都”，成交证据来源记录为：海玥名都、海玥名都苑；按清单总项/明确别名归并。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "xiaohongshu_note",
+            "title": "海玥名都又成交了",
+            "noteId": "697099980000000021029f05",
+            "author": "言仔",
+            "noteDate": "2026-01-21"
+          },
+          {
+            "type": "xiaohongshu_note",
+            "title": "海玥名都二手房成交统计以及市场走势报告",
+            "noteId": "6888e34a0000000025021f20",
+            "author": "河西豪宅小黄总丨好居",
+            "noteDate": "2025-07-29"
+          },
+          {
+            "type": "catalog_alias_merge",
+            "title": "按Excel清单总项归并：海玥名都、海玥名都苑",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": true,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-022",
+      "communityName": "莱蒙水榭春天",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2015,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 42000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西南/奥南"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-13T00:45:00+08:00",
+        "keywords": [
+          "用户提供图片：2026年5月河西中二手成交数据"
+        ],
+        "attempts": [
+          {
+            "keyword": "用户提供图片：2026年5月河西中二手成交数据",
+            "searchedAt": "2026-06-13T00:45:00+08:00",
+            "result": "hit",
+            "hitCount": 5,
+            "note": "按用户要求，直接从用户提供的成交表截图中提取同名小区成交数据；未使用小红书 skill/CLI。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2015,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2015-2018"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": {
+          "min": 29000,
+          "max": 33900,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026年5月",
+            "area": "142.92㎡",
+            "totalPrice": "485万",
+            "unitPrice": "33900元/㎡",
+            "features": "30楼；含车位，各付",
+            "source": "用户提供《2026年5月河西中二手成交数据》截图"
+          },
+          {
+            "time": "2026年5月",
+            "area": "87.53㎡",
+            "totalPrice": "290万",
+            "unitPrice": "33100元/㎡",
+            "features": "11楼；含车位，各付",
+            "source": "用户提供《2026年5月河西中二手成交数据》截图"
+          },
+          {
+            "time": "2026年5月",
+            "area": "110.19㎡",
+            "totalPrice": "323万",
+            "unitPrice": "29300元/㎡",
+            "features": "19楼；各付",
+            "source": "用户提供《2026年5月河西中二手成交数据》截图"
+          },
+          {
+            "time": "2026年5月",
+            "area": "88.15㎡",
+            "totalPrice": "276万",
+            "unitPrice": "31300元/㎡",
+            "features": "12楼；各付",
+            "source": "用户提供《2026年5月河西中二手成交数据》截图"
+          },
+          {
+            "time": "2026年5月",
+            "area": "88.62㎡",
+            "totalPrice": "256.9万",
+            "unitPrice": "29000元/㎡",
+            "features": "11楼；各付",
+            "source": "用户提供《2026年5月河西中二手成交数据》截图"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 5 条真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "user_provided_image",
+            "title": "2026年5月河西中二手成交数据",
+            "noteId": null,
+            "author": null,
+            "noteDate": "2026-06-12用户提供",
+            "scope": "transactionTable",
+            "evidenceFile": "/var/folders/g2/d962p5fj09979h6lc7vzp7v80000gn/T/codex-clipboard-0fc2f1b1-8d0e-4bc4-971c-e02e141926a7.png",
+            "note": "用户提供长成交明细截图；本次未继续使用小红书 skill/CLI，仅从图片可见字段提取。"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": false,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-023",
+      "communityName": "金隅紫京府",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2015,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 48000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-12T18:06:10+08:00",
+        "keywords": [
+          "南京 \"金隅紫京府\" 成交"
+        ],
+        "attempts": [
+          {
+            "keyword": "南京 \"金隅紫京府\" 成交",
+            "searchedAt": "2026-06-12T18:04:25+08:00",
+            "result": "hit",
+            "hitCount": 44,
+            "note": "按每小区仅1次 search-feeds 的约束执行唯一检索；搜索结果包含成交表和直接标题《炸穿河西改善四房！金隅紫京府成交价猜麻了》。"
+          },
+          {
+            "keyword": "feed-detail:69aa9bf5000000000e00c2c1",
+            "searchedAt": "2026-06-12T18:04:52+08:00",
+            "result": "partial",
+            "hitCount": 1,
+            "note": "详情正文称2015年5月首次开盘、2017年11月收官开盘，并给出2023-03同户型成交855.5万；图片未明示2026成交价。"
+          },
+          {
+            "keyword": "feed-detail:6a24f8ab000000001c026da4",
+            "searchedAt": "2026-06-12T18:05:31+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "详情《河西中还是成交主力》图片为2026-06-05至06-06河西二手成交数据，直接包含金隅紫京府两笔成交。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2015,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2015-2018"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": {
+          "min": 37300,
+          "max": 40800,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-06-05~2026-06-06",
+            "area": "129.7㎡",
+            "totalPrice": "529.8万",
+            "unitPrice": "4.08万/㎡",
+            "features": "含车位；成交表未标注具体楼层。",
+            "source": "小红书笔记《河西中还是成交主力》图片口径"
+          },
+          {
+            "time": "2026-06-05~2026-06-06",
+            "area": "87.62㎡",
+            "totalPrice": "326.5万",
+            "unitPrice": "3.73万/㎡",
+            "features": "成交表未标注车位、楼层等附加条件。",
+            "source": "小红书笔记《河西中还是成交主力》图片口径"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 2 条真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "xiaohongshu_note",
+            "title": "炸穿河西改善四房！金隅紫京府成交价猜麻了",
+            "noteId": "69aa9bf5000000000e00c2c1",
+            "author": "南京楼市老冯说房I诚居",
+            "noteDate": "2026-03-06"
+          },
+          {
+            "type": "xiaohongshu_note",
+            "title": "河西中还是成交主力",
+            "noteId": "6a24f8ab000000001c026da4",
+            "author": "NJ河西老谈选房CH",
+            "noteDate": "2026-06-07"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": false,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-024",
+      "communityName": "紫辉时代广场",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2015,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 35000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-13T00:45:00+08:00",
+        "keywords": [
+          "用户提供图片：2026年5月河西中二手成交数据"
+        ],
+        "attempts": [
+          {
+            "keyword": "用户提供图片：2026年5月河西中二手成交数据",
+            "searchedAt": "2026-06-13T00:45:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "按用户要求，直接从用户提供的成交表截图中提取同名小区成交数据；未使用小红书 skill/CLI。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2015,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2015-2018"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": {
+          "min": 14900,
+          "max": 14900,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026年5月",
+            "area": "60.25㎡",
+            "totalPrice": "90万",
+            "unitPrice": "14900元/㎡",
+            "features": "8楼；各付；需复核物业属性",
+            "source": "用户提供《2026年5月河西中二手成交数据》截图"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 1 条真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "user_provided_image",
+            "title": "2026年5月河西中二手成交数据",
+            "noteId": null,
+            "author": null,
+            "noteDate": "2026-06-12用户提供",
+            "scope": "transactionTable",
+            "evidenceFile": "/var/folders/g2/d962p5fj09979h6lc7vzp7v80000gn/T/codex-clipboard-0fc2f1b1-8d0e-4bc4-971c-e02e141926a7.png",
+            "note": "用户提供长成交明细截图；本次未继续使用小红书 skill/CLI，仅从图片可见字段提取。"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": false,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-025",
+      "communityName": "万达华府",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2010,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 40000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/万达广场"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"万达华府\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2010,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2010-2013"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-026",
+      "communityName": "金基汇锦国际",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2010,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 45000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "risk_blocked",
+        "queried": true,
+        "queriedAt": "2026-06-12T16:19:12+08:00",
+        "keywords": [
+          "南京 \"金基汇锦国际\" 成交"
+        ],
+        "attempts": [
+          {
+            "keyword": "南京 \"金基汇锦国际\" 成交",
+            "searchedAt": "2026-06-12T16:17:31+08:00",
+            "result": "risk_blocked",
+            "hitCount": 0,
+            "note": "小红书页面等待 __INITIAL_STATE__ 超时，CLI返回NoFeedsError，没有捕获到feeds数据。"
+          },
+          {
+            "keyword": "南京 \"金基汇锦国际\" 成交",
+            "searchedAt": "2026-06-12T16:18:52+08:00",
+            "result": "risk_blocked",
+            "hitCount": 0,
+            "note": "按风控策略等待1分钟并新开窗口重试，仍返回NoFeedsError；不判定为无命中。"
+          }
+        ],
+        "risk": {
+          "blocked": true,
+          "type": "xhs_no_feeds_timeout",
+          "note": "连续两次小红书搜索未捕获feeds数据；已按要求等待1分钟重试。需后续窗口恢复后回补。"
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2010,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2010-2015"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-027",
+      "communityName": "徐矿明星国际",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2010,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层",
+        "unitPrice": 35000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"徐矿明星国际\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2010,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2010"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-028",
+      "communityName": "仁恒绿洲新岛江枫园",
+      "aliases": [
+        "仁恒绿洲新岛"
+      ],
+      "catalogSnapshot": {
+        "builtYear": 2015,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 36300,
+        "priceType": "Excel清单参考均价",
+        "submarket": "江心洲"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"仁恒绿洲新岛江枫园\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2015,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2015-2018"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "Excel清单小区名为“仁恒绿洲新岛江枫园”，成交证据来源记录为：仁恒绿洲新岛；按清单总项/明确别名归并。",
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-029",
+      "communityName": "江岛华庭",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2018,
+        "buildingForm": "混合",
+        "publicBuildingType": "洋房/小高层",
+        "unitPrice": 70000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "江心洲"
+      },
+      "query": {
+        "status": "no_hit",
+        "queried": true,
+        "queriedAt": "2026-06-12T16:00:32.603+08:00",
+        "keywords": [
+          "南京 \"江岛华庭\" 奥体 成交"
+        ],
+        "attempts": [
+          {
+            "keyword": "南京 \"江岛华庭\" 奥体 成交",
+            "searchedAt": "2026-06-12T15:59:25+08:00",
+            "result": "no_hit",
+            "hitCount": 22,
+            "note": "返回奥体成交表、链家成交统计和泛河西内容，未见江岛华庭直接标题。"
+          },
+          {
+            "keyword": "feed-detail:6a250883000000003501d4b2",
+            "searchedAt": "2026-06-12T15:59:48+08:00",
+            "result": "no_hit",
+            "hitCount": 1,
+            "note": "打开2026-06-06河西奥体成交数据，图片表未见江岛华庭。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2018,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2018-2020"
+        },
+        "buildingForm": {
+          "value": "混合",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：洋房/小高层"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-030",
+      "communityName": "仁恒江湾世纪",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2018,
+        "buildingForm": "混合",
+        "publicBuildingType": "高层/叠墅",
+        "unitPrice": 39200,
+        "priceType": "Excel清单参考均价",
+        "submarket": "江心洲"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"仁恒江湾世纪\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2018,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2018-2022"
+        },
+        "buildingForm": {
+          "value": "混合",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/叠墅"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-031",
+      "communityName": "仁恒江湾城",
+      "aliases": [
+        "仁恒江湾城一期",
+        "仁恒江湾城二期",
+        "仁恒江湾城三期",
+        "仁恒江湾城四期"
+      ],
+      "catalogSnapshot": {
+        "builtYear": 2010,
+        "buildingForm": "混合",
+        "publicBuildingType": "高层/小高层",
+        "unitPrice": 43000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-12T23:42:00+08:00",
+        "keywords": [
+          "附带命中：2026.6.1-6.7 河西二手房市场一周速览"
+        ],
+        "attempts": [
+          {
+            "keyword": "附带命中：2026.6.1-6.7 河西二手房市场一周速览",
+            "searchedAt": "2026-06-12T23:42:00+08:00",
+            "result": "hit",
+            "hitCount": 2,
+            "note": "未对本小区单独执行 search-feeds；按用户要求，从已打开的小红书成交表截图中提取同名小区成交数据并回填。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2010,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2010-2014"
+        },
+        "buildingForm": {
+          "value": "混合",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/小高层"
+        },
+        "unitPriceRange": {
+          "min": 33500,
+          "max": 51700,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-06-01~2026-06-07",
+            "area": "176.62㎡",
+            "totalPrice": "610万",
+            "unitPrice": "34500元/㎡",
+            "features": "5楼；各自付税，含车位",
+            "source": "《2026.6.1-6.7 河西二手房市场一周速览》成交表截图"
+          },
+          {
+            "time": "2026-06-01~2026-06-07",
+            "area": "89.54㎡",
+            "totalPrice": "300万",
+            "unitPrice": "33500元/㎡",
+            "features": "9楼；各自付税",
+            "source": "《2026.6.1-6.7 河西二手房市场一周速览》成交表截图"
+          },
+          {
+            "time": "2026-06-04~2026-06-08",
+            "area": "152.9㎡",
+            "totalPrice": "563.08万",
+            "unitPrice": "3.68万/㎡",
+            "features": "27F；含车位。",
+            "source": "小红书笔记《河西每日成交速报2026.6.4-8》图片口径"
+          },
+          {
+            "time": "2026年5月",
+            "area": "182.12㎡",
+            "totalPrice": "688万",
+            "unitPrice": "37800元/㎡",
+            "features": "2楼；含车位，各付",
+            "source": "用户提供《2026年5月河西中二手成交数据》截图"
+          },
+          {
+            "time": "2026年5月",
+            "area": "162.18㎡",
+            "totalPrice": "690万",
+            "unitPrice": "42500元/㎡",
+            "features": "9楼；含车位，各付",
+            "source": "用户提供《2026年5月河西中二手成交数据》截图"
+          },
+          {
+            "time": "2026年5月",
+            "area": "251㎡",
+            "totalPrice": "1163万",
+            "unitPrice": "46300元/㎡",
+            "features": "11楼；含车位，各付",
+            "source": "用户提供《2026年5月河西中二手成交数据》截图"
+          },
+          {
+            "time": "2026年5月",
+            "area": "250.66㎡",
+            "totalPrice": "1295万",
+            "unitPrice": "51700元/㎡",
+            "features": "33楼；含车位，各付",
+            "source": "用户提供《2026年5月河西中二手成交数据》截图"
+          },
+          {
+            "time": "2026年5月",
+            "area": "206.59㎡",
+            "totalPrice": "845万",
+            "unitPrice": "40900元/㎡",
+            "features": "3楼；含车位，各付",
+            "source": "用户提供《2026年5月河西中二手成交数据》截图"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 8 条真实成交案例。",
+          "Excel清单小区名为“仁恒江湾城”，成交证据来源记录为：仁恒·江湾城、仁恒江湾城一期、仁恒江湾城二期、仁恒江湾城三期、仁恒江湾城四期；按清单总项/明确别名归并。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "xiaohongshu_note",
+            "title": "2026.6.1-6.7 河西二手房市场一周速览",
+            "noteId": "6a2a14a9000000000702432f",
+            "author": "河西霞姐探房丨墨岚",
+            "noteDate": "2026-06-11",
+            "scope": "attachedTransactionTable",
+            "note": "按用户要求，从已打开的小红书成交表截图中提取同名小区成交数据；未对本小区单独执行 search-feeds。",
+            "evidenceFile": "/tmp/homeland-xhs/jindi-jinghua-week-1.webp"
+          },
+          {
+            "type": "xiaohongshu_note",
+            "title": "河西每日成交速报2026.6.4-8",
+            "noteId": "6a27d59a000000000702ab88",
+            "author": "阿浪有好房",
+            "noteDate": "2026-06-09"
+          },
+          {
+            "type": "user_provided_image",
+            "title": "2026年5月河西中二手成交数据",
+            "noteId": null,
+            "author": null,
+            "noteDate": "2026-06-12用户提供",
+            "scope": "transactionTable",
+            "evidenceFile": "/var/folders/g2/d962p5fj09979h6lc7vzp7v80000gn/T/codex-clipboard-0fc2f1b1-8d0e-4bc4-971c-e02e141926a7.png",
+            "note": "用户提供长成交明细截图；本次未继续使用小红书 skill/CLI，仅从图片可见字段提取。"
+          },
+          {
+            "type": "catalog_alias_merge",
+            "title": "按Excel清单总项归并：仁恒·江湾城、仁恒江湾城一期、仁恒江湾城二期、仁恒江湾城三期、仁恒江湾城四期",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": true,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-032",
+      "communityName": "江心印",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2024,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 34900,
+        "priceType": "Excel清单参考均价",
+        "submarket": "江心洲"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"江心印\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2024,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2024"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-033",
+      "communityName": "升龙公园道榛园",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2012,
+        "buildingForm": "洋房",
+        "publicBuildingType": "低密/洋房",
+        "unitPrice": 45000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "江心洲"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"升龙公园道榛园\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2012,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2012-2015"
+        },
+        "buildingForm": {
+          "value": "洋房",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：低密/洋房"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-034",
+      "communityName": "升龙桃花源",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2018,
+        "buildingForm": "洋房",
+        "publicBuildingType": "低密/别墅",
+        "unitPrice": 70000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "江心洲"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"升龙桃花源\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2018,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2018-2020"
+        },
+        "buildingForm": {
+          "value": "洋房",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：低密/别墅"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-035",
+      "communityName": "保利紫荆公馆",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2015,
+        "buildingForm": "混合",
+        "publicBuildingType": "洋房/小高层",
+        "unitPrice": 45000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "江心洲"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-12T10:31:48+08:00",
+        "keywords": [
+          "保利紫荆公馆 成交"
+        ],
+        "attempts": [
+          {
+            "keyword": "保利紫荆公馆 成交",
+            "searchedAt": "2026-06-12T10:31:26+08:00",
+            "result": "hit",
+            "hitCount": 44,
+            "note": "搜索结果直接命中江心洲保利紫荆公馆5月份成交笔记。"
+          },
+          {
+            "keyword": "江心洲 保利紫荆公馆 5月份成交 查收",
+            "searchedAt": "2026-06-12T10:31:48+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "详情正文列出5月成交4套，评论补充122㎡次顶楼456万含车位。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2015,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2015-2018"
+        },
+        "buildingForm": {
+          "value": "混合",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：洋房/小高层"
+        },
+        "unitPriceRange": {
+          "min": 37377,
+          "max": 37377,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2025年5月成交",
+            "area": "99㎡",
+            "totalPrice": null,
+            "unitPrice": null,
+            "features": "7/11层；正文列入5月成交4套之一",
+            "source": "小红书《江心洲 保利紫荆公馆 5月份成交 查收》正文"
+          },
+          {
+            "time": "2025年5月成交",
+            "area": "122㎡",
+            "totalPrice": "456万（含车位）",
+            "unitPrice": "约37377元/㎡（按总价/面积粗算，含车位）",
+            "features": "10/11层，评论回复称次顶楼456含车位",
+            "source": "同笔记正文及评论"
+          },
+          {
+            "time": "2025年5月成交",
+            "area": "142㎡",
+            "totalPrice": null,
+            "unitPrice": null,
+            "features": "3/7层；正文列入5月成交4套之一",
+            "source": "同笔记正文"
+          },
+          {
+            "time": "2025年5月成交",
+            "area": "99㎡",
+            "totalPrice": null,
+            "unitPrice": null,
+            "features": "9/11层；正文列入5月成交4套之一",
+            "source": "同笔记正文"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 4 条真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "xiaohongshu_note",
+            "title": "江心洲 保利紫荆公馆 5月份成交 查收",
+            "noteId": "683bb28100000000210186e1",
+            "author": "姗鹏小武看房日记",
+            "noteDate": "2025-06-01"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": false,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-036",
+      "communityName": "胜科星洲府",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2018,
+        "buildingForm": "混合",
+        "publicBuildingType": "洋房/小高层",
+        "unitPrice": 40000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "江心洲"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-12T23:53:00+08:00",
+        "keywords": [
+          "附带命中：河西南5月份完整成交数据播报"
+        ],
+        "attempts": [
+          {
+            "keyword": "附带命中：河西南5月份完整成交数据播报",
+            "searchedAt": "2026-06-12T23:53:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "未对本小区单独执行 search-feeds；按用户要求，从已打开的小红书成交表截图中提取同名小区成交数据并回填。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2018,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2018-2020"
+        },
+        "buildingForm": {
+          "value": "混合",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：洋房/小高层"
+        },
+        "unitPriceRange": {
+          "min": 29670,
+          "max": 29670,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-05-12",
+            "area": "176.27㎡",
+            "totalPrice": "523万",
+            "unitPrice": "29670元/㎡（计算）",
+            "features": "19F/33（截图楼层字段略模糊）；成交表未标注税费/车位细节",
+            "source": "《河西南5月份完整成交数据播报一定要收藏好》成交表截图"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 1 条真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "xiaohongshu_note",
+            "title": "河西南5月份完整成交数据播报一定要收藏好",
+            "noteId": "6a201d7900000000380229e3",
+            "author": "梦师傅房产严选丨好居",
+            "noteDate": "2026-06-03",
+            "scope": "attachedTransactionTable",
+            "evidenceFile": "/tmp/homeland-xhs/jindi-fenghua-may.webp",
+            "note": "按用户要求，从已打开的小红书成交表截图中提取同名小区成交数据；未对本小区单独执行 search-feeds。"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": false,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-037",
+      "communityName": "中南璞境",
+      "aliases": [
+        "璞境"
+      ],
+      "catalogSnapshot": {
+        "builtYear": 2020,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 38000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "江心洲"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-11T20:42:53+08:00",
+        "keywords": [
+          "璞境 成交"
+        ],
+        "attempts": [
+          {
+            "keyword": "璞境 成交",
+            "searchedAt": "2026-06-11T20:42:53+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "命中《璞境一个月成交5套》，详情含143㎡成交/报价与工抵房讨论。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2020,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2020-2022"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": {
+          "min": 26600,
+          "max": 32900,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-06-05笔记",
+            "area": "143㎡",
+            "totalPrice": "380多-410多万",
+            "unitPrice": "约2.66-2.87万元/㎡（计算）",
+            "features": "四房、长阳台、地铁口；评论口径，含工抵房特殊性讨论",
+            "source": "《璞境一个月成交5套》/ 金陵看房记 / noteId 6a2254ff000000002103db1f"
+          },
+          {
+            "time": "2026-06-05笔记",
+            "area": "143㎡",
+            "totalPrice": "470万",
+            "unitPrice": "约3.29万元/㎡（计算）",
+            "features": "高楼层、未住过、全新；报价非成交价",
+            "source": "《璞境一个月成交5套》/ 金陵看房记 / noteId 6a2254ff000000002103db1f"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 2 条真实成交案例。",
+          "Excel清单小区名为“中南璞境”，成交证据来源记录为：璞境；按清单总项/明确别名归并。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "xiaohongshu_note",
+            "title": "璞境一个月成交5套",
+            "noteId": "6a2254ff000000002103db1f",
+            "author": "金陵看房记",
+            "noteDate": "2026-06-05"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": true,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-038",
+      "communityName": "升龙天汇珑熙",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2015,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 40000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西南/奥南"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-12T23:53:00+08:00",
+        "keywords": [
+          "附带命中：河西南5月份完整成交数据播报"
+        ],
+        "attempts": [
+          {
+            "keyword": "附带命中：河西南5月份完整成交数据播报",
+            "searchedAt": "2026-06-12T23:53:00+08:00",
+            "result": "hit",
+            "hitCount": 7,
+            "note": "未对本小区单独执行 search-feeds；按用户要求，从已打开的小红书成交表截图中提取同名小区成交数据并回填。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2015,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2015-2018"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": {
+          "min": 23468,
+          "max": 31192,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-05-17",
+            "area": "95.17㎡",
+            "totalPrice": "286.6万",
+            "unitPrice": "30115元/㎡（计算）",
+            "features": "17F/33；成交表未标注税费/车位细节",
+            "source": "《河西南5月份完整成交数据播报一定要收藏好》成交表截图"
+          },
+          {
+            "time": "2026-05-08",
+            "area": "126.27㎡",
+            "totalPrice": "375万",
+            "unitPrice": "29698元/㎡（计算）",
+            "features": "8F/15；成交表未标注税费/车位细节",
+            "source": "《河西南5月份完整成交数据播报一定要收藏好》成交表截图"
+          },
+          {
+            "time": "2026-05-05",
+            "area": "85.65㎡",
+            "totalPrice": "201万",
+            "unitPrice": "23468元/㎡（计算）",
+            "features": "2F/33；成交表未标注税费/车位细节",
+            "source": "《河西南5月份完整成交数据播报一定要收藏好》成交表截图"
+          },
+          {
+            "time": "2026-05-04",
+            "area": "119.72㎡",
+            "totalPrice": "369万",
+            "unitPrice": "30822元/㎡（计算）",
+            "features": "29F/33；成交表未标注税费/车位细节",
+            "source": "《河西南5月份完整成交数据播报一定要收藏好》成交表截图"
+          },
+          {
+            "time": "2026-05-04",
+            "area": "97.14㎡",
+            "totalPrice": "303万",
+            "unitPrice": "31192元/㎡（计算）",
+            "features": "12F/15；成交表未标注税费/车位细节",
+            "source": "《河西南5月份完整成交数据播报一定要收藏好》成交表截图"
+          },
+          {
+            "time": "2026-05-01",
+            "area": "86.65㎡",
+            "totalPrice": "263万",
+            "unitPrice": "30352元/㎡（计算）",
+            "features": "29F/33；成交表未标注税费/车位细节",
+            "source": "《河西南5月份完整成交数据播报一定要收藏好》成交表截图"
+          },
+          {
+            "time": "2026-05-14",
+            "area": "86.13㎡",
+            "totalPrice": "222万",
+            "unitPrice": "25775元/㎡（计算）",
+            "features": "21F/26；成交表未标注税费/车位细节",
+            "source": "《河西南5月份完整成交数据播报一定要收藏好》成交表截图"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 7 条真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "xiaohongshu_note",
+            "title": "河西南5月份完整成交数据播报一定要收藏好",
+            "noteId": "6a201d7900000000380229e3",
+            "author": "梦师傅房产严选丨好居",
+            "noteDate": "2026-06-03",
+            "scope": "attachedTransactionTable",
+            "evidenceFile": "/tmp/homeland-xhs/jindi-fenghua-may.webp",
+            "note": "按用户要求，从已打开的小红书成交表截图中提取同名小区成交数据；未对本小区单独执行 search-feeds。"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": false,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-039",
+      "communityName": "升龙天汇",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2015,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 40000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西南/奥南"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"升龙天汇\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2015,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2015-2018"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-040",
+      "communityName": "鲁能公馆",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2015,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 40000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西南/奥南"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-12T18:15:20+08:00",
+        "keywords": [
+          "附带命中：南京 \"金马郦城西区\" 成交"
+        ],
+        "attempts": [
+          {
+            "keyword": "南京 \"金马郦城西区\" 成交",
+            "searchedAt": "2026-06-12T18:15:20+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "未对本小区单独执行 search-feeds；按用户要求，从已打开的小红书成交表截图中提取同名小区成交数据并回填。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2015,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2015-2018"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": {
+          "min": 36000,
+          "max": 36000,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2025-04-28",
+            "area": "88.27㎡",
+            "totalPrice": "318万",
+            "unitPrice": "3.60万/㎡",
+            "features": "成交表未标注楼层、车位等附加条件。",
+            "source": "小红书笔记《河西奥体成交数据2025/04/28》图片口径"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 1 条真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "xiaohongshu_note",
+            "title": "河西奥体成交数据2025/04/28",
+            "noteId": "681042d3000000002002945c",
+            "author": "松子爱洛",
+            "noteDate": "2025-04-29"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": false,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-041",
+      "communityName": "招商雍和府",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2015,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 45000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西南/奥南"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-12T23:42:00+08:00",
+        "keywords": [
+          "附带命中：2026.6.1-6.7 河西二手房市场一周速览"
+        ],
+        "attempts": [
+          {
+            "keyword": "附带命中：2026.6.1-6.7 河西二手房市场一周速览",
+            "searchedAt": "2026-06-12T23:42:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "未对本小区单独执行 search-feeds；按用户要求，从已打开的小红书成交表截图中提取同名小区成交数据并回填。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2015,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2015-2018"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": {
+          "min": 25300,
+          "max": 25300,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-06-01~2026-06-07",
+            "area": "89.96㎡",
+            "totalPrice": "227.5万",
+            "unitPrice": "25300元/㎡",
+            "features": "27楼；各自付税",
+            "source": "《2026.6.1-6.7 河西二手房市场一周速览》成交表截图"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 1 条真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "xiaohongshu_note",
+            "title": "2026.6.1-6.7 河西二手房市场一周速览",
+            "noteId": "6a2a14a9000000000702432f",
+            "author": "河西霞姐探房丨墨岚",
+            "noteDate": "2026-06-11",
+            "scope": "attachedTransactionTable",
+            "note": "按用户要求，从已打开的小红书成交表截图中提取同名小区成交数据；未对本小区单独执行 search-feeds。",
+            "evidenceFile": "/tmp/homeland-xhs/jindi-jinghua-week-2.webp"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": false,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-042",
+      "communityName": "华侨城天鹅堡",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2022,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 31500,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-12T15:27:51.400+08:00",
+        "keywords": [
+          "南京 \"华侨城天鹅堡\" 成交",
+          "南京 \"欢乐滨江\" 成交"
+        ],
+        "attempts": [
+          {
+            "keyword": "南京 \"欢乐滨江\" 成交",
+            "searchedAt": "2026-06-12T15:20:33+08:00",
+            "result": "hit",
+            "hitCount": 22,
+            "note": "附带命中河西南热门次新房价格变化图，图中包含华侨城天鹅堡价格行。"
+          },
+          {
+            "keyword": "feed-detail:6a20cad9000000002201a089",
+            "searchedAt": "2026-06-12T15:22:23+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "配图显示华侨城天鹅堡交付时间2022年6月、历史高价5.8万/㎡、2025年12月均价3.2万/㎡、2026年5月均价3.2万/㎡。"
+          },
+          {
+            "keyword": "南京 \"华侨城天鹅堡\" 成交",
+            "searchedAt": "2026-06-12T15:26:36+08:00",
+            "result": "hit",
+            "hitCount": 20,
+            "note": "直接检索命中《老鹅堡价格花样跳水（附带成交价）》等天鹅堡相关结果。"
+          },
+          {
+            "keyword": "feed-detail:689f1934000000001b020434",
+            "searchedAt": "2026-06-12T15:26:55+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "详情提供560挂价、510各付、未满二、14楼，以及162㎡挂牌560万/500万左右可谈等口径。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2022,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2022"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": {
+          "min": 30000,
+          "max": 32000,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2025年8月笔记口径",
+            "area": null,
+            "totalPrice": "510万",
+            "unitPrice": null,
+            "features": "各付、未满二、14楼；笔记标题称附带成交价",
+            "source": "小红书《老鹅堡价格花样跳水（附带成交价）》"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 1 条真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "xiaohongshu_note",
+            "title": "今年1-5月，河西南次新房价格变化！",
+            "noteId": "6a20cad9000000002201a089",
+            "author": "深度南京",
+            "noteDate": "2026-06-04",
+            "evidence": [
+              "配图华侨城天鹅堡行：交付时间2022年6月，历史高价5.8万/㎡，2025年12月均价3.2万/㎡，2026年5月均价3.2万/㎡。"
+            ]
+          },
+          {
+            "type": "xiaohongshu_note",
+            "title": "老鹅堡价格花样跳水（附带成交价）",
+            "noteId": "689f1934000000001b020434",
+            "author": "小天爸爸的买房日记",
+            "noteDate": "2025-08-15",
+            "evidence": [
+              "正文称稳定下滑，单价到3以下比较稳定。",
+              "正文称现在挂牌价162㎡、560万，自行砍价500万左右问题不大。",
+              "正文称560挂价、510各付、未满二、14楼。"
+            ]
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": false,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-043",
+      "communityName": "星叶云墅",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2022,
+        "buildingForm": "洋房",
+        "publicBuildingType": "低密/洋房",
+        "unitPrice": 50800,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西南/奥南"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"星叶云墅\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2022,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2022-2024"
+        },
+        "buildingForm": {
+          "value": "洋房",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：低密/洋房"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-044",
+      "communityName": "颐和源璟",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2020,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 55000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-11T20:45:19+08:00",
+        "keywords": [
+          "颐和源璟 成交"
+        ],
+        "attempts": [
+          {
+            "keyword": "颐和源璟 成交",
+            "searchedAt": "2026-06-11T20:45:19+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "命中《颐和源璟 1 月份成交数据》，截图含A/B区多笔成交样本。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2020,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2020-2023"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": {
+          "min": 45500,
+          "max": 49500,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-02-02笔记",
+            "area": "115.66㎡",
+            "totalPrice": "533.6万",
+            "unitPrice": "4.61万/㎡",
+            "features": "颐和源璟B区，各种付税，8F",
+            "source": "《颐和源璟 1 月份成交数据》/ 主营河西新城 找南京小江 / noteId 6980b234000000001a03630e"
+          },
+          {
+            "time": "2026-02-02笔记",
+            "area": "115.63㎡",
+            "totalPrice": "526.8万",
+            "unitPrice": "4.55万/㎡",
+            "features": "颐和源璟B区，各自付税，16F",
+            "source": "同上"
+          },
+          {
+            "time": "2026-02-02笔记",
+            "area": "143.47㎡",
+            "totalPrice": "710.8万",
+            "unitPrice": "4.95万/㎡",
+            "features": "颐和源璟B区，各自付税，20F",
+            "source": "同上"
+          },
+          {
+            "time": "2026-02-02笔记",
+            "area": "125.84㎡",
+            "totalPrice": "583.6万",
+            "unitPrice": "4.63万/㎡",
+            "features": "颐和源璟B区，各自付税，29F",
+            "source": "同上"
+          },
+          {
+            "time": "2026-02-02笔记",
+            "area": "125.85㎡",
+            "totalPrice": "608万",
+            "unitPrice": "4.63万/㎡",
+            "features": "颐和源璟B区，各自付税，17F",
+            "source": "同上"
+          },
+          {
+            "time": "2026-02-02笔记",
+            "area": "143.5㎡",
+            "totalPrice": "666万",
+            "unitPrice": "4.64万/㎡",
+            "features": "颐和源璟A区，各自付税，30F",
+            "source": "同上"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 6 条真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "xiaohongshu_note",
+            "title": "颐和源璟 1 月份成交数据",
+            "noteId": "6980b234000000001a03630e",
+            "author": "主营河西新城 找南京小江",
+            "noteDate": "2026-02-02"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": false,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-045",
+      "communityName": "佳兆业城市广场",
+      "aliases": [
+        "佳兆业·城市广场2期"
+      ],
+      "catalogSnapshot": {
+        "builtYear": 2015,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 39000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西南/奥南"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-12T15:51:02.568+08:00",
+        "keywords": [
+          "南京 \"佳兆业城市广场\" 奥南 成交",
+          "南京 \"佳兆业城市广场二期\" 成交"
+        ],
+        "attempts": [
+          {
+            "keyword": "南京 \"佳兆业城市广场二期\" 成交",
+            "searchedAt": "2026-06-12T15:46:54+08:00",
+            "result": "hit",
+            "hitCount": 22,
+            "note": "搜索结果命中直接相关标题《成交最多的佳兆业竟然涨价20万 单价过3W了》，但详情连续两次未捕获；同时命中河西南成交数据。"
+          },
+          {
+            "keyword": "feed-detail:697597af000000002200a3a8",
+            "searchedAt": "2026-06-12T15:47:26+08:00 / 2026-06-12T15:47:55+08:00",
+            "result": "retry_failed",
+            "hitCount": 1,
+            "note": "直接相关笔记详情两次返回“没有捕获到 feed 详情数据”，未作为最终成交证据。"
+          },
+          {
+            "keyword": "南京 \"佳兆业城市广场\" 奥南 成交",
+            "searchedAt": "2026-06-12T15:48:28+08:00",
+            "result": "hit",
+            "hitCount": 22,
+            "note": "命中《佳兆业126㎡四房成交价破局，行情真的反转了？》和《南京河西南最新真实成交数据》。"
+          },
+          {
+            "keyword": "feed-detail:694fd376000000001f008344",
+            "searchedAt": "2026-06-12T15:48:53+08:00",
+            "result": "partial",
+            "hitCount": 1,
+            "note": "详情确认佳兆业城市广场126㎡四房成交，但正文和配图未给总价/单价。"
+          },
+          {
+            "keyword": "feed-detail:6a28c116000000001702972c",
+            "searchedAt": "2026-06-12T15:49:35+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "详情配图“河西南2026.6月成交数据”给出佳兆业二期和佳兆业三期成交明细。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2015,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2015-2018"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": {
+          "min": 30600,
+          "max": 32000,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-06月截至6月8日",
+            "area": "87㎡",
+            "totalPrice": "278.2万",
+            "unitPrice": "3.20万/㎡",
+            "features": "佳兆业二期，有车位，成交公司德佑",
+            "source": "小红书《南京河西南最新真实成交数据📊 截至6月8日》配图"
+          },
+          {
+            "time": "2026-06月截至6月8日",
+            "area": "105.87㎡",
+            "totalPrice": "323.8万",
+            "unitPrice": "3.06万/㎡",
+            "features": "佳兆业三期，有车位，成交公司中环",
+            "source": "同上"
+          },
+          {
+            "time": "2026-06月截至6月8日",
+            "area": "86.39㎡",
+            "totalPrice": "272万",
+            "unitPrice": "3.15万/㎡",
+            "features": "佳兆业三期，成交公司德佑",
+            "source": "同上"
+          },
+          {
+            "time": "2025-12-27笔记",
+            "area": "126㎡",
+            "totalPrice": "未披露",
+            "unitPrice": "未披露",
+            "features": "佳兆业城市广场四房两卫，南北通透，边户；价格未披露",
+            "source": "小红书《佳兆业126㎡四房成交价破局，行情真的反转了？》正文/配图"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 4 条真实成交案例。",
+          "Excel清单小区名为“佳兆业城市广场”，成交证据来源记录为：佳兆业城市广场、佳兆业·城市广场2期；按清单总项/明确别名归并。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "xiaohongshu_note",
+            "title": "南京河西南最新真实成交数据📊 截至6月8日",
+            "noteId": "6a28c116000000001702972c",
+            "author": "南京欢哥看房丨创格家",
+            "noteDate": "2026-06-10",
+            "evidence": [
+              "正文称佳兆业、海珀二期、升龙天汇等热门盘成交单价约2.8-3.7万/㎡。",
+              "配图表格：佳兆业二期87㎡，278.2万，3.20万/㎡，有车位。",
+              "配图表格：佳兆业三期105.87㎡，323.8万，3.06万/㎡，有车位；86.39㎡，272万，3.15万/㎡。"
+            ]
+          },
+          {
+            "type": "xiaohongshu_note",
+            "title": "佳兆业126㎡四房成交价破局，行情真的反转了？",
+            "noteId": "694fd376000000001f008344",
+            "author": "南京买房小王帮忙",
+            "noteDate": "2025-12-27",
+            "evidence": [
+              "正文称南京建邺奥南佳兆业城市广场126㎡四房两卫成交；配图为126㎡户型图，未给成交价。"
+            ]
+          },
+          {
+            "type": "catalog_alias_merge",
+            "title": "按Excel清单总项归并：佳兆业城市广场、佳兆业·城市广场2期",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": true,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-046",
+      "communityName": "中国府",
+      "aliases": [
+        "葛洲坝南京中国府"
+      ],
+      "catalogSnapshot": {
+        "builtYear": 2019,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/大平层",
+        "unitPrice": 60000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西南/奥南"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-12T11:08:35+08:00",
+        "keywords": [
+          "葛洲坝南京中国府 成交"
+        ],
+        "attempts": [
+          {
+            "keyword": "葛洲坝南京中国府 成交",
+            "searchedAt": "2026-06-12T11:07:28+08:00",
+            "result": "hit",
+            "hitCount": 22,
+            "note": "命中“中国府最近成交单价5.1W”“中国府成交统计以及小区介绍”等直接相关笔记。"
+          },
+          {
+            "keyword": "中国府最近成交单价 5.1.W",
+            "searchedAt": "2026-06-12T11:07:52+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "详情正文写最新成交价5.1万/㎡、面积190㎡、中楼层；评论说明该套为业主急售，低于市场价约5000元/㎡。"
+          },
+          {
+            "keyword": "中国府成交统计以及小区介绍",
+            "searchedAt": "2026-06-12T11:08:16+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "详情补充建邺区奥南商圈/青奥社区、5栋楼、大平层为主、面积189-228㎡、总价1095-1726万、葛洲坝物业等信息。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2019,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2019-2022"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/大平层"
+        },
+        "unitPriceRange": {
+          "min": 51000,
+          "max": 75700,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "date": "2025-04-29",
+            "area": 190,
+            "areaUnit": "㎡",
+            "floor": "中楼层",
+            "totalPrice": 969,
+            "totalPriceUnit": "万元",
+            "totalPriceNote": "按190㎡ * 5.1万/㎡计算，原笔记未直接给总价。",
+            "unitPrice": 51000,
+            "unitPriceUnit": "元/㎡",
+            "features": "中国府最新成交，中楼层；评论称业主急售，低于市场价约5000元/㎡。",
+            "source": "小红书笔记《中国府最近成交单价 5.1.W》"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 1 条真实成交案例。",
+          "Excel清单小区名为“中国府”，成交证据来源记录为：葛洲坝南京中国府；按清单总项/明确别名归并。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "xiaohongshu_note",
+            "title": "中国府最近成交单价 5.1.W",
+            "noteId": "6810c4d1000000002101b2db",
+            "author": "落落房研社CH",
+            "noteDate": "2025-04-29"
+          },
+          {
+            "type": "xiaohongshu_note",
+            "title": "中国府成交统计以及小区介绍",
+            "noteId": "68aebc1d000000001c013b38",
+            "author": "销冠的烦恼",
+            "noteDate": "2025-08-27"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": true,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-047",
+      "communityName": "河西金茂府",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2019,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/科技住宅",
+        "unitPrice": 55000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西南/奥南"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-12T11:37:54+08:00",
+        "keywords": [
+          "河西金茂府 成交"
+        ],
+        "attempts": [
+          {
+            "keyword": "河西金茂府 成交",
+            "searchedAt": "2026-06-12T11:33:25+08:00",
+            "result": "hit",
+            "hitCount": 22,
+            "note": "搜索结果命中《河西楼盘-金茂府》和《河西南5月份完整成交数据播报一定要收藏好》等直接相关内容。"
+          },
+          {
+            "keyword": "河西楼盘-金茂府",
+            "searchedAt": "2026-06-12T11:33:48+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "首次详情触发扫码验证失败；等待1分钟后重试成功。图文提供2019-2026价格演变、一期/二期开盘口径、科技系统和户型价格带。"
+          },
+          {
+            "keyword": "河西南5月份完整成交数据播报一定要收藏好",
+            "searchedAt": "2026-06-12T11:36:58+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "详情正文列出金茂府一期226.86㎡成交802万，单价3.54万/㎡，作为近期单套成交样本。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": "scan_verification_retry_success",
+          "note": "打开《河西楼盘-金茂府》首次触发扫码验证并失败；按规则等待1分钟后重试，新窗口加载成功。"
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2019,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2019-2022"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/科技住宅"
+        },
+        "unitPriceRange": {
+          "min": 35400,
+          "max": 47000,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "date": "2026-05",
+            "areaSqm": 226.86,
+            "totalPriceWan": 802,
+            "unitPriceYuanPerSqm": 35400,
+            "floor": null,
+            "features": "金茂府一期，大户型样本；5月河西南成交播报列入第一梯队但单价低于2026年3月均价区间。",
+            "source": "小红书笔记《河西南5月份完整成交数据播报一定要收藏好》",
+            "sourceNoteId": "6a201d7900000000380229e3"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 1 条真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "platform": "小红书",
+            "noteId": "69d9077f000000002102e316",
+            "title": "河西楼盘-金茂府",
+            "author": "Kaka",
+            "noteDate": "2026-04-10",
+            "extracted": "图文称一期2019年底首开5.2-5.4万/㎡、二期2021年底加推5.6-6.0万/㎡+3800元/㎡装修包；2026年3月最新均价4.5-4.7万/㎡，145-155㎡三房4.3-4.6万/㎡（630-710万），185-190㎡四房4.4-4.8万/㎡（820-910万），品质抗跌，2026年站稳4.5万+。"
+          },
+          {
+            "platform": "小红书",
+            "noteId": "6a201d7900000000380229e3",
+            "title": "河西南5月份完整成交数据播报一定要收藏好",
+            "author": "梦师傅房产严选丨好居",
+            "noteDate": "2026-06-03",
+            "extracted": "正文列金茂府一期226.86㎡成交802万，单价3.54万/㎡；数据截至2026-06-01，来源说明为河西小土逗6.1更新。"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": false,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-048",
+      "communityName": "颐和铂湾",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2020,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 40000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西南/鱼嘴"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"颐和铂湾\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2020,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2020-2023"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-049",
+      "communityName": "建发珺和府",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2020,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 45000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西南/奥南"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-12T15:56:25.833+08:00",
+        "keywords": [
+          "南京 \"建发珺和府\" 成交"
+        ],
+        "attempts": [
+          {
+            "keyword": "南京 \"建发珺和府\" 成交",
+            "searchedAt": "2026-06-12T15:53:52+08:00",
+            "result": "hit",
+            "hitCount": 22,
+            "note": "命中《今年1-5月，河西南次新房价格变化！》和珺和府看房总结；价格变化图含珺和府东区/西区。"
+          },
+          {
+            "keyword": "feed-detail:6a20cad9000000002201a089",
+            "searchedAt": "2026-06-12T15:54:23+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "详情正文点名建发珺和府东区房价下降近15%；配图给出东区/西区交付时间、历史高价、2025-12与2026-05均价。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2020,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2020-2023"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "xiaohongshu_note",
+            "title": "今年1-5月，河西南次新房价格变化！",
+            "noteId": "6a20cad9000000002201a089",
+            "author": "深度南京",
+            "noteDate": "2026-06-04",
+            "evidence": [
+              "正文：建发珺和府东区房价下降近15%。",
+              "配图：东区2022年12月交付，2025年12月均价3.8万/㎡，2026年5月均价3.2万/㎡，下降15.8%。",
+              "配图：西区2023年5月交付，2025年12月和2026年5月均价均3.2万/㎡。"
+            ]
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-050",
+      "communityName": "深业南湾上府",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2023,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 42000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西南/奥南"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"深业南湾上府\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2023,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2023-2025"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-051",
+      "communityName": "中宁府",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2023,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/大平层",
+        "unitPrice": 55000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"中宁府\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2023,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2023-2025"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/大平层"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-052",
+      "communityName": "源尚丹若府",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2023,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 50000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"源尚丹若府\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2023,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2023-2025"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-053",
+      "communityName": "伟星长江之歌",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2023,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/大平层",
+        "unitPrice": 45000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西南/奥南"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"伟星长江之歌\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2023,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2023-2025"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/大平层"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-054",
+      "communityName": "天琴华樟",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2023,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/大平层",
+        "unitPrice": 55000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"天琴华樟\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2023,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2023-2025"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/大平层"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-055",
+      "communityName": "绿城华发金陵月华",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2024,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/大平层",
+        "unitPrice": 71000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"绿城华发金陵月华\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2024,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2024"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/大平层"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-056",
+      "communityName": "嘉璟峰",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2022,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 45000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西南/奥南"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"嘉璟峰\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2022,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2022-2024"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-057",
+      "communityName": "枫璟雅园",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2022,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 42000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西南/奥南"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"枫璟雅园\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2022,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2022-2024"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-058",
+      "communityName": "江尚紫薇",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2022,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 43200,
+        "priceType": "Excel清单参考均价",
+        "submarket": "江心洲"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"江尚紫薇\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2022,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2022-2024"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-059",
+      "communityName": "仁恒江湾时代",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2018,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 41100,
+        "priceType": "Excel清单参考均价",
+        "submarket": "江心洲"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"仁恒江湾时代\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2018,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2018-2020"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-060",
+      "communityName": "中海江湾境",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2023,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 40000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "江心洲"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"中海江湾境\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2023,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2023-2025"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-061",
+      "communityName": "星叶栖悦湾",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2022,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 40000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "江心洲"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"星叶栖悦湾\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2022,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2022-2024"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-062",
+      "communityName": "水沐和瑞园",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2022,
+        "buildingForm": "洋房",
+        "publicBuildingType": "低密/洋房",
+        "unitPrice": 45000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "江心洲"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"水沐和瑞园\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2022,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2022-2024"
+        },
+        "buildingForm": {
+          "value": "洋房",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：低密/洋房"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-063",
+      "communityName": "荣盛江天瓴筑",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2018,
+        "buildingForm": "洋房",
+        "publicBuildingType": "低密/洋房",
+        "unitPrice": 50000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "江心洲"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"荣盛江天瓴筑\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2018,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2018-2020"
+        },
+        "buildingForm": {
+          "value": "洋房",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：低密/洋房"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-064",
+      "communityName": "招商金陵序",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2024,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/大平层",
+        "unitPrice": 63600,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"招商金陵序\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2024,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2024"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/大平层"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-065",
+      "communityName": "丹荔云府",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2024,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 50000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"丹荔云府\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2024,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2024"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-066",
+      "communityName": "丹若园",
+      "aliases": [],
+      "catalogSnapshot": {
+        "builtYear": 2022,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 55000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西中/奥体"
+      },
+      "query": {
+        "status": "todo",
+        "queried": false,
+        "keywords": [
+          "南京 \"丹若园\" 成交"
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2022,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2022-2024"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": null,
+        "transactionCases": [],
+        "judgments": [
+          "当前尚未取得本小区真实成交案例。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "excel_catalog",
+            "title": "建邺区2010年后商品房清单.xlsx",
+            "noteDate": "2026-06-12"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "low",
+        "needsHumanReview": true,
+        "notes": [
+          "缺少本小区真实成交案例。"
+        ]
+      }
+    },
+    {
+      "communityId": "excel-067",
+      "communityName": "青奥村观云",
+      "aliases": [
+        "青奥村"
+      ],
+      "catalogSnapshot": {
+        "builtYear": 2022,
+        "buildingForm": "高层",
+        "publicBuildingType": "高层/板楼",
+        "unitPrice": 40000,
+        "priceType": "Excel清单参考均价",
+        "submarket": "河西南/奥南"
+      },
+      "query": {
+        "status": "hit",
+        "queried": true,
+        "queriedAt": "2026-06-12T23:42:00+08:00",
+        "keywords": [
+          "附带命中：2026.6.1-6.7 河西二手房市场一周速览"
+        ],
+        "attempts": [
+          {
+            "keyword": "附带命中：2026.6.1-6.7 河西二手房市场一周速览",
+            "searchedAt": "2026-06-12T23:42:00+08:00",
+            "result": "hit",
+            "hitCount": 1,
+            "note": "未对本小区单独执行 search-feeds；按用户要求，从已打开的小红书成交表截图中提取同名小区成交数据并回填。"
+          }
+        ],
+        "risk": {
+          "blocked": false,
+          "type": null,
+          "note": null
+        }
+      },
+      "calibration": {
+        "builtYear": {
+          "value": 2022,
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel清单建成年份：2022-2024"
+        },
+        "buildingForm": {
+          "value": "高层",
+          "sourceType": "Excel清单口径",
+          "confidence": "medium",
+          "note": "Excel建筑类型：高层/板楼"
+        },
+        "unitPriceRange": {
+          "min": 22900,
+          "max": 22900,
+          "unit": "元/㎡",
+          "sourceType": "小红书成交截图口径",
+          "note": "由迁移后的本小区/清单总项真实成交案例汇总。"
+        },
+        "transactionCases": [
+          {
+            "time": "2026-06-01~2026-06-07",
+            "area": "175.87㎡",
+            "totalPrice": "402万",
+            "unitPrice": "22900元/㎡",
+            "features": "3楼；各自付税",
+            "source": "《2026.6.1-6.7 河西二手房市场一周速览》成交表截图"
+          }
+        ],
+        "judgments": [
+          "已从旧校准记录迁移 1 条真实成交案例。",
+          "Excel清单小区名为“青奥村观云”，成交证据来源记录为：青奥村；按清单总项/明确别名归并。"
+        ],
+        "sourceNotes": [
+          {
+            "type": "xiaohongshu_note",
+            "title": "2026.6.1-6.7 河西二手房市场一周速览",
+            "noteId": "6a2a14a9000000000702432f",
+            "author": "河西霞姐探房丨墨岚",
+            "noteDate": "2026-06-11",
+            "scope": "attachedTransactionTable",
+            "note": "按用户要求，从已打开的小红书成交表截图中提取同名小区成交数据；未对本小区单独执行 search-feeds。",
+            "evidenceFile": "/tmp/homeland-xhs/jindi-jinghua-week-2.webp"
+          }
+        ]
+      },
+      "catalogPatchCandidate": {
+        "applyToCatalog": true,
+        "reason": "catalog 已按用户提供Excel清单重建。"
+      },
+      "review": {
+        "confidence": "medium",
+        "needsHumanReview": true,
+        "notes": [
+          "真实成交案例为旧校准记录迁移，已按Excel清单名称归档。"
+        ]
+      }
+    }
+  ],
+  "excludedRecords": []
+}
