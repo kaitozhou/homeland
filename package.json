@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:github-pages": "tsc -b && vite build --mode github-pages",
     "audit": "node scripts/audit-implementation.mjs",
     "xhs:status": "node scripts/check-xhs-research.mjs",
     "xhs:complete": "node scripts/check-xhs-research.mjs --complete",
